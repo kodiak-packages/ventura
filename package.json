@@ -15,25 +15,25 @@
     "react-dom": "^16"
   },
   "devDependencies": {
-    "react": "^16",
-    "react-dom": "^16",
     "docz": "^2.3.1",
-    "prop-types": "^15.7.2",
     "eslint": "^6.8.0",
     "eslint-config-airbnb-typescript": "^6.3.1",
     "eslint-config-prettier": "^6.9.0",
     "eslint-import-resolver-typescript": "^2.0.0",
+    "eslint-plugin-ban": "1.4.0",
     "eslint-plugin-import": "^2.20.0",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-react": "^7.18.0",
     "eslint-plugin-react-hooks": "^2.3.0",
     "eslint-plugin-simple-import-sort": "^5.0.2",
-    "eslint-plugin-ban": "1.4.0"
+    "prettier": "^2.0.4",
+    "prop-types": "^15.7.2",
+    "react": "^16",
+    "react-dom": "^16"
   },
   "scripts": {
-    "dev": "docz dev",
-    "build": "docz build",
-    "serve": "docz serve"
+    "start": "docz dev",
+    "build-docs": "docz build"
   }
 }
