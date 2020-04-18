@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { SFC } from 'react';
 
-interface Props {
-  label: string;
+export interface Props {
+  children: React.ReactChild;
 }
 
-const Button: React.FC<Props> = ({ label }: Props) => <button type="button">{label}</button>;
-
-export default Button;
+export const Button: SFC<Props> = ({ children }: Props) => (
+  <button type="button">{children}</button>
+);
