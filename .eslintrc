@@ -1,0 +1,57 @@
+{
+  "plugins": ["import", "prettier", "simple-import-sort", "ban"],
+  "extends": [
+    "react-app",
+    "airbnb-typescript",
+    "prettier/react",
+    "prettier/@typescript-eslint",
+    "eslint-config-prettier",
+    "plugin:prettier/recommended"
+  ],
+  "rules": {
+    "no-unused-expressions": [
+      "warn",
+      {
+        "allowShortCircuit": true,
+        "allowTernary": true
+      }
+    ],
+    "import/prefer-default-export": "off",
+    "simple-import-sort/sort": [
+      "warn",
+      {
+        "groups": [
+          ["^\\u0000", "^react", "^@?\\w"], // Packages. `react` related packages come first.
+          [
+            "^(app|components|mock|models|services|utils)(/.*|$)",
+            "^\\./(?=.*/)(?!/?$)",
+            "^\\.(?!/?$)",
+            "^\\./?$"
+          ], // Relative imports. Put same-folder imports and `.` last.
+          ["^.+\\.s?css$"] // Style imports.
+        ]
+      }
+    ],
+    "sort-imports": "off", // simple-import-sort takes care of this
+    "import/order": "off", // simple-import-sort takes care of this
+    "ban/ban": [
+      "error",
+      { "name": "it", "message": "Usage of 'test()' instead of 'it()' is preferred" }
+    ]
+
+  },
+  "overrides": [
+    {
+      "files": ["**/*.test.tsx"],
+      "rules": {
+        // Allow when defining a default props object to be used in multiple tests
+        "react/jsx-props-no-spreading": "off"
+      }
+    }
+  ],
+  "settings": {
+    "import/resolver": {
+      "typescript": {} // Fix imports with tsconfig baseUrl
+    }
+  }
+}
