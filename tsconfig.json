@@ -1,9 +1,8 @@
 {
   "compilerOptions": {
-    "outDir": "dist",
+    "outDir": "./dist",
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
@@ -15,9 +14,18 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
+    "sourceMap": true,
+    "declaration": true,
     "jsx": "react",
-    "baseUrl": "src"
+    "baseUrl": "src",
+    "typeRoots": [
+      "index.d.ts",
+      "node_modules/@types"
+    ]
   },
-  "include": ["src"],
+  "include": [
+    "./src/**/*.tsx",
+    "./src/**/*.ts"
+  ],
   "exclude": ["node_modules", "dist"]
 }

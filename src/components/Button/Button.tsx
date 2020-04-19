@@ -10,7 +10,7 @@ export interface Props {
   onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }
 
-export const Button: React.FC<Props> = ({
+const Button: React.FC<Props> = ({
   children,
   appearance = 'tactile',
   kind = 'primary',
@@ -35,3 +35,5 @@ export const Button: React.FC<Props> = ({
     </button>
   );
 };
+
+export default Button;
