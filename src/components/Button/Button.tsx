@@ -1,7 +1,7 @@
 import React from 'react';
 
 import '../index.css';
-import styles from './Button.module.css';
+// import styles from './Button.module.css';
 
 export interface Props {
   children: string;
@@ -13,9 +13,11 @@ export interface Props {
 export const Button: React.FC<Props> = ({
   children,
   appearance = 'tactile',
-  kind = 'kind',
+  kind = 'primary',
   onClick,
 }: Props) => {
+  const styles: any = kind;
+
   const getAppearanceClass = (appearanceProp: typeof appearance) => {
     if (appearanceProp === 'flat') {
       return styles.appearanceFlat;
