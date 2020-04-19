@@ -18,12 +18,11 @@
     --contrast-8: #2E2E2E;
     --contrast-9: #000000;
 
-     /* ==================
+}
+
+    /* ==================
         Global styles 
     ================== */
-
-    
-}
 
 * {
     font-family: var(--global-font-family);
