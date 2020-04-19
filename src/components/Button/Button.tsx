@@ -1,6 +1,6 @@
 import React from 'react';
 
-import '../../index.css';
+import '../index.css';
 import styles from './Button.module.css';
 
 export interface Props {
@@ -23,12 +23,12 @@ export const Button: React.FC<Props> = ({
     return styles.appearanceTactile;
   };
 
-  const className: string[] = [styles.base];
+  const classNames: string[] = [styles.base];
 
-  className.push(getAppearanceClass(appearance));
+  classNames.push(getAppearanceClass(appearance));
 
   return (
-    <button type="button" onClick={onClick}>
+    <button className={classNames.join(' ')} type="button" onClick={onClick}>
       {children}
     </button>
   );

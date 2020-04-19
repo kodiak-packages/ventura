@@ -19,9 +19,11 @@
     "react-dom": "^16"
   },
   "devDependencies": {
-    "typescript": "^3.8.3",
-    "docz": "^2.3.1",
+    "@types/react": "^16.9.34",
+    "@types/react-dom": "^16.9.6",
     "@typescript-eslint/eslint-plugin": "^2.17.0",
+    "css-loader": "^3.5.2",
+    "docz": "^2.3.1",
     "eslint": "^6.8.0",
     "eslint-config-airbnb-typescript": "^6.3.1",
     "eslint-config-prettier": "^6.9.0",
@@ -34,8 +36,9 @@
     "eslint-plugin-react-hooks": "^2.3.0",
     "eslint-plugin-simple-import-sort": "^5.0.2",
     "prettier": "^2.0.4",
-    "prop-types": "^15.7.2",
     "react": "^16",
-    "react-dom": "^16"
+    "react-dom": "^16",
+    "style-loader": "^1.1.4",
+    "typescript": "^3.8.3"
   }
 }
