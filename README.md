@@ -1,41 +1,13 @@
-# Basic Docz example
+# Venture component library
 
-## Using `create-docz-app`
+## Development
 
 ```sh
-npx create-docz-app docz-app-basic
-# or
-yarn create docz-app docz-app-basic
+yarn start
 ```
 
-## Download manually
+## Generate documentation
 
 ```sh
-curl https://codeload.github.com/doczjs/docz/tar.gz/master | tar -xz --strip=2 docz-master/examples/basic
-mv basic docz-basic-example
-cd docz-basic-example
-```
-
-## Setup
-
-```sh
-yarn # npm i
-```
-
-## Run
-
-```sh
-yarn dev # npm run dev
-```
-
-## Build
-
-```sh
-yarn build # npm run build
-```
-
-## Serve built app
-
-```sh
-yarn serve # npm run serve
+yarn document
 ```
