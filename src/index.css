@@ -1,0 +1,6 @@
+@import "modern-css-reset";
+@import "./variables/colors.css";
+    
+* {
+    font-family: var(--global-font-family);
+} 

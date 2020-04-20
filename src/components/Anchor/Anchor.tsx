@@ -1,7 +1,5 @@
 import React from 'react';
 
-import '../index.css';
-
 export interface Props {
   children: string;
   href: string | undefined;
