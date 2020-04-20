@@ -1,7 +1,6 @@
 {
   "name": "ventura",
   "version": "1.0.0-1",
-  "main": "index.js",
   "repository": "git@github.com:kodiak-packages/ventura.git",
   "author": "Kodiak",
   "license": "MIT",
@@ -12,7 +11,8 @@
   ],
   "scripts": {
     "start": "docz dev",
-    "document": "docz build"
+    "document": "docz build",
+    "build": "rm dist && tsc -b && cpx src/**/*.css dist"
   },
   "peerDependencies": {
     "react": "^16",
@@ -22,6 +22,7 @@
     "@types/react": "^16.9.34",
     "@types/react-dom": "^16.9.6",
     "@typescript-eslint/eslint-plugin": "^2.17.0",
+    "cpx": "1.5.0",
     "docz": "^2.3.1",
     "eslint": "^6.8.0",
     "eslint-config-airbnb-typescript": "^6.3.1",
@@ -38,5 +39,8 @@
     "react": "^16",
     "react-dom": "^16",
     "typescript": "^3.8.3"
+  },
+  "dependencies": {
+    "modern-css-reset": "^1.1.0"
   }
 }
