@@ -11,9 +11,9 @@ export interface Props {
 const Button: React.FC<Props> = ({ children, type = 'primary', onClick }: Props) => {
   const getAppearanceClass = (buttonType: typeof type) => {
     if (buttonType === 'secondary') {
-      return styles.typePrimary;
+      return styles.typeSecondary;
     }
-    return styles.typeSecondary;
+    return styles.typePrimary;
   };
 
   const classNames: string[] = [styles.base];
