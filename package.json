@@ -9,6 +9,7 @@
     "dist",
     "README.md"
   ],
+  "main": "dist/index.js",
   "scripts": {
     "start": "docz dev",
     "document": "docz build",
