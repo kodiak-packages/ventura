@@ -5,7 +5,7 @@ route: /button
 ---
 
 import { Playground, Props } from 'docz'
-import { Button } from './Button.tsx'
+import Button from './Button.tsx'
 
 # Button
 
@@ -28,8 +28,10 @@ Buttons make common actions more obvious and help users more easily perform them
   <Button>Click me</Button>
 </Playground>
 
-## Flat usage
+## Button type usage
 
 <Playground>
-  <Button flat>Click me</Button>
+  <Button type="primary">Click me</Button>
+  <br/>
+  <Button type="secondary">Click me</Button>
 </Playground>

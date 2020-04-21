@@ -1,0 +1,21 @@
+@import "colors.css";
+
+:root {
+
+    /* ==================
+        General styles 
+    ================== */
+
+    /* Font */
+    --global-font-family: Lato, sans-serif;
+
+
+    /* ==================
+        Button styles 
+    ================== */
+
+    --button-border-radius: 3px;
+    --button-line-height: 32px;
+
+    --button-primary-background: var(--contrast-2);
+}

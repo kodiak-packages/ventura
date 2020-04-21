@@ -1,7 +1,6 @@
 {
   "name": "ventura",
-  "version": "1.0.0-1",
-  "main": "index.js",
+  "version": "1.0.0-2",
   "repository": "git@github.com:kodiak-packages/ventura.git",
   "author": "Kodiak",
   "license": "MIT",
@@ -10,9 +9,11 @@
     "dist",
     "README.md"
   ],
+  "main": "dist/index.js",
   "scripts": {
     "start": "docz dev",
-    "document": "docz build"
+    "document": "docz build",
+    "build": "rm -rf dist && tsc -b -v && cpx './src/**/*.css' 'dist'"
   },
   "peerDependencies": {
     "react": "^16",
@@ -22,6 +23,7 @@
     "@types/react": "^16.9.34",
     "@types/react-dom": "^16.9.6",
     "@typescript-eslint/eslint-plugin": "^2.17.0",
+    "cpx": "1.5.0",
     "docz": "^2.3.1",
     "eslint": "^6.8.0",
     "eslint-config-airbnb-typescript": "^6.3.1",
@@ -34,9 +36,20 @@
     "eslint-plugin-react": "^7.18.0",
     "eslint-plugin-react-hooks": "^2.3.0",
     "eslint-plugin-simple-import-sort": "^5.0.2",
+    "firebase-tools": "^8.1.1",
     "prettier": "^2.0.4",
     "react": "^16",
     "react-dom": "^16",
     "typescript": "^3.8.3"
-  }
+  },
+  "dependencies": {
+    "modern-css-reset": "^1.1.0"
+  },
+  "keywords": [
+    "kodiak",
+    "ventura",
+    "react",
+    "ui",
+    "library"
+  ]
 }

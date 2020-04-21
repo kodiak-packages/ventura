@@ -1,3 +1,20 @@
 .base {
-    color: red;
+    border-radius: var(--button-border-radius);
+    line-height: var(--button-line-height);
+    font-size: 14px;
+    padding: 0 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.typePrimary {
+    background-color: var(--button-primary-background);
+}
+
+.typePrimary:hover {
+    background-color: rgba(67, 90, 111, 0.1);
+}
+
+.typeSecondary:hover {
+    background-color: rgba(67, 90, 111, 0.06);
 }
