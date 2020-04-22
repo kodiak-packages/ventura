@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button default snapshot 1`] = `
+<DocumentFragment>
+  <button
+    class="base typePrimary"
+    type="button"
+  >
+    Click me
+  </button>
+</DocumentFragment>
+`;
+
+exports[`Button secondary button 1`] = `
+<DocumentFragment>
+  <button
+    class="base typeSecondary"
+    type="button"
+  >
+    Click me
+  </button>
+</DocumentFragment>
+`;
