@@ -12,14 +12,19 @@
   "main": "dist/index.js",
   "scripts": {
     "start": "docz dev",
-    "document": "docz build",
-    "build": "rm -rf dist && tsc -b -v && cpx './src/**/*.css' 'dist'"
+    "build": "rm -rf dist && tsc -b -v && cpx './src/**/*.css' 'dist'",
+    "test": "jest --detectOpenHandles --colors",
+    "document": "docz build"
   },
   "peerDependencies": {
     "react": "^16",
     "react-dom": "^16"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.5.0",
+    "@testing-library/react": "^10.0.3",
+    "@testing-library/user-event": "^10.0.2",
+    "@types/jest": "^25.2.1",
     "@types/react": "^16.9.34",
     "@types/react-dom": "^16.9.6",
     "@typescript-eslint/eslint-plugin": "^2.17.0",
@@ -28,6 +33,7 @@
     "eslint": "^6.8.0",
     "eslint-config-airbnb-typescript": "^6.3.1",
     "eslint-config-prettier": "^6.9.0",
+    "eslint-config-react-app": "^5.2.1",
     "eslint-import-resolver-typescript": "^2.0.0",
     "eslint-plugin-ban": "1.4.0",
     "eslint-plugin-import": "^2.20.0",
@@ -37,9 +43,12 @@
     "eslint-plugin-react-hooks": "^2.3.0",
     "eslint-plugin-simple-import-sort": "^5.0.2",
     "firebase-tools": "^8.1.1",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^25.4.0",
     "prettier": "^2.0.4",
     "react": "^16",
     "react-dom": "^16",
+    "ts-jest": "^25.4.0",
     "typescript": "^3.8.3"
   },
   "dependencies": {
@@ -51,5 +60,18 @@
     "react",
     "ui",
     "library"
-  ]
+  ],
+  "jest": {
+    "preset": "ts-jest",
+    "roots": [
+      "<rootDir>/src"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.{ts,tsx}",
+      "!src/**/*.d.ts"
+    ],
+    "moduleNameMapper": {
+      "^.+\\.css$": "identity-obj-proxy"
+    }
+  }
 }
