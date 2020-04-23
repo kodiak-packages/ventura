@@ -4,5 +4,3 @@ dist
 node_modules
 *-error.log
 *-debug.log
-
-react-app-env.d.ts
