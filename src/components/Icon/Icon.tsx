@@ -897,6 +897,8 @@ import YoutubeCircle from '../../assets/icons/youtube-circle.svg';
 import YoutubeSquare from '../../assets/icons/youtube-square.svg';
 import Youtube from '../../assets/icons/youtube.svg';
 
+import styles from './Icon.module.css';
+
 type IconType =
   | '500px'
   | 'activity'
@@ -2699,7 +2701,9 @@ export interface Props {
 }
 
 const Icon: React.FC<Props> = ({ type }: Props) => {
-  return <object type="image/svg+xml" data={svgIcons[type]} aria-label={type} />;
+  return (
+    <object className={styles.icon} type="image/svg+xml" data={svgIcons[type]} aria-label={type} />
+  );
 };
 
 export default Icon;

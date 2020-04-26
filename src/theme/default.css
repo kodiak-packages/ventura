@@ -8,6 +8,7 @@
 
     /* Font */
     --global-font-family: Lato, sans-serif;
+    --global-font-color: var(--contrast-8);
 
 
     /* ==================
