@@ -17,7 +17,7 @@
     "document": "docz build",
     "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'",
     "lint:fix": "yarn lint --fix",
-    "semantic-release": "semantic-release"
+    "release": "semantic-release"
   },
   "peerDependencies": {
     "react": "^16",
