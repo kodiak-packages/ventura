@@ -1,9 +1,9 @@
-name: CI Pipeline
+name: Test and lint
 
 on:
   push:
     paths-ignore:
-      - '{dist,docs}/**'
+      - 'docs/**'
 
 jobs:
   node:

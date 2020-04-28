@@ -1,11 +1,11 @@
-name: Build docs and dist
+name: Build and release
 
 on:
   push:
     branches:
       - master
     paths-ignore:
-      - '{dist,docs}/**'
+      - 'docs/**'
 
 jobs:
   node:
@@ -36,7 +36,7 @@ jobs:
       - name: Commit docs and dist
         uses: EndBug/add-and-commit@v4
         with:
-          add: '{dist,docs}/**'
+          add: 'docs/**'
           author_name: Github Workflow Bot
           author_email: bot@github.com
           message: 'build docs and dist'
