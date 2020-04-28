@@ -1,6 +1,9 @@
 name: CI Pipeline
 
-on: push
+on:
+  push:
+    paths-ignore:
+      - '{dist,docs}/**'
 
 jobs:
   node:
@@ -27,9 +30,3 @@ jobs:
 
       - name: Run tests
         run: yarn run test --ci --coverage
-
-      - name: Build the docs
-        run: yarn document
-
-      - name: Compile to JSX
-        run: yarn build
