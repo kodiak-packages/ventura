@@ -14,7 +14,9 @@
     "start": "docz dev",
     "build": "rm -rf dist && tsc -b -v && cpx './src/**/*.css' 'dist'",
     "test": "jest --detectOpenHandles --colors",
-    "document": "docz build"
+    "document": "docz build",
+    "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'",
+    "lint:fix": "yarn lint --fix"
   },
   "peerDependencies": {
     "react": "^16",

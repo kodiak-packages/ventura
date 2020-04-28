@@ -1,0 +1,35 @@
+name: CI Pipeline
+
+on: push
+
+jobs:
+  node:
+    name: Node 12
+    # buster distribution has git >v2.17 required for actions/checkout@v2
+    container: node:12-buster
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Sync packages with cache
+        uses: actions/cache@v1
+        with:
+          path: ./node_modules
+          key: node:12-buster-node_modules-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: node:12-buster-node_modules-
+
+      - name: Install packages
+        run: yarn install --frozen-lockfile
+
+      - name: Run ESLint
+        run: yarn lint --quiet --color
+
+      - name: Run tests
+        run: yarn run test --ci --coverage
+
+      - name: Build the docs
+        run: yarn document
+
+      - name: Compile to JSX
+        run: yarn build
