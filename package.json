@@ -63,8 +63,14 @@
     "ventura",
     "react",
     "ui",
+    "component",
     "library"
   ],
+  "release": {
+    "branches": [
+      "master"
+    ]
+  },
   "jest": {
     "preset": "ts-jest",
     "roots": [
