@@ -2,8 +2,8 @@ name: Build and release
 
 on:
   push:
-    branches:
-      - master
+    # branches:
+    #   - master
     paths-ignore:
       - 'docs/**'
 
@@ -19,8 +19,8 @@ jobs:
         uses: actions/cache@v1
         with:
           path: ./node_modules
-          key: node:12-buster-node_modules-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: node:12-buster-node_modules-
+          key: ${{ runner.os }}-node_modules-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: ${{ runner.os }}-node_modules-
 
       - name: Install packages
         run: yarn install --frozen-lockfile
@@ -31,12 +31,12 @@ jobs:
       - name: Compile src
         run: yarn build
 
-      - name: Commit docs and dist
+      - name: Commit docs
         uses: EndBug/add-and-commit@v4
         with:
-          add: 'docs/**'
+          add: 'docs'
           author_name: Github Workflow Bot
           author_email: bot@github.com
-          message: 'build docs and dist'
+          message: 'build docs'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
