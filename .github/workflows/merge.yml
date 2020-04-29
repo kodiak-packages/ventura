@@ -34,7 +34,7 @@ jobs:
         run: yarn build
 
       - name: Commit docs
-        uses: EndBug/add-and-commit@v4
+        uses: RobinWijnant/add-and-commit@master
         with:
           add: 'docs'
           author_name: Github Workflow Bot
