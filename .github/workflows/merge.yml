@@ -28,6 +28,8 @@ jobs:
       - name: Build the docs
         run: yarn document
 
+      - run: git status
+
       - name: Compile src
         run: yarn build
 
@@ -39,4 +41,4 @@ jobs:
           author_email: bot@github.com
           message: 'build docs'
         env:
-          GITHUB_TOKEN: ${{ github.token }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
