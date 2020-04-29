@@ -10,8 +10,6 @@ on:
 jobs:
   node:
     name: Node 12
-    # buster distribution has git >v2.17 required for actions/checkout@v2
-    container: node:12-buster
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
