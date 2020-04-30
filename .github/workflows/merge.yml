@@ -4,8 +4,6 @@ on:
   push:
     branches:
       - master
-    paths-ignore:
-      - 'docs/**'
 
 jobs:
   node:
@@ -28,17 +26,12 @@ jobs:
       - name: Build the docs
         run: yarn document
 
-      - run: git status
-
       - name: Compile src
         run: yarn build
 
-      - name: Commit docs
-        uses: RobinWijnant/add-and-commit@master
+      - name: Deploy docs
+        uses: actions-x/commit@v1
         with:
-          add: docs
-          author_name: Github Workflow Bot
-          author_email: bot@github.com
+          files: docs
+          branch: gh-pages
           message: 'build docs'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
