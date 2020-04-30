@@ -30,8 +30,9 @@ jobs:
         run: yarn build
 
       - name: Deploy docs
-        uses: actions-x/commit@v1
+        uses: crazy-max/ghaction-github-pages@v1
         with:
-          files: docs
-          branch: gh-pages
-          message: 'build docs'
+          target_branch: gh-pages
+          build_dir: docs
+        env:
+          GITHUB_PAT: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
