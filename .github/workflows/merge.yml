@@ -4,8 +4,8 @@ on:
   push:
     # branches:
     #   - master
-    # paths-ignore:
-    #   - 'docs/**'
+    paths-ignore:
+      - 'docs/**'
 
 jobs:
   node:
@@ -36,7 +36,7 @@ jobs:
       - name: Commit docs
         uses: RobinWijnant/add-and-commit@master
         with:
-          add: 'docs'
+          add: docs
           author_name: Github Workflow Bot
           author_email: bot@github.com
           message: 'build docs'
