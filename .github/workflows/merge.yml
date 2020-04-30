@@ -4,14 +4,10 @@ on:
   push:
     branches:
       - master
-    paths-ignore:
-      - 'docs/**'
 
 jobs:
   node:
     name: Node 12
-    # buster distribution has git >v2.17 required for actions/checkout@v2
-    container: node:12-buster
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -21,8 +17,8 @@ jobs:
         uses: actions/cache@v1
         with:
           path: ./node_modules
-          key: node:12-buster-node_modules-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: node:12-buster-node_modules-
+          key: ${{ runner.os }}-node_modules-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: ${{ runner.os }}-node_modules-
 
       - name: Install packages
         run: yarn install --frozen-lockfile
@@ -33,12 +29,10 @@ jobs:
       - name: Compile src
         run: yarn build
 
-      - name: Commit docs and dist
-        uses: EndBug/add-and-commit@v4
+      - name: Deploy docs
+        uses: crazy-max/ghaction-github-pages@v1
         with:
-          add: 'docs/**'
-          author_name: Github Workflow Bot
-          author_email: bot@github.com
-          message: 'build docs and dist'
+          target_branch: gh-pages
+          build_dir: docs
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_PAT: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
