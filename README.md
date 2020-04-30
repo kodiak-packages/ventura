@@ -2,7 +2,7 @@ TODO: Display logo
 
 # Ventura React component library
 
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/kodiak-packages/ventura/Test and lint?label=CI%20-%20test%2Flint) ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/kodiak-packages/ventura/Build and release?label=CI%20-%20build%2Frelease) ![Snyk Vulnerabilities for GitHub Repo](https://img.shields.io/snyk/vulnerabilities/github/kodiak-packages/ventura) ![npm](https://img.shields.io/npm/v/ventura) ![Code style](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/kodiak-packages/ventura/Test%20and%20lint/master?label=CI%20test%2Flint) ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/kodiak-packages/ventura/Build%20and%20release/master?label=CI%20build%2Frelease) ![Snyk Vulnerabilities for GitHub Repo](https://img.shields.io/snyk/vulnerabilities/github/kodiak-packages/ventura) ![npm](https://img.shields.io/npm/v/ventura) ![Code style](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)
 
 A lightweight, themeable react component library
 
