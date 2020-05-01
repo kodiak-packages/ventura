@@ -1,0 +1,48 @@
+---
+name: Icons
+menu: Components
+route: /icons
+---
+
+import { Playground, Props } from 'docz'
+import { ArrowDownCircle, GitHub, Minimize, Minimize2, Figma, LifeBuoy, XCircle, X } from '../../index.ts'
+import Icon from './Icon.tsx'
+
+# Icons
+
+The full set of icons from [Feather Icons](https://feathericons.com).
+
+All icons have their own component. Each component name is a pascal cased version of the [Feather Icon](https://feathericons.com).
+
+## Basic usage
+
+<Playground>
+  <ArrowDownCircle />
+  <GitHub />
+  <Minimize />
+  <Minimize2 />
+  <Figma />
+  <LifeBuoy />
+  <XCircle />
+  <X />
+</Playground>
+
+## Changing icon size
+
+<Playground>
+  <GitHub size={12} />
+  <GitHub />
+  <GitHub size={48} />
+</Playground>
+
+## Changing icon color
+
+<Playground>
+  <GitHub color={'#000000'} />
+  <GitHub color={'#fdda24'} />
+  <GitHub color={'#ef3340'} />
+</Playground>
+
+## API
+
+<Props of={Icon} />
