@@ -13,7 +13,7 @@
   "scripts": {
     "start": "docz dev",
     "build": "rm -rf dist && tsc && cpx './src/**/*.css' 'dist'",
-    "test": "jest --detectOpenHandles --colors",
+    "test": "jest --detectOpenHandles --watchAll",
     "document": "docz build",
     "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'",
     "lint:fix": "yarn lint --fix",
@@ -26,7 +26,8 @@
   "devDependencies": {
     "@testing-library/jest-dom": "^5.5.0",
     "@testing-library/react": "^10.0.3",
-    "@testing-library/user-event": "^10.0.2",
+    "@testing-library/user-event": "^10.1.0",
+    "@types/classnames": "^2.2.10",
     "@types/jest": "^25.2.1",
     "@types/react": "^16.9.34",
     "@types/react-dom": "^16.9.6",
@@ -51,11 +52,12 @@
     "prettier": "^2.0.4",
     "react": "^16",
     "react-dom": "^16",
+    "semantic-release": "^17.0.7",
     "ts-jest": "^25.4.0",
-    "typescript": "^3.8.3",
-    "semantic-release": "^17.0.7"
+    "typescript": "^3.8.3"
   },
   "dependencies": {
+    "classnames": "^2.2.6",
     "modern-css-reset": "^1.1.0"
   },
   "keywords": [
