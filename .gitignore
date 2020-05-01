@@ -1,9 +1,9 @@
 # Production
-/.docz
-/dist
+.docz/
+dist/
 
 # Dependencies
-/node_modules
+node_modules/
 
 # Logs
 logs
