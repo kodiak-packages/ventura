@@ -13,7 +13,7 @@ A lightweight, themable react component library from 2020
 
 ## Documentation
 
-You can find exampled of all of our components in the documentation.
+You can find examples of all of our components in the documentation.
 
 [➡️ Go to full documentation](https://kodiak-packages.github.io/ventura)
 
