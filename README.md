@@ -4,16 +4,16 @@ TODO: Display logo
 
 ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/kodiak-packages/ventura/Test%20and%20lint/master?label=CI%20test%2Flint) ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/kodiak-packages/ventura/Build%20and%20release/master?label=CI%20build%2Frelease) ![Snyk Vulnerabilities for GitHub Repo](https://img.shields.io/snyk/vulnerabilities/github/kodiak-packages/ventura) ![npm](https://img.shields.io/npm/v/ventura) ![Code style](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)
 
-A lightweight, themeable react component library from 2020
+A lightweight, themable react component library from 2020
 
 - 📘 Typescript support
-- 🎨 Theme in CSS variables
+- 🎨 Theme with CSS variables
 - 📎 All components support className and ref props
 - 🐦 Icons from [Feather Icons](https://feathericons.com)
 
 ## Documentation
 
-All components are documented using Docz. You can find examples for each prop.
+All components are documented using Docz. You can find examples for each component there.
 
 [➡️ Go to full documentation](https://kodiak-packages.github.io/ventura)
 
