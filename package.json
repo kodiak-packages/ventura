@@ -1,6 +1,6 @@
 {
   "name": "ventura",
-  "version": "1.0.0-2",
+  "version": "0.0.0-development",
   "repository": "git@github.com:kodiak-packages/ventura.git",
   "author": "Kodiak",
   "license": "MIT",
@@ -12,9 +12,12 @@
   "main": "dist/index.js",
   "scripts": {
     "start": "docz dev",
-    "build": "rm -rf dist && tsc -b -v && cpx './src/**/*.css' 'dist' && cpx './src/**/*.svg' 'dist'",
+    "build": "rm -rf dist && tsc && cpx './src/**/*.css' 'dist'",
     "test": "jest --detectOpenHandles --colors",
-    "document": "docz build"
+    "document": "docz build",
+    "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'",
+    "lint:fix": "yarn lint --fix",
+    "release": "semantic-release"
   },
   "peerDependencies": {
     "react": "^16",
@@ -49,7 +52,8 @@
     "react": "^16",
     "react-dom": "^16",
     "ts-jest": "^25.4.0",
-    "typescript": "^3.8.3"
+    "typescript": "^3.8.3",
+    "semantic-release": "^17.0.7"
   },
   "dependencies": {
     "react-feather": "^2.0.8"
@@ -59,8 +63,14 @@
     "ventura",
     "react",
     "ui",
+    "component",
     "library"
   ],
+  "release": {
+    "branches": [
+      "master"
+    ]
+  },
   "jest": {
     "preset": "ts-jest",
     "roots": [
