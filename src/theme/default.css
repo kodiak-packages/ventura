@@ -1,21 +1,21 @@
-@import "colors.css";
+@import 'colors.css';
 
 :root {
-
-    /* ==================
-        General styles 
+  /* ==================
+        General styles
     ================== */
 
-    /* Font */
-    --global-font-family: Lato, sans-serif;
+  /* Font */
+  --global-font-family: Lato, sans-serif;
+  --font-size: 14px;
+  --border-radius-small: 3px;
 
-
-    /* ==================
-        Button styles 
+  /* ==================
+        Button styles
     ================== */
 
-    --button-border-radius: 3px;
-    --button-line-height: 32px;
+  --button-border-radius: 3px;
+  --button-line-height: 32px;
 
-    --button-primary-background: var(--contrast-2);
+  --button-primary-background: var(--contrast-2);
 }

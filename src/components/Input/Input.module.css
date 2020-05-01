@@ -1,11 +1,31 @@
 .input {
-  /* border-radius: var(--button-border-radius); */
-  font-size: 14px;
+  font: inherit;
+  box-sizing: border-box;
+  width: 100%;
+  background-color: var(--contrast-1);
+  border-radius: var(--border-radius-small);
+  border: 1px solid var(--contrast-4);
+  padding: 9px 14px;
+}
+
+.input::placeholder {
+  color: var(--contrast-6);
+}
+
+.input:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px var(--contrast-2);
+}
+
+.containsError {
+}
+
+.errorMessage {
 }
 
 /* MDX */
 
-.countryCodeIput {
+.countryCodeInput {
   text-align: center;
-  width: 30px;
+  width: 50px;
 }

@@ -1,18 +1,17 @@
 ---
-name: TextInput
+name: Input
 menu: Components
-route: /textinput
+route: /input
 ---
 
+import { useState } from 'react';
 import { Playground, Props } from 'docz';
-import TextInput from './TextInput.tsx';
-import styles from './TextInput.module.css';
+import Input from './Input.tsx';
+import styles from './Input.module.css';
 
-# TextInput
+# Input
 
-A TextInput can be used to let the user insert text using key strokes. A crucial form item for building interactive apps.
-
-> Form elements do not have `onChange` or `value` props in favour to form control libraries (like [react-hook-form](https://react-hook-form.com)) that use the ref prop to detect the current value.
+A Input can be used to let the user insert text using key strokes. A crucial form item for building interactive apps.
 
 ## Best practices
 
@@ -20,36 +19,61 @@ A TextInput can be used to let the user insert text using key strokes. A crucial
 
 ## Properties
 
-<Props of={TextInput} />
+<Props of={Input} />
 
 ## Examples
 
 ### Basic usage
 
 <Playground>
-  <TextInput name="firstname" />
+  <Input name="firstname" />
+</Playground>
+
+### Listening for changes
+
+<Playground>
+  <Input name="logger" onChange={(event) => console.log(`LOGGER: ${event.target.value}`)} />
 </Playground>
 
 ### Email address
 
 <Playground>
-  <TextInput name="email" placeholder="Email address" type="email" />
+  <Input name="email" placeholder="Email address" type="email" />
 </Playground>
 
 ### Password
 
 <Playground>
-  <TextInput name="password" placeholder="Password" type="password" />
+  <Input name="password" placeholder="Password" type="password" />
 </Playground>
 
 ### Limited amount of characters
 
 <Playground>
-  {/* the countryCodeInput class centers the text and reduces the input width */}
-  <TextInput
-    name="countryCode"
-    maxLength={2}
-    className={styles.countryCodeInput}
-    placeholder="XX"
-  />
+  {/* .countryCodeInput { text-align: center; width: 30px; } */}
+  <Input name="countryCode" maxLength={2} className={styles.countryCodeInput} placeholder="XX" />
+</Playground>
+
+### Format a serial code
+
+<Playground>
+  {() => {
+    const [serialCode, setSerialCode] = useState('AAAA-BBBB-CCCC-DDDD');
+    const formattedSerialCode = (
+      serialCode
+        .split('-')
+        .join('')
+        .match(/.{1,4}/g) || []
+    )
+      .join('-')
+      .toUpperCase();
+    return (
+      <Input
+        name="serialCode"
+        value={formattedSerialCode}
+        onChange={(event) => setSerialCode(event.target.value)}
+        maxLength={19}
+      />
+    );
+  }}
 </Playground>
