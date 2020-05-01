@@ -7,10 +7,10 @@ export interface IconProps {
 
 const Icon: React.FC<IconProps> = ({ size = 24, color = 'currentColor' }: IconProps) => {
   return (
-    <div>
+    <>
       {size}
       {color}
-    </div>
+    </>
   );
 };
 
