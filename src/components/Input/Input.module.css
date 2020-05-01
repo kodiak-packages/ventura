@@ -1,0 +1,11 @@
+.input {
+  /* border-radius: var(--button-border-radius); */
+  font-size: 14px;
+}
+
+/* MDX */
+
+.countryCodeIput {
+  text-align: center;
+  width: 30px;
+}
