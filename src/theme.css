@@ -1,21 +1,23 @@
 :root {
   /* Colors */
-  --color-contrast-1: #ffffff;
-  --color-contrast-2: #f4f4f4;
-  --color-contrast-3: #ebebeb;
-  --color-contrast-4: #d6d6d6;
-  --color-contrast-5: #adadad;
-  --color-contrast-6: #7a7a7a;
-  --color-contrast-7: #4d4d4d;
-  --color-contrast-8: #2e2e2e;
-  --color-contrast-9: #000000;
+  --color-neutral-1: #ffffff;
+  --color-neutral-2: #f4f4f4;
+  --color-neutral-3: #ebebeb;
+  --color-neutral-4: #d6d6d6;
+  --color-neutral-5: #adadad;
+  --color-neutral-6: #7a7a7a;
+  --color-neutral-7: #4d4d4d;
+  --color-neutral-8: #2e2e2e;
+  --color-neutral-9: #000000;
 
   --color-primary-1: var(--color-contrast-2);
   --color-primary-2: var(--color-contrast-2);
-  --color-primary-3: var(--color-contrast-2);
-  --color-primary-1-text: var(--color-contrast-8);
-  --color-primary-2-text: var(--color-contrast-8);
-  --color-primary-3-text: var(--color-contrast-8);
+  --color-primary-1-contrast: var(--color-contrast-8);
+  --color-primary-2-contrast: var(--color-contrast-8);
+
+  --color-error-1: #ffe2e2;
+  --color-error-2: #eb3737;
+  --color-error-1-contrast: var(--color-contrast-8);
 
   /* Font */
   --font-family: Lato, sans-serif;
