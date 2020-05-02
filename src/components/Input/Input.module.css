@@ -2,19 +2,19 @@
   font: inherit;
   box-sizing: border-box;
   width: 100%;
-  background-color: var(--contrast-1);
+  background-color: var(--color-contrast-1);
   border-radius: var(--border-radius-small);
-  border: 1px solid var(--contrast-4);
+  border: 1px solid var(--color-contrast-4);
   padding: 9px 14px;
 }
 
 .input::placeholder {
-  color: var(--contrast-6);
+  color: var(--color-contrast-6);
 }
 
 .input:focus {
   outline: none;
-  box-shadow: 0 0 0 4px var(--contrast-2);
+  box-shadow: 0 0 0 4px var(--color-contrast-2);
 }
 
 .containsError {
