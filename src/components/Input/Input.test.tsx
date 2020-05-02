@@ -52,12 +52,15 @@ describe('Input', () => {
     expect(inputElement.getAttribute('type')).toBe('password');
   });
 
-  test('isInvalid prop', () => {
-    const component = <Input {...defaultButtonProps} isInvalid />;
-    const { getByTestId } = render(component);
+  test('errorMessage prop', () => {
+    const errorMessage = 'This is an error message';
+    const component = <Input {...defaultButtonProps} errorMessage={errorMessage} />;
+    const { getByTestId, queryByText } = render(component);
     const inputElement = getByTestId('input-firstname');
+    const spanElement = queryByText(errorMessage);
 
-    expect(inputElement.classList).toContain('isInvalid');
+    expect(inputElement.classList).toContain('containsError');
+    expect(spanElement).not.toEqual(null);
   });
 
   test('spellCheck prop', () => {
@@ -90,9 +93,9 @@ describe('Input', () => {
     const className = 'center';
     const component = <Input {...defaultButtonProps} className={className} />;
     const { getByTestId } = render(component);
-    const inputElement = getByTestId('input-firstname');
+    const containerElement = getByTestId('container');
 
-    const renderedClassNames = inputElement.className.split(' ');
+    const renderedClassNames = containerElement.className.split(' ');
     expect(renderedClassNames).toContain(className);
     // className in prop should be the last in the row
     expect(renderedClassNames.indexOf(className)).toBe(renderedClassNames.length - 1);

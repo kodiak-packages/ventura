@@ -9,7 +9,7 @@ type Props = {
   onChange?: ChangeEventHandler<HTMLInputElement>;
   placeholder?: string;
   type?: 'text' | 'email' | 'password';
-  isInvalid?: boolean;
+  errorMessage?: string;
   spellCheck?: boolean;
   autoComplete?: boolean;
   maxLength?: number;
@@ -24,7 +24,7 @@ const Input = React.forwardRef<HTMLInputElement, Props>(
       onChange,
       placeholder,
       type = 'text',
-      isInvalid = false,
+      errorMessage,
       spellCheck = false,
       autoComplete = false,
       maxLength,
@@ -32,21 +32,27 @@ const Input = React.forwardRef<HTMLInputElement, Props>(
     }: Props,
     ref,
   ) => {
-    const mergedClassName = classNames(styles.input, { [styles.isInvalid]: isInvalid }, className);
+    const mergedContainerClassName = classNames(styles.container, className);
+    const mergedInputClassName = classNames(styles.input, {
+      [styles.containsError]: Boolean(errorMessage),
+    });
     return (
-      <input
-        name={name}
-        value={value}
-        onChange={onChange}
-        placeholder={placeholder}
-        type={type}
-        spellCheck={spellCheck}
-        autoComplete={autoComplete ? 'on' : 'off'}
-        maxLength={maxLength}
-        className={mergedClassName}
-        ref={ref}
-        data-testid={`input-${name}`}
-      />
+      <div className={mergedContainerClassName} data-testid="container">
+        <input
+          name={name}
+          value={value}
+          onChange={onChange}
+          placeholder={placeholder}
+          type={type}
+          spellCheck={spellCheck}
+          autoComplete={autoComplete ? 'on' : 'off'}
+          maxLength={maxLength}
+          ref={ref}
+          className={mergedInputClassName}
+          data-testid={`input-${name}`}
+        />
+        {Boolean(errorMessage) && <span className={styles.errorMessage}>{errorMessage}</span>}
+      </div>
     );
   },
 );

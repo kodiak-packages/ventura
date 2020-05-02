@@ -2,14 +2,19 @@
 
 exports[`Input default snapshot 1`] = `
 <DocumentFragment>
-  <input
-    autocomplete="off"
-    class="input"
-    data-testid="input-firstname"
-    name="firstname"
-    spellcheck="false"
-    type="text"
-    value=""
-  />
+  <div
+    class="container"
+    data-testid="container"
+  >
+    <input
+      autocomplete="off"
+      class="input"
+      data-testid="input-firstname"
+      name="firstname"
+      spellcheck="false"
+      type="text"
+      value=""
+    />
+  </div>
 </DocumentFragment>
 `;
