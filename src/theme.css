@@ -10,14 +10,14 @@
   --color-neutral-8: #2e2e2e;
   --color-neutral-9: #000000;
 
-  --color-primary-1: var(--color-contrast-2);
-  --color-primary-2: var(--color-contrast-2);
-  --color-primary-1-contrast: var(--color-contrast-8);
-  --color-primary-2-contrast: var(--color-contrast-8);
+  --color-primary-1: #f4f4f4;
+  --color-primary-2: #f4f4f4;
+  --color-primary-1-contrast: #2e2e2e;
+  --color-primary-2-contrast: #2e2e2e;
 
   --color-error-1: #ffe2e2;
   --color-error-2: #eb3737;
-  --color-error-1-contrast: var(--color-contrast-8);
+  --color-error-1-contrast: #2e2e2e;
 
   /* Font */
   --font-family: Lato, sans-serif;
