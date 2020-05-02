@@ -14,7 +14,7 @@
 
 .input:focus {
   outline: none;
-  box-shadow: 0 0 0 4px var(--color-contrast-2);
+  box-shadow: 0 0 0 4px var(--color-primary-1);
 }
 
 .containsError {

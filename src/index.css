@@ -1,5 +1,5 @@
 /* @import "modern-css-reset"; */
-@import 'theme/default.css';
+@import 'theme.css';
 
 body {
   font-family: var(--global-font-family);
