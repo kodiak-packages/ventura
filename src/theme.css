@@ -10,14 +10,13 @@
   --color-neutral-8: #2e2e2e;
   --color-neutral-9: #000000;
 
-  --color-primary-1: #f4f4f4;
-  --color-primary-2: #f4f4f4;
-  --color-primary-1-contrast: #2e2e2e;
-  --color-primary-2-contrast: #2e2e2e;
+  --color-primary: #f4f4f4;
+  --color-primary-text: #2e2e2e;
+  --color-primary-light: #f4f4f4;
+  --color-primary-light-text: #2e2e2e;
 
-  --color-error-1: #ffe2e2;
-  --color-error-2: #eb3737;
-  --color-error-1-contrast: #2e2e2e;
+  --color-error: #eb3737;
+  --color-error-light: #ffe2e2;
 
   /* Font */
   --font-family: Lato, sans-serif;
