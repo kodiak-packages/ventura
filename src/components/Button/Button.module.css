@@ -5,10 +5,19 @@
     padding: 0 16px;
     border: none;
     cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
+
+.prefix
 
 .typePrimary {
     background-color: var(--button-primary-background);
+}
+
+.typeScondary {
+  background-color: var(--button-primary-background);
 }
 
 .typePrimary:hover {
@@ -17,4 +26,9 @@
 
 .typeSecondary:hover {
     background-color: rgba(67, 90, 111, 0.06);
+}
+
+.spinner {
+  width: 16px;
+  height: 16px;
 }
