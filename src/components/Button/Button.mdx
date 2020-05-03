@@ -5,6 +5,7 @@ route: /button
 ---
 
 import { Playground, Props } from 'docz'
+import { Activity } from '../../index.ts'
 import Button from './Button.tsx'
 
 # Button
@@ -32,10 +33,22 @@ Buttons make common actions more obvious and help users more easily perform them
   <Button type="secondary">Click me</Button>
 </Playground>
 
+## Button disabled
+
+<Playground>
+  <Button isDisabled>Click me</Button>
+</Playground>
+
 ## Button loading
 
 <Playground>
   <Button isLoading>Click me</Button>
+</Playground>
+
+## Button with icon
+
+<Playground>
+  <Button suffixIcon={<Activity size={14}/>}>Click me</Button>
 </Playground>
 
 ## API

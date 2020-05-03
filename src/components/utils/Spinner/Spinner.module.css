@@ -24,7 +24,7 @@
 .circle {
   stroke-dashoffset: 6;
   stroke-dasharray: 300;
-  stroke-width: 12;
+  stroke-width: 16;
   stroke-miterlimit: 10;
   stroke-linecap: 10;
   animation: loadingCircleKeyFrames 1.6s cubic-bezier(0.4, 0.15, 0.6, 0.85) infinite;

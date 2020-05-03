@@ -27,20 +27,25 @@ const Button: React.FC<Props> = ({
   name,
 }: Props) => {
   const buttonClassNames = classNames(styles.base, {
-    [styles.typePrimary]: type === 'primary',
-    [styles.typeSecondary]: type === 'secondary',
+    [styles.typePrimary]: (!isDisabled || !isLoading) && type === 'primary',
+    [styles.typeSecondary]: (!isDisabled || !isLoading) && type === 'secondary',
+  });
+
+  const labelClassNames = classNames(styles.label, {
+    [styles.labelWithPrefixIcon]: Boolean(prefixIcon) || isLoading,
+    [styles.labelWithSuffixIcon]: Boolean(suffixIcon),
   });
 
   return (
     <button
-      disabled={isDisabled}
+      disabled={isDisabled || isLoading}
       className={buttonClassNames}
       type="button"
       onClick={onClick}
       data-testid={name}
     >
       {isLoading ? <Spinner className={styles.spinner} /> : prefixIcon}
-      {children}
+      <span className={labelClassNames}>{children}</span>
       {isLoading || suffixIcon}
     </button>
   );

@@ -1,5 +1,7 @@
 :root {
-  /* Colors */
+  /* ==================
+         Colors
+  ================== */
   --color-neutral-1: #ffffff;
   --color-neutral-2: #f4f4f4;
   --color-neutral-3: #ebebeb;
@@ -10,17 +12,35 @@
   --color-neutral-8: #2e2e2e;
   --color-neutral-9: #000000;
 
-  --color-primary: #f4f4f4;
-  --color-primary-text: #2e2e2e;
-  --color-primary-light: #f4f4f4;
-  --color-primary-light-text: #2e2e2e;
+  --color-error-1:#ffe2e2;
+  --color-error-2: #eb3737;
 
-  --color-error: #eb3737;
-  --color-error-light: #ffe2e2;
+  /* ==================
+         Theme
+  ================== */
+
+  --color-primary: var(--color-neutral-2);
+  --color-primary-text: var(--color-neutral-8);
+  --color-primary-contrast: var(--color-neutral-3);
+  --color-primary-contrast-font: var(--color-neutral-8);
+  --color-primary-hover: var(--color-neutral-3);
+
+  --color-secondary: var(--color-neutral-1);
+  --color-secondary-text: var(--color-neutral-8);
+  --color-secondary-contrast: var(--color-neutral-3);
+  --color-secondary-contrast-font: var(--color-neutral-8);
+  --color-primary-hover: var(--color-neutral-2);
+
+  --color-error: var(--color-error-2);
+  --color-error-contrast: var(--color-error-1);
+
+  --color-disabled: var(--color-neutral-2);
+  --color-disabled-font: var(--color-neutral-5);
 
   /* Font */
   --font-family: Lato, sans-serif;
   --font-size: 14px;
+  --font-color: var(--color-neutral-8);
 
   /* Border */
   --border-radius-small: 3px;

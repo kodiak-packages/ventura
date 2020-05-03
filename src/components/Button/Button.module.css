@@ -1,6 +1,6 @@
 .base {
-    border-radius: var(--button-border-radius);
-    line-height: var(--button-line-height);
+    border-radius: var(--border-radius-small);
+    line-height: 32px;
     font-size: 14px;
     padding: 0 16px;
     border: none;
@@ -8,16 +8,6 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-}
-
-.prefix
-
-.typePrimary {
-    background-color: var(--button-primary-background);
-}
-
-.typeScondary {
-  background-color: var(--button-primary-background);
 }
 
 .typePrimary:hover {
@@ -28,7 +18,43 @@
     background-color: rgba(67, 90, 111, 0.06);
 }
 
+.typePrimary:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--color-primary-contrast);
+}
+
+.typeSecondary:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--color-primary-contrast);
+}
+
+.typePrimary, .typePrimary:active {
+  background-color: var(--color-primary);
+}
+
+.typeSecondary, .typeSecondary:active {
+background-color: var(--color-secondary);
+}
+
+.base:disabled {
+  color: var(--color-disabled-font);
+  background-color: var(--color-disabled);
+  cursor: default;
+}
+
+.label {
+  text-align: center;
+}
+
+.labelWithPrefixIcon {
+  margin-left: 8px;
+}
+
+.labelWithSuffixIcon {
+  margin-right: 8px;
+}
+
 .spinner {
-  width: 16px;
-  height: 16px;
+  width: 14px;
+  height: 14px;
 }

@@ -18,7 +18,7 @@
 
 .input:focus {
   outline: none;
-  box-shadow: 0 0 0 4px var(--color-primary-light);
+  box-shadow: 0 0 0 2px var(--color-primary-contrast);
 }
 
 .containsError {
@@ -26,7 +26,7 @@
 }
 
 .containsError:focus {
-  box-shadow: 0 0 0 4px var(--color-error-light);
+  box-shadow: 0 0 0 2px var(--color-error-contrast);
 }
 
 .errorMessage {
