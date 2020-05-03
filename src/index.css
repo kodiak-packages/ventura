@@ -5,3 +5,8 @@ body {
   font-size: var(--font-size);
   color: var(--font-color);
 }
+
+svg {
+  width: var(--font-size);
+  height: var(--font-size);
+}

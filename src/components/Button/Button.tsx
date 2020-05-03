@@ -7,12 +7,12 @@ import styles from './Button.module.css';
 
 export interface Props {
   children: string;
-  type: 'primary' | 'secondary';
+  type?: 'primary' | 'secondary';
   onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
-  isDisabled: boolean;
-  isLoading: boolean;
-  prefixIcon: React.Component;
-  suffixIcon: React.Component;
+  isDisabled?: boolean;
+  isLoading?: boolean;
+  prefixIcon?: React.ReactElement;
+  suffixIcon?: React.ReactElement;
   name?: string;
 }
 
@@ -42,7 +42,7 @@ const Button: React.FC<Props> = ({
       className={buttonClassNames}
       type="button"
       onClick={onClick}
-      data-testid={name}
+      data-testid={`button-${name}`}
     >
       {isLoading ? <Spinner className={styles.spinner} /> : prefixIcon}
       <span className={labelClassNames}>{children}</span>
