@@ -1,0 +1,85 @@
+---
+name: Input
+menu: Components
+route: /input
+---
+
+import { useState } from 'react';
+import { Playground, Props } from 'docz';
+import Input from './Input.tsx';
+import styles from './Input.module.css';
+
+# Input
+
+A Input can be used to let the user insert text using key strokes. A crucial form item for building interactive apps.
+
+## Best practices
+
+- Inputs should be wrapped in a FormField or should be preceded by another component serving as a label // TODO Link to FormField
+
+## Examples
+
+### Basic usage
+
+<Playground>
+  <Input name="firstname" />
+</Playground>
+
+### Listening for changes
+
+<Playground>
+  <Input name="logger" onChange={(event) => console.log(`LOGGER: ${event.target.value}`)} />
+</Playground>
+
+### Email address
+
+<Playground>
+  <Input name="email" placeholder="Email address" type="email" />
+</Playground>
+
+### Password
+
+<Playground>
+  <Input name="password" placeholder="Password" type="password" />
+</Playground>
+
+### Limited amount of characters
+
+<Playground>
+  {/* .countryCodeInput { text-align: center; width: 30px; } */}
+  <Input name="countryCode" maxLength={2} className={styles.countryCodeInput} placeholder="XX" />
+</Playground>
+
+### Error message
+
+<Playground>
+  <Input name="username" errorMessage="The username contains invalid characters" />
+</Playground>
+
+### Format a serial code
+
+<Playground>
+  {() => {
+    const [serialCode, setSerialCode] = useState('AAAA-BBBB-CCCC-DDDD');
+    const formattedSerialCode = (
+      serialCode
+        .split('-')
+        .join('')
+        .match(/.{1,4}/g) || []
+    )
+      .join('-')
+      .toUpperCase();
+    return (
+      <Input
+        name="serialCode"
+        value={formattedSerialCode}
+        onChange={(event) => setSerialCode(event.target.value)}
+        maxLength={19}
+      />
+    );
+  }}
+</Playground>
+
+## API
+
+<Props of={Input} />

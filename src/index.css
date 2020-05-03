@@ -1,5 +1,7 @@
-@import "theme/default.css";
-    
-* {
-    font-family: var(--global-font-family);
-} 
+@import 'theme.css';
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  color: var(--color-neutral-8);
+}

@@ -1,0 +1,43 @@
+.container {
+  width: 100%;
+}
+
+.input {
+  font: inherit;
+  box-sizing: border-box;
+  width: inherit;
+  background-color: var(--color-neutral-1);
+  border-radius: var(--border-radius-small);
+  border: 1px solid var(--color-neutral-4);
+  padding: 9px 14px;
+}
+
+.input::placeholder {
+  color: var(--color-neutral-6);
+}
+
+.input:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px var(--color-primary-light);
+}
+
+.containsError {
+  border-color: var(--color-error);
+}
+
+.containsError:focus {
+  box-shadow: 0 0 0 4px var(--color-error-light);
+}
+
+.errorMessage {
+  display: block;
+  margin-top: 4px;
+  color: var(--color-error);
+}
+
+/* MDX */
+
+.countryCodeInput {
+  text-align: center;
+  width: 50px;
+}

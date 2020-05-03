@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input default snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="container"
+    data-testid="container"
+  >
+    <input
+      autocomplete="off"
+      class="input"
+      data-testid="input-firstname"
+      name="firstname"
+      spellcheck="false"
+      type="text"
+      value=""
+    />
+  </div>
+</DocumentFragment>
+`;
