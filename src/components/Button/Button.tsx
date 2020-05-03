@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { MouseEventHandler } from 'react';
 import classNames from 'classnames';
 
 import Spinner from '../utils/Spinner/Spinner';
@@ -8,7 +8,7 @@ import styles from './Button.module.css';
 export interface Props {
   children: string;
   type?: 'primary' | 'secondary';
-  onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+  onClick?: MouseEventHandler<HTMLButtonElement>;
   isDisabled?: boolean;
   isLoading?: boolean;
   prefixIcon?: React.ReactElement;
