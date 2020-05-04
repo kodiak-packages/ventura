@@ -9,6 +9,7 @@ export interface Props {
   children: string;
   type?: 'primary' | 'secondary';
   onClick?: MouseEventHandler<HTMLButtonElement>;
+  className?: string;
   isDisabled?: boolean;
   isLoading?: boolean;
   prefixIcon?: React.ReactElement;
@@ -20,16 +21,21 @@ const Button: React.FC<Props> = ({
   children,
   type = 'primary',
   onClick,
+  className,
   isDisabled,
   isLoading,
   prefixIcon,
   suffixIcon,
   name,
 }: Props) => {
-  const buttonClassNames = classNames(styles.base, {
-    [styles.typePrimary]: (!isDisabled || !isLoading) && type === 'primary',
-    [styles.typeSecondary]: (!isDisabled || !isLoading) && type === 'secondary',
-  });
+  const buttonClassNames = classNames(
+    styles.base,
+    {
+      [styles.typePrimary]: (!isDisabled || !isLoading) && type === 'primary',
+      [styles.typeSecondary]: (!isDisabled || !isLoading) && type === 'secondary',
+    },
+    className,
+  );
 
   const labelClassNames = classNames(styles.label, {
     [styles.labelWithPrefixIcon]: Boolean(prefixIcon) || isLoading,

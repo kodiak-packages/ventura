@@ -17,6 +17,22 @@ describe('Button', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
+  test('className prop', () => {
+    const className = 'center';
+    const component = (
+      <Button className={className} name="class">
+        Hey
+      </Button>
+    );
+    const { getByTestId } = render(component);
+    const buttonElement = getByTestId('button-class');
+
+    const renderedClassNames = buttonElement.className.split(' ');
+    expect(renderedClassNames).toContain(className);
+    // className in prop should be the last in the row
+    expect(renderedClassNames.indexOf(className)).toBe(renderedClassNames.length - 1);
+  });
+
   test('disabled button', () => {
     const component = (
       <Button isDisabled name="disabled">
