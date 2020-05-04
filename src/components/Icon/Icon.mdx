@@ -27,15 +27,35 @@ All icons have their own component. Each component name is a pascal cased versio
   <X />
 </Playground>
 
-## Changing icon size
+## Changing styles
+
+There are a few ways this can be done. The default styles can be changed using a theme.
+
+To apply custom styles using CSS in JS, you can use the styles property.
 
 <Playground>
-  <GitHub size={12} />
   <GitHub />
-  <GitHub size={48} />
+  <GitHub style={{width: '24px', height: '24px', stroke: '#116ab8'}}/>
+</Playground>
+
+You apply custom styles using CSS classes, you can use the className property.
+
+```CSS
+  .blueIcon {
+    width: 24px;
+    height: 24px;
+    stroke: #116ab8;
+  }
+```
+
+<Playground>
+  <GitHub />
+  <GitHub className="blueIcon"/>
 </Playground>
 
 ## Changing icon color
+
+Feather Icons opens up a `color` property to change the color of an icon. We reccomand styling icons using class name or CSS in JS.
 
 <Playground>
   <GitHub color={'#000000'} />
