@@ -36,7 +36,7 @@ import { Button } from 'ventura';
 
 const MyComponent = () => {
   
-  return (<Button>Click me</Button>);
+  return <Button>Click me</Button>;
 };
 ```
 
