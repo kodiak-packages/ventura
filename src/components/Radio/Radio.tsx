@@ -1,11 +1,11 @@
 import React from 'react';
 
 export interface Props {
-  color?: string;
+  data?: string;
   size?: string | number;
 }
 
-const Icon: React.FC<Props> = ({ size = 24, color = 'currentColor' }: Props) => {
+const Radio: React.FC<Props> = ({ size = 24, color = 'currentColor' }: Props) => {
   return (
     <>
       {size}
@@ -14,4 +14,4 @@ const Icon: React.FC<Props> = ({ size = 24, color = 'currentColor' }: Props) => 
   );
 };
 
-export default Icon;
+export default Radio;
