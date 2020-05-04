@@ -29,15 +29,15 @@ const Button: React.FC<Props> = ({
   name,
 }: Props) => {
   const buttonClassNames = classNames(
-    styles.base,
+    styles.button,
     {
-      [styles.typePrimary]: (!isDisabled || !isLoading) && type === 'primary',
-      [styles.typeSecondary]: (!isDisabled || !isLoading) && type === 'secondary',
+      [styles.typePrimary]: type === 'primary',
+      [styles.typeSecondary]: type === 'secondary',
     },
     className,
   );
 
-  const labelClassNames = classNames(styles.label, {
+  const labelClassNames = classNames({
     [styles.labelWithPrefixIcon]: Boolean(prefixIcon) || isLoading,
     [styles.labelWithSuffixIcon]: Boolean(suffixIcon),
   });
@@ -47,7 +47,7 @@ const Button: React.FC<Props> = ({
       disabled={isDisabled || isLoading}
       className={buttonClassNames}
       type="button"
-      onClick={onClick}
+      onClick={isLoading || suffixIcon ? onClick : undefined}
       data-testid={`button-${name}`}
     >
       {isLoading ? <Spinner className={styles.spinner} /> : prefixIcon}

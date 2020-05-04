@@ -1,4 +1,4 @@
-.base {
+.button {
     border-radius: var(--border-radius-small);
     line-height: 32px;
     font-size: 14px;
@@ -36,14 +36,10 @@
 background-color: var(--color-secondary);
 }
 
-.base:disabled {
+.button:disabled {
   color: var(--color-disabled-font);
   background-color: var(--color-disabled);
   cursor: default;
-}
-
-.label {
-  text-align: center;
 }
 
 .labelWithPrefixIcon {
