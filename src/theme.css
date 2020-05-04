@@ -20,13 +20,13 @@
   ================== */
 
   --color-primary: var(--color-neutral-2);
-  --color-primary-text: var(--color-neutral-8);
+  --color-primary-font: var(--color-neutral-8);
   --color-primary-contrast: var(--color-neutral-3);
   --color-primary-contrast-font: var(--color-neutral-8);
   --color-primary-hover: var(--color-neutral-3);
 
   --color-secondary: var(--color-neutral-1);
-  --color-secondary-text: var(--color-neutral-8);
+  --color-secondary-font: var(--color-neutral-8);
   --color-secondary-contrast: var(--color-neutral-3);
   --color-secondary-contrast-font: var(--color-neutral-8);
   --color-primary-hover: var(--color-neutral-2);
