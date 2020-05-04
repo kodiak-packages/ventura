@@ -6,7 +6,7 @@ body {
   color: var(--font-color);
 }
 
-svg {
+svg[viewBox="0 0 24 24"][stroke-linejoin="round"][stroke-linecap="round"] {
   width: var(--font-size);
   height: var(--font-size);
 }
