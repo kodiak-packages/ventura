@@ -11,21 +11,21 @@
 }
 
 .typePrimary:hover {
-  background-color: rgba(67, 90, 111, 0.1);
+  background-color: var(--color-primary-hover);
 }
 
 .typeSecondary:hover {
-  background-color: rgba(67, 90, 111, 0.06);
+  background-color: var(--color-secondary-hover);
 }
 
 .typePrimary:focus {
   outline: none;
-  box-shadow: 0 0 0 3px var(--color-focus);
+  box-shadow: 0 0 0 3px var(--color-primary-focus);
 }
 
 .typeSecondary:focus {
   outline: none;
-  box-shadow: 0 0 0 3px var(--color-focus);
+  box-shadow: 0 0 0 3px var(--color-secondary-focus);
 }
 
 .typePrimary,
