@@ -6,7 +6,7 @@ import Spinner from '../utils/Spinner/Spinner';
 import styles from './Button.module.css';
 
 export interface Props {
-  children: string;
+  children: React.ReactNode;
   type?: 'primary' | 'secondary';
   onClick?: MouseEventHandler<HTMLButtonElement>;
   className?: string;
