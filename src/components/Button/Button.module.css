@@ -1,8 +1,8 @@
 .button {
     border-radius: var(--border-radius-small);
-    line-height: 36px;
+    line-height: inherit;
     font-size: 14px;
-    padding: 0 14px;
+    padding: 7.5px 14px;
     border: none;
     cursor: pointer;
     display: flex;
