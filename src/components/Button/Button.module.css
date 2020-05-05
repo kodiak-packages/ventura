@@ -1,14 +1,13 @@
-.base {
-    border-radius: var(--button-border-radius);
-    line-height: var(--button-line-height);
+.button {
+    border-radius: var(--border-radius-small);
+    line-height: inherit;
     font-size: 14px;
-    padding: 0 16px;
+    padding: 7.5px 14px;
     border: none;
     cursor: pointer;
-}
-
-.typePrimary {
-    background-color: var(--button-primary-background);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 .typePrimary:hover {
@@ -17,4 +16,41 @@
 
 .typeSecondary:hover {
     background-color: rgba(67, 90, 111, 0.06);
+}
+
+.typePrimary:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--color-focus);
+}
+
+.typeSecondary:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--color-focus);
+}
+
+.typePrimary, .typePrimary:active {
+  background-color: var(--color-primary);
+}
+
+.typeSecondary, .typeSecondary:active {
+background-color: var(--color-secondary);
+}
+
+.button:disabled {
+  color: var(--color-disabled-font);
+  background-color: var(--color-disabled);
+  cursor: default;
+}
+
+.labelWithPrefixIcon {
+  margin-left: 8px;
+}
+
+.labelWithSuffixIcon {
+  margin-right: 8px;
+}
+
+.spinner {
+  width: 14px;
+  height: 14px;
 }

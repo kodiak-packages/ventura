@@ -9,7 +9,7 @@
   background-color: var(--color-neutral-1);
   border-radius: var(--border-radius-small);
   border: 1px solid var(--color-neutral-4);
-  padding: 9px 14px;
+  padding: 6.5px 14px;
 }
 
 .input::placeholder {
@@ -18,7 +18,7 @@
 
 .input:focus {
   outline: none;
-  box-shadow: 0 0 0 4px var(--color-primary-light);
+  box-shadow: 0 0 0 2px var(--color-focus);
 }
 
 .containsError {
@@ -26,7 +26,7 @@
 }
 
 .containsError:focus {
-  box-shadow: 0 0 0 4px var(--color-error-light);
+  box-shadow: 0 0 0 2px var(--color-error-light);
 }
 
 .errorMessage {

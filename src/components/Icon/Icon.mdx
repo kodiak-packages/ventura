@@ -14,7 +14,9 @@ The full set of icons from [Feather Icons](https://feathericons.com).
 
 All icons have their own component. Each component name is a pascal cased version of the [Feather Icon](https://feathericons.com).
 
-## Basic usage
+## Examples
+
+### Basic usage
 
 <Playground>
   <ArrowDownCircle />
@@ -27,20 +29,42 @@ All icons have their own component. Each component name is a pascal cased versio
   <X />
 </Playground>
 
-## Changing icon size
+### Change icon color
 
-<Playground>
-  <GitHub size={12} />
-  <GitHub />
-  <GitHub size={48} />
-</Playground>
-
-## Changing icon color
+Feather Icons opens up a `color` property to change the color of an icon. We reccomand styling icons using className or CSS in JS.
 
 <Playground>
   <GitHub color={'#000000'} />
   <GitHub color={'#fdda24'} />
   <GitHub color={'#ef3340'} />
+</Playground>
+
+### Styling using className
+
+To apply custom styles using CSS classes, you can use the className property.
+
+This is our preffered method.
+
+<Playground>
+  <GitHub className="blueIcon"/>
+</Playground>
+
+```css
+  .blueIcon {
+    width: 24px;
+    height: 24px;
+    stroke: #116ab8;
+  }
+```
+
+### Styling using CSS in JS
+
+There are a few ways this can be done. The default styles can be changed using a theme.
+
+To apply custom styles using CSS in JS, you can use the styles property.
+
+<Playground>
+  <GitHub style={{width: '24px', height: '24px', stroke: '#116ab8'}}/>
 </Playground>
 
 ## API

@@ -5,31 +5,61 @@ route: /button
 ---
 
 import { Playground, Props } from 'docz'
+import { Activity, Trash2 } from '../../index.ts'
 import Button from './Button.tsx'
 
 # Button
 
 Buttons make common actions more obvious and help users more easily perform them. Buttons use labels and sometimes icons to communicate the action that will occur when the user touches them.
 
-### Best practices
+## Best practices
 
 - Group buttons logically into sets based on usage and importance.
 - Ensure that button actions are clear and consistent.
-- The main action of a group set can be a primary button.
 - Select a single button variation and do not mix them.
 
-## Basic usage
+## Examples
+
+### Basic usage
 
 <Playground>
   <Button>Click me</Button>
 </Playground>
 
-## Button type usage
+### Button types
 
 <Playground>
   <Button type="primary">Click me</Button>
   <br/>
   <Button type="secondary">Click me</Button>
+</Playground>
+
+### Button with an onClick function
+
+<Playground>
+  <Button onClick={(event) => console.log(`LOGGER: ${event.target}`)}>Click me</Button>
+</Playground>
+
+### Button that is disabled
+
+<Playground>
+  <Button isDisabled>Submit</Button>
+</Playground>
+
+### Button with loading state
+
+<Playground>
+  <Button isLoading>Submit</Button>
+</Playground>
+
+### Buttons with an icon
+
+Button can be prefixed or suffixed with an Icon.
+
+<Playground>
+  <Button suffixIcon={<Activity />}>Insights</Button>
+  <br/>
+  <Button prefixIcon={<Trash2 />}>Remove</Button>
 </Playground>
 
 ## API

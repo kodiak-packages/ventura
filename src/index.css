@@ -3,5 +3,10 @@
 body {
   font-family: var(--font-family);
   font-size: var(--font-size);
-  color: var(--color-neutral-8);
+  color: var(--font-color);
+}
+
+svg[viewBox="0 0 24 24"][stroke-linejoin="round"][stroke-linecap="round"] {
+  width: var(--font-size);
+  height: var(--font-size);
 }

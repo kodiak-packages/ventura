@@ -1,15 +1,17 @@
-import React from 'react';
+import React, { CSSProperties } from 'react';
 
 export interface IconProps {
   color?: string;
-  size?: string | number;
+  className?: string;
+  style?: CSSProperties;
 }
 
-const Icon: React.FC<IconProps> = ({ size = 24, color = 'currentColor' }: IconProps) => {
+const Icon: React.FC<IconProps> = ({ className, style, color = 'currentColor' }: IconProps) => {
   return (
     <>
-      {size}
       {color}
+      {style}
+      {className}
     </>
   );
 };
