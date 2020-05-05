@@ -33,23 +33,56 @@ describe('Button', () => {
     expect(renderedClassNames.indexOf(className)).toBe(renderedClassNames.length - 1);
   });
 
+  test('onClick should be triggered when clicked', async () => {
+    const onClickFn = jest.fn();
+    const component = (
+      <Button onClick={onClickFn} name="click">
+        Click me
+      </Button>
+    );
+    const { getByTestId } = render(component);
+
+    const button = await getByTestId('button-click');
+    fireEvent.click(button);
+
+    expect(onClickFn).toHaveBeenCalledTimes(1);
+  });
+
   test('disabled button', () => {
+    const onClickFn = jest.fn();
     const component = (
       <Button isDisabled name="disabled">
         Click me
       </Button>
     );
     const { getByTestId } = render(component);
-    const inputElement = getByTestId('button-disabled');
+    const button = getByTestId('button-disabled');
 
-    expect(inputElement.hasAttribute('disabled')).toBe(true);
-    expect(inputElement.getAttribute('disabled')).not.toBe(false);
+    expect(button.hasAttribute('disabled')).toBe(true);
+    expect(button.getAttribute('disabled')).not.toBe(false);
+
+    fireEvent.click(button);
+    expect(onClickFn).toHaveBeenCalledTimes(0);
   });
 
   test('loading button', () => {
-    const component = <Button isLoading>Click me</Button>;
-    const { asFragment } = render(component);
+    const onClickFn = jest.fn();
+    const component = (
+      <Button isLoading name="loading">
+        Click me
+      </Button>
+    );
+    const { asFragment, getByTestId } = render(component);
+
     expect(asFragment()).toMatchSnapshot();
+
+    const button = getByTestId('button-loading');
+
+    expect(button.hasAttribute('disabled')).toBe(true);
+    expect(button.getAttribute('disabled')).not.toBe(false);
+
+    fireEvent.click(button);
+    expect(onClickFn).toHaveBeenCalledTimes(0);
   });
 
   test('prefix icon button', () => {
@@ -62,20 +95,5 @@ describe('Button', () => {
     const component = <Button suffixIcon={<GitHub />}>Click me</Button>;
     const { asFragment } = render(component);
     expect(asFragment()).toMatchSnapshot();
-  });
-
-  test('onClick should be triggered when clicked', async () => {
-    const onClickFn = jest.fn();
-    const component = (
-      <Button onClick={onClickFn} name="click">
-        Click me
-      </Button>
-    );
-    const { findByTestId } = render(component);
-
-    const button = await findByTestId('button-click');
-    fireEvent.click(button);
-
-    expect(onClickFn).toHaveBeenCalledTimes(1);
   });
 });

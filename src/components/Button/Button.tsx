@@ -47,7 +47,7 @@ const Button: React.FC<Props> = ({
       disabled={isDisabled || isLoading}
       className={buttonClassNames}
       type="button"
-      onClick={isLoading || suffixIcon ? onClick : undefined}
+      onClick={isLoading || suffixIcon ? undefined : onClick}
       data-testid={`button-${name}`}
     >
       {isLoading ? <Spinner className={styles.spinner} /> : prefixIcon}

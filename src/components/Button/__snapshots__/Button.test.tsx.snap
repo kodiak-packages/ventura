@@ -3,12 +3,12 @@
 exports[`Button default snapshot 1`] = `
 <DocumentFragment>
   <button
-    class="base typePrimary"
+    class="button typePrimary"
     data-testid="button-undefined"
     type="button"
   >
     <span
-      class="label"
+      class=""
     >
       Click me
     </span>
@@ -19,8 +19,8 @@ exports[`Button default snapshot 1`] = `
 exports[`Button loading button 1`] = `
 <DocumentFragment>
   <button
-    class="base typePrimary"
-    data-testid="button-undefined"
+    class="button typePrimary"
+    data-testid="button-loading"
     disabled=""
     type="button"
   >
@@ -38,7 +38,7 @@ exports[`Button loading button 1`] = `
       />
     </svg>
     <span
-      class="label labelWithPrefixIcon"
+      class="labelWithPrefixIcon"
     >
       Click me
     </span>
@@ -49,7 +49,7 @@ exports[`Button loading button 1`] = `
 exports[`Button prefix icon button 1`] = `
 <DocumentFragment>
   <button
-    class="base typePrimary"
+    class="button typePrimary"
     data-testid="button-undefined"
     type="button"
   >
@@ -69,7 +69,7 @@ exports[`Button prefix icon button 1`] = `
       />
     </svg>
     <span
-      class="label labelWithPrefixIcon"
+      class="labelWithPrefixIcon"
     >
       Click me
     </span>
@@ -80,12 +80,12 @@ exports[`Button prefix icon button 1`] = `
 exports[`Button secondary button 1`] = `
 <DocumentFragment>
   <button
-    class="base typeSecondary"
+    class="button typeSecondary"
     data-testid="button-undefined"
     type="button"
   >
     <span
-      class="label"
+      class=""
     >
       Click me
     </span>
@@ -96,12 +96,12 @@ exports[`Button secondary button 1`] = `
 exports[`Button suffix icon button 1`] = `
 <DocumentFragment>
   <button
-    class="base typePrimary"
+    class="button typePrimary"
     data-testid="button-undefined"
     type="button"
   >
     <span
-      class="label labelWithSuffixIcon"
+      class="labelWithSuffixIcon"
     >
       Click me
     </span>
