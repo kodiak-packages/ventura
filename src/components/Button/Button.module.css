@@ -20,12 +20,12 @@
 
 .typePrimary:focus {
   outline: none;
-  box-shadow: 0 0 0 2px var(--color-primary-contrast);
+  box-shadow: 0 0 0 2px var(--color-focus);
 }
 
 .typeSecondary:focus {
   outline: none;
-  box-shadow: 0 0 0 2px var(--color-secondary-contrast);
+  box-shadow: 0 0 0 2px var(--color-focus);
 }
 
 .typePrimary, .typePrimary:active {

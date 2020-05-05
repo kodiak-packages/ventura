@@ -1,7 +1,9 @@
-:root {
-  /* ==================
-         Colors
+ /* ==================
+     Color Variables
   ================== */
+
+:root {
+
   --color-neutral-1: #ffffff;
   --color-neutral-2: #f4f4f4;
   --color-neutral-3: #ebebeb;
@@ -12,30 +14,32 @@
   --color-neutral-8: #2e2e2e;
   --color-neutral-9: #000000;
 
-  --color-error-1:#ffe2e2;
+  --color-error-1: #ffe2e2;
   --color-error-2: #eb3737;
+}
 
   /* ==================
          Theme
   ================== */
 
+:root {
+
+  /* Base colors */
   --color-primary: var(--color-neutral-2);
   --color-primary-font: var(--color-neutral-8);
-  --color-primary-contrast: var(--color-neutral-3);
-  --color-primary-contrast-font: var(--color-neutral-8);
   --color-primary-hover: var(--color-neutral-3);
 
   --color-secondary: var(--color-neutral-1);
   --color-secondary-font: var(--color-neutral-8);
-  --color-secondary-contrast: var(--color-neutral-3);
-  --color-secondary-contrast-font: var(--color-neutral-8);
   --color-primary-hover: var(--color-neutral-2);
 
   --color-error: var(--color-error-2);
-  --color-error-contrast: var(--color-error-1);
+  --color-error-light: var(--color-error-1);
 
   --color-disabled: var(--color-neutral-2);
   --color-disabled-font: var(--color-neutral-5);
+
+  --color-focus: var(--color-neutral-3);
 
   /* Font */
   --font-family: Lato, sans-serif;
