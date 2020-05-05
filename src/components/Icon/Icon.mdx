@@ -29,15 +29,14 @@ All icons have their own component. Each component name is a pascal cased versio
   <X />
 </Playground>
 
-### Styling using CSS in JS
+### Change icon color
 
-There are a few ways this can be done. The default styles can be changed using a theme.
-
-To apply custom styles using CSS in JS, you can use the styles property.
+Feather Icons opens up a `color` property to change the color of an icon. We reccomand styling icons using className or CSS in JS.
 
 <Playground>
-  <GitHub />
-  <GitHub style={{width: '24px', height: '24px', stroke: '#116ab8'}}/>
+  <GitHub color={'#000000'} />
+  <GitHub color={'#fdda24'} />
+  <GitHub color={'#ef3340'} />
 </Playground>
 
 ### Styling using className
@@ -45,6 +44,10 @@ To apply custom styles using CSS in JS, you can use the styles property.
 To apply custom styles using CSS classes, you can use the className property.
 
 This is our preffered method.
+
+<Playground>
+  <GitHub className="blueIcon"/>
+</Playground>
 
 ```css
   .blueIcon {
@@ -54,19 +57,14 @@ This is our preffered method.
   }
 ```
 
-<Playground>
-  <GitHub />
-  <GitHub className="blueIcon"/>
-</Playground>
+### Styling using CSS in JS
 
-### Changing icon color
+There are a few ways this can be done. The default styles can be changed using a theme.
 
-Feather Icons opens up a `color` property to change the color of an icon. We reccomand styling icons using className or CSS in JS.
+To apply custom styles using CSS in JS, you can use the styles property.
 
 <Playground>
-  <GitHub color={'#000000'} />
-  <GitHub color={'#fdda24'} />
-  <GitHub color={'#ef3340'} />
+  <GitHub style={{width: '24px', height: '24px', stroke: '#116ab8'}}/>
 </Playground>
 
 ## API
