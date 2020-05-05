@@ -1,8 +1,8 @@
 .button {
     border-radius: var(--border-radius-small);
-    line-height: 32px;
+    line-height: 36px;
     font-size: 14px;
-    padding: 0 16px;
+    padding: 0 14px;
     border: none;
     cursor: pointer;
     display: flex;
