@@ -23,14 +23,14 @@ jobs:
       - name: Run ESLint
         run: yarn lint --quiet --color
 
-      - run: ls -al /dev
-
       - name: Run tests
         run: yarn run test --watchAll=false --colors --ci --coverage
 
-      - name: Set coverage environment number
-        run: |
-          coverage=$(cat coverage/lcov-report/index.html | pcregrep -o '(?<=>)[\d.]{1,6}(?=%\s*<)' | head -1)
-          echo "::set-env name=coverage::$coverage"
+      - name: Get coverage number
+        uses: actions-ecosystem/action-regex-match@v2
+        id: coverageNumber
+        with:
+          text: ${ cat coverage/lcov-report/index.html }
+          regex: '(?<=>)[\d.]{1,6}(?=%\s*<)'
 
-      - run: echo $coverage
+      - run: echo ${{ steps.coverageNumber.outputs.group1 }}
