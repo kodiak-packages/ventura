@@ -36,10 +36,10 @@ jobs:
           text: ${{ steps.tests.outputs.coverageIndexHtml }}
           regex: '(?<=>)[\d.]{1,6}(?=%\s*<)'
 
-      - name: "deployment success"
+      - name: Set coverage deployment status
         if: success()
         uses: "deliverybot/deployment-status@v1"
         with:
-          state: "success"
-          description: ${{ steps.coverageNumber.outputs.match }} Coverage
+          state: success
+          description: Coverage
           token: "${{ github.token }}"
