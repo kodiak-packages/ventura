@@ -25,14 +25,13 @@ jobs:
 
       - run: ls -al /dev
 
-      - name: Run tests
+      - name: Run tests & store output
         id: tests
         run: |
           stdout=$(yarn run test --watchAll=false --colors --ci --coverage 2>&1 | tee /dev/stdout)
-          stdout=$(echo $stdout | tr '\n' ' ')
-          echo "::set-output name=stdout::$stdout"
+          echo "::set-output name=stdout::${stdout//\n/' '}"
 
-      - run: echo ${{ steps.tests.outputs.stdout }}
+      - run: echo "${{ steps.tests.outputs.stdout }}"
 
       - name: Store coverage percentage as output
         id: coveragePercentage
