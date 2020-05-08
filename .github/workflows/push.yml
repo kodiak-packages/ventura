@@ -28,8 +28,9 @@ jobs:
       - name: Run tests & store output
         id: tests
         run: |
-          stdout=$(yarn run test --watchAll=false --colors --ci --coverage 2>&1 | tee /dev/stdout)
-          echo "::set-output name=stdout::${stdout//\n/' '}"
+          stdout=$(yarn run test --watchAll=false --colors --ci --coverage)
+          echo $stdout
+          echo "::set-output name=stdout::$stdout"
 
       - run: echo "${{ steps.tests.outputs.stdout }}"
 
