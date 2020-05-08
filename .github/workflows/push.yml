@@ -27,7 +27,7 @@ jobs:
         id: tests
         run: |
           yarn run test --watchAll=false --colors --ci --coverage
-          echo ::set-output name=coverageIndexHtml=${cat coverage/lcov-report/index.html}
+          echo ::set-output name=coverageIndexHtml::${cat coverage/lcov-report/index.html}
 
       - name: Get coverage number
         id: coverageNumber
