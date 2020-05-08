@@ -4,6 +4,7 @@ on: [push]
 
 jobs:
   node:
+    container: node:12-buster
     name: Node 12
     runs-on: ubuntu-latest
     steps:
