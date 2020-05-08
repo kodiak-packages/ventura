@@ -24,13 +24,16 @@ jobs:
         run: yarn lint --quiet --color
 
       - name: Run tests
-        run: yarn run test --watchAll=false --colors --ci --coverage
+        id: tests
+        run: |
+          yarn run test --watchAll=false --colors --ci --coverage
+          echo ::set-output name=coverageIndexHtml=${cat coverage/lcov-report/index.html}
 
       - name: Get coverage number
-        uses: actions-ecosystem/action-regex-match@v2
         id: coverageNumber
+        uses: actions-ecosystem/action-regex-match@v2
         with:
-          text: '<span class="strong">87.27% </span>'
+          text: ${{ steps.tests.outputs.coverageIndexHtml }}
           regex: '(?<=>)[\d.]{1,6}(?=%\s*<)'
 
       - run: echo ${{ steps.coverageNumber.outputs.match }}
