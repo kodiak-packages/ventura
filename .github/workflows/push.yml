@@ -30,7 +30,7 @@ jobs:
         uses: actions-ecosystem/action-regex-match@v2
         id: coverageNumber
         with:
-          text: "<span class="strong">87.27% </span>"
+          text: '<span class="strong">87.27% </span>'
           regex: '(?<=>)[\d.]{1,6}(?=%\s*<)'
 
       - run: echo ${{ steps.coverageNumber.outputs.match }}
