@@ -30,7 +30,7 @@ jobs:
         run: |
           stdout=$(yarn run test --watchAll=false --colors --ci --coverage 2>&1 | tee /dev/stdout)
           echo $stdout
-          echo "::set-output name=stdout::$stdout"
+          echo "::set-output name=stdout::`$stdout`"
 
       - run: echo ${{ steps.tests.outputs.stdout }}
 
