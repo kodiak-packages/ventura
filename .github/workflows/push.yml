@@ -33,4 +33,4 @@ jobs:
           text: ${ cat coverage/lcov-report/index.html }
           regex: '(?<=>)[\d.]{1,6}(?=%\s*<)'
 
-      - run: echo ${{ steps.coverageNumber.outputs.group1 }}
+      - run: echo ${{ steps.coverageNumber.outputs.match }}
