@@ -28,7 +28,7 @@ jobs:
       - name: Run tests
         id: tests
         run: |
-          stdout=$(yarn run test --watchAll=false --colors --ci --coverage 2>&1 | tee -tt /dev/tty)
+          stdout=$(yarn run test --watchAll=false --colors --ci --coverage 2>&1 | tee -t /dev/tty)
           echo "::set-output name=stdout::$stdout"
 
       - name: Store coverage percentage as output
