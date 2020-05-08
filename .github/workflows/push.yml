@@ -4,7 +4,6 @@ on: [push]
 
 jobs:
   node:
-    container: node:12-buster
     name: Node 12
     runs-on: ubuntu-latest
     steps:
@@ -21,26 +20,17 @@ jobs:
       - name: Install packages
         run: yarn install --frozen-lockfile
 
-      # - name: Run ESLint
-      #   run: yarn lint --quiet --color
+      - name: Run ESLint
+        run: yarn lint --quiet --color
 
       - run: ls -al /dev
 
-      - name: Run tests & store output
-        id: tests
+      - name: Run tests
+        run: yarn run test --watchAll=false --colors --ci --coverage
+
+      - name: Set coverage environment number
         run: |
-          stdout=$(yarn run test --watchAll=false --colors --ci --coverage)
-          echo $stdout
-          echo "::set-output name=stdout::$stdout"
+          coverage=$(cat coverage/lcov-report/index.html | pcregrep -o '(?<=>)[\d.]{1,6}(?=%\s*<)' | head -1)
+          echo "::set-env name=coverage::$coverage"
 
-      - run: echo "${{ steps.tests.outputs.stdout }}"
-
-      - name: Store coverage percentage as output
-        id: coveragePercentage
-        uses: AsasInnab/regex-action@v1
-        with:
-          regex_pattern: 'All\sfiles.*?\s+(\d+.\d+)'
-          regex_flags: gim
-          search_string: ${{ steps.tests.outputs.stdout }}
-
-      - run: echo ${{ steps.coveragePercentage.outputs.first_match }}"
+      - run: echo $coverage
