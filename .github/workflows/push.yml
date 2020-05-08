@@ -36,10 +36,11 @@ jobs:
           text: ${{ steps.tests.outputs.coverageIndexHtml }}
           regex: '(?<=>)[\d.]{1,6}(?=%\s*<)'
 
-      - name: Set coverage deployment status
-        if: success()
-        uses: "deliverybot/deployment-status@v1"
+      - name: Set coverage deployment
+        uses: Sibz/github-status-action@v1
         with:
+          authToken: ${{ github.token }}
+          context: ${{ steps.coverageNumber.outputs.match }} Coverage
+          description: TODO difference with master
           state: success
-          description: Coverage
-          token: "${{ github.token }}"
+          sha: ${{ github.sha }}
