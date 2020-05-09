@@ -3,7 +3,7 @@ import classNames from 'classnames';
 
 import styles from './Input.module.css';
 
-type Props = {
+interface Props {
   name: string;
   value?: string;
   onChange?: ChangeEventHandler<HTMLInputElement>;
@@ -14,7 +14,7 @@ type Props = {
   autoComplete?: boolean;
   maxLength?: number;
   className?: string;
-};
+}
 
 const Input = React.forwardRef<HTMLInputElement, Props>(
   (

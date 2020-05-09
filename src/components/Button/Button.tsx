@@ -2,7 +2,7 @@ import React from 'react';
 
 import styles from './Button.module.css';
 
-export interface Props {
+interface Props {
   children: string;
   type: 'primary' | 'secondary';
   onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
