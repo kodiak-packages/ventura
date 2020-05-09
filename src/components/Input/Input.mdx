@@ -46,10 +46,17 @@ A Input can be used to let the user insert text using key strokes. A crucial for
 ### Limited amount of characters
 
 <Playground>
-  {/* .countryCode { width: 30px; } */}
-  {/* .countryCode input { text-align: center; } */}
   <Input name="countryCode" maxLength={2} className={styles.countryCode} placeholder="XX" />
 </Playground>
+
+```css
+.countryCode {
+  width: 30px;
+}
+.countryCode input {
+  text-align: center;
+}
+```
 
 ### Error message
 
