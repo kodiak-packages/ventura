@@ -35,7 +35,8 @@ npm install ventura
 import { Button } from 'ventura';
 
 const MyComponent = () => {
-  <Button text="Click me" />;
+  
+  return <Button>Click me</Button>;
 };
 ```
 

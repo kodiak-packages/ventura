@@ -1,15 +1,17 @@
-import React from 'react';
+import React, { CSSProperties } from 'react';
 
 interface Props {
   color?: string;
-  size?: string | number;
+  className?: string;
+  style?: CSSProperties;
 }
 
-const Icon: React.FC<Props> = ({ size = 24, color = 'currentColor' }: Props) => {
+const Icon: React.FC<Props> = ({ className, style, color = 'currentColor' }: Props) => {
   return (
     <>
-      {size}
       {color}
+      {style}
+      {className}
     </>
   );
 };
