@@ -5,20 +5,50 @@ route: /radio
 ---
 
 import { Playground, Props } from 'docz'
-import { Radio } from '../../index.ts'
+import { Radio, Loader } from '../../index.ts'
 
 # Radio
 
-Buttons make common actions more obvious and help users more easily perform them. Buttons use labels and sometimes icons to communicate the action that will occur when the user touches them.
+## Examples
+
+### Basic usage
 
 <Playground>
-  <Radio.Group name="class" defaultValue="0">
-    <Radio.Item value="0" label="Java Fundementals" description="Get introduced to the basics of Java. Objects, primitive types and basic logic operators."/>
-    <Radio.Item value="1" label="Advanced Web Development" description="Explore the different frameworks in the web."/>
-    <Radio.Item value="2" label="User Experience Design" description="Learn to work with customer centricity in mind."/>
+  <Radio.Group name="basic" defaultValue="react">
+    <Radio.Item value="react" label="Introduction To React" />
+    <Radio.Item value="docker" label="Introduction To Docker" />
+    <Radio.Item value="python" label="Introuction To Python" />
+  </Radio.Group>
+</Playground>
+
+### Radio button label
+
+The label property on the button component also accepts JSX. This allows you to display custom components in the radio button label, like icons.
+
+<Playground>
+  <Radio.Group name="label" defaultValue="react">
+    <Radio.Item value="react" label={<React.Fragment><Loader/> Introduction To React</React.Fragment>} />
+    <Radio.Item value="docker" label={<React.Fragment><Loader/> Introduction To Docker</React.Fragment>}/>
+    <Radio.Item value="python" label={<React.Fragment><Loader/> Introduction To Python</React.Fragment>} />
+  </Radio.Group>
+</Playground>
+
+### Radio button description
+
+<Playground>
+  <Radio.Group name="description" defaultValue="react">
+    <Radio.Item value="react" label="Introduction To React" description="This course is for React newbies and anyone looking to build a solid foundation. It’s designed to teach you everything you need to start building web applications in React right away."/>
+    <Radio.Item value="docker" label="Introduction To Docker" description="In this course we will take a simple Node.js app that connects to a MongoDB database and uses an Express web server, and how to properly “Dockerize” the app."/>
+    <Radio.Item value="python" label="Introuction To Python" description="At the end of this course, you’ll have a great working knowledge of Python, fully capable of creating your own Python projects from scratch or jumping into an existing application."/>
   </Radio.Group>
 </Playground>
 
 ## API
 
-<Props of={RadioGroup} />
+### Radio Group
+
+<Props of={Radio.Group} />
+
+### Radio Item
+
+<Props of={Radio.Item} />

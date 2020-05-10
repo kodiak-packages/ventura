@@ -56,7 +56,10 @@
 }
 
 .radioButtonContainer .title {
-  font-size: 14px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .radioButtonContainer .description {

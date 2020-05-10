@@ -18,7 +18,9 @@ const RadioItem = React.forwardRef<HTMLInputElement, Props>(
 
     if (groupContext === null) {
       // eslint-disable-next-line no-console
-      console.error(`The ${label} RadioItem component needs to wrapped in a RadioGroup component.`);
+      console.warn(
+        `The ${label} Radio.Item component needs to wrapped in a Radio.Group component.`,
+      );
       return null;
     }
 
@@ -31,9 +33,9 @@ const RadioItem = React.forwardRef<HTMLInputElement, Props>(
     );
 
     return (
-      <label className={labelClassNames} htmlFor={value}>
+      <label className={labelClassNames} htmlFor={`${groupContext.name}${value}`}>
         <input
-          id={value}
+          id={`${groupContext.name}${value}`}
           type="radio"
           name={groupContext.name}
           value={value}
