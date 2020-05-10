@@ -10,10 +10,11 @@ export interface Props {
   label: string;
   description: string;
   className?: string;
+  isDisabled?: boolean;
 }
 
 const RadioItem = React.forwardRef<HTMLInputElement, Props>(
-  ({ value, label, description, className }: Props, ref) => {
+  ({ value, label, description, className, isDisabled = false }: Props, ref) => {
     const groupContext = useContext(radioContext);
 
     if (groupContext === null) {
@@ -24,10 +25,13 @@ const RadioItem = React.forwardRef<HTMLInputElement, Props>(
       return null;
     }
 
+    const isChecked = value === groupContext.selectedValue;
+
     const labelClassNames = classNames(
       styles.radioButtonContainer,
       {
-        [styles.radioButtonContainerChecked]: value === groupContext.selectedValue,
+        [styles.radioButtonContainerChecked]: isChecked,
+        [styles.radioButtonContainerDisabled]: isDisabled,
       },
       className,
     );
@@ -41,7 +45,8 @@ const RadioItem = React.forwardRef<HTMLInputElement, Props>(
           value={value}
           ref={ref || groupContext.groupRef}
           onChange={groupContext.onChange}
-          checked={value === groupContext.selectedValue}
+          checked={isChecked}
+          disabled={isDisabled}
         />
         <div className={styles.header}>
           <div className={styles.checkBox}>

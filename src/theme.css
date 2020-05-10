@@ -39,6 +39,8 @@
   --color-disabled: var(--color-neutral-2);
   --color-disabled-font: var(--color-neutral-5);
 
+  --color-focus: var(--color-neutral-2);
+
   /* Font */
   --font-family: Lato, sans-serif;
   --font-size: 14px;

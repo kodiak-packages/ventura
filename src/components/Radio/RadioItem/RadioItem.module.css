@@ -14,11 +14,19 @@
 }
 
 .radioButtonContainer:hover {
-  background-color: var(--color-secondary-focus);
+  background-color: var(--color-focus);
 }
 
 .radioButtonContainerChecked {
-  background-color: var(--color-secondary-focus);
+  background-color: var(--color-focus);
+}
+
+.radioButtonContainerDisabled {
+  cursor: default;
+}
+
+.radioButtonContainerDisabled:hover:not(.radioButtonContainerChecked) {
+  background-color: unset;
 }
 
 .radioButtonContainer input {
@@ -55,15 +63,31 @@
   height: 8px;
 }
 
-.radioButtonContainer .title {
+.radioButtonContainer input:disabled ~ .header .checkBox {
+  border-color: var(--color-disabled-font);
+}
+
+.radioButtonContainer input:disabled ~ .header .checkBox .checkBoxFilling  {
+  background-color: var(--color-disabled-font);
+}
+
+.radioButtonContainer input ~ .header .title {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
 }
 
-.radioButtonContainer .description {
+.radioButtonContainer input:disabled ~ .header .title {
+  color: var(--color-disabled-font);
+}
+
+.radioButtonContainer input ~ .description {
   color: var(--font-color-sub);
   font-size: 13px;
   margin: 0px 0px 0px 30px;
+}
+
+.radioButtonContainer input:disabled ~ .description {
+  color: var(--color-disabled-font);
 }

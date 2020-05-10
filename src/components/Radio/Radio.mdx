@@ -43,6 +43,16 @@ The label property on the button component also accepts JSX. This allows you to 
   </Radio.Group>
 </Playground>
 
+### Radio button disabled
+
+<Playground>
+  <Radio.Group name="description" defaultValue="react">
+    <Radio.Item isDisabled value="react" label="Introduction To React" description="This course is for React newbies and anyone looking to build a solid foundation. It’s designed to teach you everything you need to start building web applications in React right away."/>
+    <Radio.Item isDisabled value="docker" label="Introduction To Docker" description="In this course we will take a simple Node.js app that connects to a MongoDB database and uses an Express web server, and how to properly “Dockerize” the app."/>
+    <Radio.Item isDisabled value="python" label="Introuction To Python" description="At the end of this course, you’ll have a great working knowledge of Python, fully capable of creating your own Python projects from scratch or jumping into an existing application."/>
+  </Radio.Group>
+</Playground>
+
 ## API
 
 ### Radio Group
