@@ -1,0 +1,66 @@
+
+.radioButtonContainer {
+  cursor: pointer;
+  display: flex;
+  border-radius: var(--border-radius-small);
+  padding: 10px 16px;
+  background-color: var(--color-secondary);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex: 1 1 0;
+  width: auto;
+}
+
+.radioButtonContainer:hover {
+  background-color: var(--color-secondary-focus);
+}
+
+.radioButtonContainerChecked {
+  background-color: var(--color-secondary-focus);
+}
+
+.radioButtonContainer input {
+  display: none;
+}
+
+.radioButtonContainer input ~ .header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.radioButtonContainer input ~ .header .checkBox {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: solid 2px var(--font-color-sub);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 14px;
+}
+
+.radioButtonContainer input ~ .header .checkBox .checkBoxFilling {
+  width: 0px;
+  height: 0px;
+  border-radius: 50%;
+  background-color: var(--font-color-sub);
+}
+
+.radioButtonContainer input:checked ~ .header .checkBox .checkBoxFilling {
+  width: 8px;
+  height: 8px;
+}
+
+.radioButtonContainer .title {
+  font-size: 14px;
+}
+
+.radioButtonContainer .description {
+  color: var(--font-color-sub);
+  font-size: 13px;
+  margin: 0px 0px 0px 30px;
+}

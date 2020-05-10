@@ -1,0 +1,24 @@
+---
+name: Radio
+menu: Components
+route: /radio
+---
+
+import { Playground, Props } from 'docz'
+import { Radio } from '../../index.ts'
+
+# Radio
+
+Buttons make common actions more obvious and help users more easily perform them. Buttons use labels and sometimes icons to communicate the action that will occur when the user touches them.
+
+<Playground>
+  <Radio.Group name="class" defaultValue="0">
+    <Radio.Item value="0" label="Java Fundementals" description="Get introduced to the basics of Java. Objects, primitive types and basic logic operators."/>
+    <Radio.Item value="1" label="Advanced Web Development" description="Explore the different frameworks in the web."/>
+    <Radio.Item value="2" label="User Experience Design" description="Learn to work with customer centricity in mind."/>
+  </Radio.Group>
+</Playground>
+
+## API
+
+<Props of={RadioGroup} />
