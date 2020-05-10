@@ -14,10 +14,10 @@ import { Radio, Loader } from '../../index.ts'
 ### Basic usage
 
 <Playground>
-  <Radio.Group name="basic" defaultValue="react">
+  <Radio.Group name="classes1" defaultValue="react">
     <Radio.Item value="react" label="Introduction To React" />
     <Radio.Item value="docker" label="Introduction To Docker" />
-    <Radio.Item value="python" label="Introuction To Python" />
+    <Radio.Item value="python" label="Introduction To Python" />
   </Radio.Group>
 </Playground>
 
@@ -26,7 +26,7 @@ import { Radio, Loader } from '../../index.ts'
 The label property on the button component also accepts JSX. This allows you to display custom components in the radio button label, like icons.
 
 <Playground>
-  <Radio.Group name="label" defaultValue="react">
+  <Radio.Group name="classes2" defaultValue="react">
     <Radio.Item value="react" label={<React.Fragment><Loader color="orange" style={{marginRight: '4px'}} />Introduction To React</React.Fragment>} />
     <Radio.Item value="docker" label={<React.Fragment><Loader color="orange" style={{marginRight: '4px'}} />Introduction To Docker</React.Fragment>}/>
     <Radio.Item value="python" label={<React.Fragment><Loader color="orange" style={{marginRight: '4px'}} />Introduction To Python</React.Fragment>} />
@@ -36,20 +36,20 @@ The label property on the button component also accepts JSX. This allows you to 
 ### Radio button description
 
 <Playground>
-  <Radio.Group name="description" defaultValue="react">
+  <Radio.Group name="classes3" defaultValue="react">
     <Radio.Item value="react" label="Introduction To React" description="This course is for React newbies and anyone looking to build a solid foundation. It’s designed to teach you everything you need to start building web applications in React right away."/>
     <Radio.Item value="docker" label="Introduction To Docker" description="In this course we will take a simple Node.js app that connects to a MongoDB database and uses an Express web server, and how to properly “Dockerize” the app."/>
-    <Radio.Item value="python" label="Introuction To Python" description="At the end of this course, you’ll have a great working knowledge of Python, fully capable of creating your own Python projects from scratch or jumping into an existing application."/>
+    <Radio.Item value="python" label="Introduction To Python" description="At the end of this course, you’ll have a great working knowledge of Python, fully capable of creating your own Python projects from scratch or jumping into an existing application."/>
   </Radio.Group>
 </Playground>
 
 ### Radio button disabled
 
 <Playground>
-  <Radio.Group name="description" defaultValue="react">
+  <Radio.Group name="classes4" defaultValue="react">
     <Radio.Item isDisabled value="react" label="Introduction To React" description="This course is for React newbies and anyone looking to build a solid foundation. It’s designed to teach you everything you need to start building web applications in React right away."/>
     <Radio.Item isDisabled value="docker" label="Introduction To Docker" description="In this course we will take a simple Node.js app that connects to a MongoDB database and uses an Express web server, and how to properly “Dockerize” the app."/>
-    <Radio.Item isDisabled value="python" label="Introuction To Python" description="At the end of this course, you’ll have a great working knowledge of Python, fully capable of creating your own Python projects from scratch or jumping into an existing application."/>
+    <Radio.Item isDisabled value="python" label="Introduction To Python" description="At the end of this course, you’ll have a great working knowledge of Python, fully capable of creating your own Python projects from scratch or jumping into an existing application."/>
   </Radio.Group>
 </Playground>
 

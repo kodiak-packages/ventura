@@ -33,7 +33,7 @@ describe('Button', () => {
     expect(renderedClassNames.indexOf(className)).toBe(renderedClassNames.length - 1);
   });
 
-  test('onClick should be triggered when clicked', async () => {
+  test('onClick should be triggered when clicked', () => {
     const onClickFn = jest.fn();
     const component = (
       <Button onClick={onClickFn} name="click">
@@ -42,7 +42,7 @@ describe('Button', () => {
     );
     const { getByTestId } = render(component);
 
-    const button = await getByTestId('button-click');
+    const button = getByTestId('button-click');
     fireEvent.click(button);
 
     expect(onClickFn).toHaveBeenCalledTimes(1);

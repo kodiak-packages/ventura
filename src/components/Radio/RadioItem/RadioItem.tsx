@@ -8,7 +8,7 @@ import styles from './RadioItem.module.css';
 export interface Props {
   value: string;
   label: string;
-  description: string;
+  description?: string;
   className?: string;
   isDisabled?: boolean;
 }
@@ -37,16 +37,21 @@ const RadioItem = React.forwardRef<HTMLInputElement, Props>(
     );
 
     return (
-      <label className={labelClassNames} htmlFor={`${groupContext.name}${value}`}>
+      <label
+        className={labelClassNames}
+        htmlFor={`${groupContext.name}-${value}`}
+        data-testid={`${groupContext.name}-${value}-container`}
+      >
         <input
-          id={`${groupContext.name}${value}`}
+          id={`${groupContext.name}-${value}`}
           type="radio"
           name={groupContext.name}
           value={value}
           ref={ref || groupContext.groupRef}
-          onChange={groupContext.onChange}
+          onChange={isDisabled ? undefined : groupContext.onChange}
           checked={isChecked}
           disabled={isDisabled}
+          data-testid={`radio-${groupContext.name}-${value}`}
         />
         <div className={styles.header}>
           <div className={styles.checkBox}>
@@ -54,7 +59,7 @@ const RadioItem = React.forwardRef<HTMLInputElement, Props>(
           </div>
           <span className={styles.title}>{label}</span>
         </div>
-        <p className={styles.description}>{description}</p>
+        {description && <p className={styles.description}>{description}</p>}
       </label>
     );
   },

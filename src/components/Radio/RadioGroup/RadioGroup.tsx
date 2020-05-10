@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 export interface RadioContext {
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   selectedValue: string;
-  groupRef: React.Ref<HTMLInputElement>;
+  groupRef?: React.Ref<HTMLInputElement>;
   name: string;
 }
 
@@ -12,7 +12,7 @@ export interface Props {
   defaultValue: RadioContext['selectedValue'];
   name: string;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  groupRef: React.Ref<HTMLInputElement>;
+  groupRef?: React.Ref<HTMLInputElement>;
 }
 
 export const radioContext = React.createContext<RadioContext | null>(null);
