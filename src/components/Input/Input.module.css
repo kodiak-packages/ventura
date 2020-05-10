@@ -34,13 +34,3 @@
   margin-top: 4px;
   color: var(--color-error);
 }
-
-/* MDX */
-
-.countryCode {
-  width: 50px;
-}
-
-.countryCode input {
-  text-align: center;
-}
