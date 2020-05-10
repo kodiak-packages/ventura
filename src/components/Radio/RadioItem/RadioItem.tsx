@@ -37,11 +37,7 @@ const RadioItem = React.forwardRef<HTMLInputElement, Props>(
     );
 
     return (
-      <label
-        className={labelClassNames}
-        htmlFor={`${groupContext.name}-${value}`}
-        data-testid={`${groupContext.name}-${value}-container`}
-      >
+      <>
         <input
           id={`${groupContext.name}-${value}`}
           type="radio"
@@ -52,15 +48,22 @@ const RadioItem = React.forwardRef<HTMLInputElement, Props>(
           checked={isChecked}
           disabled={isDisabled}
           data-testid={`radio-${groupContext.name}-${value}`}
+          className={styles.radioInput}
         />
-        <div className={styles.header}>
-          <div className={styles.checkBox}>
-            <div className={styles.checkBoxFilling} />
+        <label
+          className={labelClassNames}
+          htmlFor={`${groupContext.name}-${value}`}
+          data-testid={`${groupContext.name}-${value}-container`}
+        >
+          <div className={styles.header}>
+            <div className={styles.checkBox}>
+              <div className={styles.checkBoxFilling} />
+            </div>
+            <span className={styles.title}>{label}</span>
           </div>
-          <span className={styles.title}>{label}</span>
-        </div>
-        {description && <p className={styles.description}>{description}</p>}
-      </label>
+          {description && <p className={styles.description}>{description}</p>}
+        </label>
+      </>
     );
   },
 );

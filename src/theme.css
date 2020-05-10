@@ -26,12 +26,10 @@
   --color-primary: var(--color-neutral-2);
   --color-primary-font: var(--color-neutral-8);
   --color-primary-hover: var(--color-neutral-3);
-  --color-primary-focus: var(--color-neutral-3);
 
   --color-secondary: var(--color-neutral-1);
   --color-secondary-font: var(--color-neutral-8);
   --color-secondary-hover: var(--color-neutral-2);
-  --color-secondary-focus: var(--color-neutral-2);
 
   --color-error: var(--color-error-2);
   --color-error-light: var(--color-error-1);
@@ -39,7 +37,7 @@
   --color-disabled: var(--color-neutral-2);
   --color-disabled-font: var(--color-neutral-5);
 
-  --color-focus: var(--color-neutral-2);
+  --color-focus: var(--color-neutral-3);
 
   /* Font */
   --font-family: Lato, sans-serif;

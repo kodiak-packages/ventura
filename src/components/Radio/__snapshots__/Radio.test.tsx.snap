@@ -2,19 +2,20 @@
 
 exports[`Radio default snapshot 1`] = `
 <DocumentFragment>
+  <input
+    checked=""
+    class="radioInput"
+    data-testid="radio-default-test1"
+    id="default-test1"
+    name="default"
+    type="radio"
+    value="test1"
+  />
   <label
     class="radioButtonContainer radioButtonContainerChecked"
     data-testid="default-test1-container"
     for="default-test1"
   >
-    <input
-      checked=""
-      data-testid="radio-default-test1"
-      id="default-test1"
-      name="default"
-      type="radio"
-      value="test1"
-    />
     <div
       class="header"
     >
@@ -32,18 +33,19 @@ exports[`Radio default snapshot 1`] = `
       </span>
     </div>
   </label>
+  <input
+    class="radioInput"
+    data-testid="radio-default-test2"
+    id="default-test2"
+    name="default"
+    type="radio"
+    value="test2"
+  />
   <label
     class="radioButtonContainer"
     data-testid="default-test2-container"
     for="default-test2"
   >
-    <input
-      data-testid="radio-default-test2"
-      id="default-test2"
-      name="default"
-      type="radio"
-      value="test2"
-    />
     <div
       class="header"
     >
@@ -61,18 +63,19 @@ exports[`Radio default snapshot 1`] = `
       </span>
     </div>
   </label>
+  <input
+    class="radioInput"
+    data-testid="radio-default-test3"
+    id="default-test3"
+    name="default"
+    type="radio"
+    value="test3"
+  />
   <label
     class="radioButtonContainer"
     data-testid="default-test3-container"
     for="default-test3"
   >
-    <input
-      data-testid="radio-default-test3"
-      id="default-test3"
-      name="default"
-      type="radio"
-      value="test3"
-    />
     <div
       class="header"
     >
@@ -95,19 +98,20 @@ exports[`Radio default snapshot 1`] = `
 
 exports[`Radio description snapshot 1`] = `
 <DocumentFragment>
+  <input
+    checked=""
+    class="radioInput"
+    data-testid="radio-default-test1"
+    id="default-test1"
+    name="default"
+    type="radio"
+    value="test1"
+  />
   <label
     class="radioButtonContainer radioButtonContainerChecked"
     data-testid="default-test1-container"
     for="default-test1"
   >
-    <input
-      checked=""
-      data-testid="radio-default-test1"
-      id="default-test1"
-      name="default"
-      type="radio"
-      value="test1"
-    />
     <div
       class="header"
     >
@@ -130,18 +134,19 @@ exports[`Radio description snapshot 1`] = `
       Lalalalalalala
     </p>
   </label>
+  <input
+    class="radioInput"
+    data-testid="radio-default-test2"
+    id="default-test2"
+    name="default"
+    type="radio"
+    value="test2"
+  />
   <label
     class="radioButtonContainer"
     data-testid="default-test2-container"
     for="default-test2"
   >
-    <input
-      data-testid="radio-default-test2"
-      id="default-test2"
-      name="default"
-      type="radio"
-      value="test2"
-    />
     <div
       class="header"
     >
@@ -164,18 +169,19 @@ exports[`Radio description snapshot 1`] = `
       Lololololololo
     </p>
   </label>
+  <input
+    class="radioInput"
+    data-testid="radio-default-test3"
+    id="default-test3"
+    name="default"
+    type="radio"
+    value="test3"
+  />
   <label
     class="radioButtonContainer"
     data-testid="default-test3-container"
     for="default-test3"
   >
-    <input
-      data-testid="radio-default-test3"
-      id="default-test3"
-      name="default"
-      type="radio"
-      value="test3"
-    />
     <div
       class="header"
     >
