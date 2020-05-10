@@ -7,11 +7,21 @@ route: /radio
 import { Playground, Props } from 'docz'
 import { Radio, Loader } from '../../index.ts'
 
+import reactImage from './docAssets/react.png'
+import dockerImage from './docAssets/docker.png'
+import pythonImage from './docAssets/python.png'
+
 # Radio
 
 ## Examples
 
 ### Basic usage
+
+Radio buttons are made up of two components working together. The `Radio.Group` and `Radio.Item` component.
+
+The `Radio.Group` component controls the name of the radio buttons and the onChange event. Each `Radio.Group` name property should be unique. The `Radio.Item` componet contains the value and label of the radio buttons. You add one `Radio.Item` per option.
+
+The `Radio.Item` component must be wrapped in a `Radio.Group` component to function properly.
 
 <Playground>
   <Radio.Group name="classes1" defaultValue="react">
@@ -23,21 +33,21 @@ import { Radio, Loader } from '../../index.ts'
   </Radio.Group>
 </Playground>
 
-### Radio button label
+### Custom label with Icon
 
 The label property on the button component also accepts JSX. This allows you to display custom components in the radio button label, like icons.
 
 <Playground>
   <Radio.Group name="classes2" defaultValue="react">
-    <Radio.Item value="react" label={<React.Fragment><Loader color="orange" style={{marginRight: '4px'}} />Introduction To React</React.Fragment>} />
+    <Radio.Item value="react" label={<React.Fragment><img src={reactImage} style={{ height: '20px', marginRight: '6px'}} />Introduction To React</React.Fragment>} />
     <br />
-    <Radio.Item value="docker" label={<React.Fragment><Loader color="orange" style={{marginRight: '4px'}} />Introduction To Docker</React.Fragment>}/>
+    <Radio.Item value="docker" label={<React.Fragment><img src={dockerImage} style={{ height: '20px', marginRight: '6px'}} />Introduction To Docker</React.Fragment>}/>
     <br />
-    <Radio.Item value="python" label={<React.Fragment><Loader color="orange" style={{marginRight: '4px'}} />Introduction To Python</React.Fragment>} />
+    <Radio.Item value="python" label={<React.Fragment><img src={pythonImage} style={{ height: '20px', marginRight: '6px'}} />Introduction To Python</React.Fragment>} />
   </Radio.Group>
 </Playground>
 
-### Radio button description
+### Radio item with description
 
 <Playground>
   <Radio.Group name="classes3" defaultValue="react">
@@ -49,7 +59,7 @@ The label property on the button component also accepts JSX. This allows you to 
   </Radio.Group>
 </Playground>
 
-### Radio button disabled
+### Disabled radio items
 
 <Playground>
   <Radio.Group name="classes4" defaultValue="react">
