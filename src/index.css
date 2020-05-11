@@ -1,5 +1,13 @@
 @import 'theme.css';
 
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 body {
   font-family: var(--font-family);
   font-size: var(--font-size);

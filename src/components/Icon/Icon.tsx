@@ -1,12 +1,12 @@
 import React, { CSSProperties } from 'react';
 
-export interface IconProps {
+interface Props {
   color?: string;
   className?: string;
   style?: CSSProperties;
 }
 
-const Icon: React.FC<IconProps> = ({ className, style, color = 'currentColor' }: IconProps) => {
+const Icon: React.FC<Props> = ({ className, style, color = 'currentColor' }: Props) => {
   return (
     <>
       {color}

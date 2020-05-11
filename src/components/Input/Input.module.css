@@ -18,7 +18,7 @@
 
 .input:focus {
   outline: none;
-  box-shadow: 0 0 0 3px var(--color-secondary-focus);
+  box-shadow: 0 0 0 3px var(--color-focus);
 }
 
 .containsError {
@@ -33,14 +33,4 @@
   display: block;
   margin-top: 4px;
   color: var(--color-error);
-}
-
-/* MDX */
-
-.countryCode {
-  width: 50px;
-}
-
-.countryCode input {
-  text-align: center;
 }

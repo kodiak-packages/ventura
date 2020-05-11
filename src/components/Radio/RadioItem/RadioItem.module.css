@@ -1,0 +1,103 @@
+.radioInput {
+  height: 0;
+  width: 0;
+  opacity: 0;
+  position: absolute;
+}
+
+.radioInput + .radioButtonContainer {
+  cursor: pointer;
+  display: flex;
+  border-radius: var(--border-radius-small);
+  color: var(--color-primary-font);
+  padding: 10px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex: 1 1 0;
+  width: auto;
+}
+
+.radioInput + .radioButtonContainer .header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.radioInput + .radioButtonContainer .header .checkBox {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: solid 2px var(--font-color-sub);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 14px;
+}
+
+.radioInput + .radioButtonContainer .header .checkBox .checkBoxFilling {
+  width: 0px;
+  height: 0px;
+  border-radius: 50%;
+  background-color: var(--font-color-sub);
+}
+
+.radioInput + .radioButtonContainer .header .title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.radioInput:disabled + .radioButtonContainer .header .title {
+  color: var(--color-disabled-font);
+}
+
+.radioInput + .radioButtonContainer .description {
+  color: var(--font-color-sub);
+  font-size: 13px;
+  margin: 0px 0px 0px 30px;
+}
+
+.radioButtonContainer:hover {
+  background-color: var(--color-primary);
+}
+
+.radioInput:focus {
+  outline: none;
+}
+
+.radioInput:focus + .radioButtonContainer {
+  box-shadow: 0 0 0 3px var(--color-focus);
+}
+
+.radioInput:disabled + .radioButtonContainer {
+  cursor: default;
+}
+
+.radioInput:disabled:not(:checked) + .radioButtonContainer {
+  background-color: unset;
+}
+
+.radioInput:disabled + .radioButtonContainer .header .checkBox {
+  border-color: var(--color-disabled-font);
+}
+
+.radioInput:disabled + .radioButtonContainer .header .checkBox .checkBoxFilling  {
+  background-color: var(--color-disabled-font);
+}
+
+.radioInput:disabled + .radioButtonContainer .description {
+  color: var(--color-disabled-font);
+}
+
+.radioInput:checked + .radioButtonContainer {
+  background-color: var(--color-primary);
+}
+
+.radioInput:checked + .radioButtonContainer .header .checkBox .checkBoxFilling {
+  width: 8px;
+  height: 8px;
+}
