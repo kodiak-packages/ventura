@@ -9,6 +9,7 @@
   cursor: pointer;
   display: flex;
   border-radius: var(--border-radius-small);
+  color: var(--color-primary-font);
   padding: 10px 16px;
   display: flex;
   flex-direction: column;
