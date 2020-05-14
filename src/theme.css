@@ -2,7 +2,7 @@
      Color Variables
   ================== */
 
-:root {
+.ventura {
   --color-neutral-1: #ffffff;
   --color-neutral-2: #f4f4f4;
   --color-neutral-3: #ebebeb;
@@ -21,7 +21,7 @@
          Theme
   ================== */
 
-:root {
+.ventura {
   /* Base colors */
   --color-primary: var(--color-neutral-2);
   --color-primary-font: var(--color-neutral-8);

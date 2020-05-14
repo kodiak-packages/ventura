@@ -1,0 +1,42 @@
+/* Box sizing rules */
+.ventura *,
+.ventura *::before,
+.ventura *::after {
+  box-sizing: border-box;
+}
+
+/* Remove default padding and bullet */
+.ventura ul[class],
+.ventura ol[class] {
+  padding: 0;
+  list-style: none;
+}
+
+/* Remove default margin */
+.ventura h1,
+.ventura h2,
+.ventura h3,
+.ventura h4,
+.ventura p,
+.ventura ul[class],
+.ventura ol[class],
+.ventura figure,
+.ventura blockquote,
+.ventura dl,
+.ventura dd {
+  margin: 0;
+}
+
+/* Make images easier to work with */
+.ventura img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+.ventura input,
+.ventura button,
+.ventura textarea,
+.ventura select {
+  font: inherit;
+}
