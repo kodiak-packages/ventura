@@ -5,7 +5,7 @@
 */
 
 const path = require('path');
-const { ncp } = require('ncp');
+const cpx = require('cpx');
 const fs = require('fs');
 
 // Make sure the Ventura component is accessible in gatsby-theme-docz
@@ -20,7 +20,7 @@ const copyVenturaComponentToBuildFolder = () => {
     fs.mkdirSync(buildPath, { recursive: true });
 
     // copy Ventura component files to new path
-    ncp(sourcePath, buildPath, (error) => {
+    cpx.copy(sourcePath, buildPath, (error) => {
       if (error) {
         return reject(error);
       }
