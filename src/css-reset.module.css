@@ -1,0 +1,16 @@
+.ventura {
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  color: var(--font-color);
+}
+
+.ventura *,
+.ventura *:before,
+.ventura *:after {
+  box-sizing: border-box;
+}
+
+.ventura svg[viewBox='0 0 24 24'][stroke-linejoin='round'][stroke-linecap='round'] {
+  width: var(--font-size);
+  height: var(--font-size);
+}

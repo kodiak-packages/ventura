@@ -1,6 +1,7 @@
 import React, { ChangeEventHandler } from 'react';
 import classNames from 'classnames';
 
+import cssReset from '../../css-reset.module.css';
 import styles from './Input.module.css';
 
 interface Props {
@@ -32,7 +33,7 @@ const Input = React.forwardRef<HTMLInputElement, Props>(
     }: Props,
     ref,
   ) => {
-    const mergedContainerClassName = classNames(styles.container, className);
+    const mergedContainerClassName = classNames(cssReset.ventura, styles.container, className);
     const mergedInputClassName = classNames(styles.input, {
       [styles.containsError]: Boolean(errorMessage),
     });

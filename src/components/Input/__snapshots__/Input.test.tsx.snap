@@ -3,7 +3,7 @@
 exports[`Input default snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="container"
+    class="ventura container"
     data-testid="container"
   >
     <input

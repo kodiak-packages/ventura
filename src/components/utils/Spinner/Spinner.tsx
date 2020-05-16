@@ -1,6 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 
+import cssReset from '../../../css-reset.module.css';
 import styles from './Spinner.module.css';
 
 interface Props {
@@ -8,7 +9,7 @@ interface Props {
 }
 
 const Spinner: React.FC<Props> = ({ className }: Props) => {
-  const spinnerClassNames = classNames(styles.svg, className);
+  const spinnerClassNames = classNames(cssReset.ventura, styles.svg, className);
 
   return (
     <svg className={spinnerClassNames} x="0px" y="0px" viewBox="0 0 150 150">

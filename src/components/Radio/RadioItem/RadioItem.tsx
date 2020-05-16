@@ -3,6 +3,7 @@ import classNames from 'classnames';
 
 import { radioContext } from '../RadioGroup/RadioGroup';
 
+import cssReset from '../../../css-reset.module.css';
 import styles from './RadioItem.module.css';
 
 export interface Props {
@@ -28,6 +29,7 @@ const RadioItem = React.forwardRef<HTMLInputElement, Props>(
     const isChecked = value === groupContext.selectedValue;
 
     const labelClassNames = classNames(
+      cssReset.ventura,
       styles.radioButtonContainer,
       {
         [styles.radioButtonContainerChecked]: isChecked,
