@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import classNames from 'classnames';
 
 export interface RadioContext {
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
