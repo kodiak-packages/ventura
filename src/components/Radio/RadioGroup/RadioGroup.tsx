@@ -14,7 +14,7 @@ export interface Props {
   name: string;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   groupRef?: React.Ref<HTMLInputElement>;
-  className: string;
+  className?: string;
 }
 
 export const radioContext = React.createContext<RadioContext | null>(null);

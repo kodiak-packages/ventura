@@ -2,207 +2,215 @@
 
 exports[`Radio default snapshot 1`] = `
 <DocumentFragment>
-  <input
-    checked=""
-    class="radioInput"
-    data-testid="radio-default-test1"
-    id="default-test1"
-    name="default"
-    type="radio"
-    value="test1"
-  />
-  <label
-    class="radioButtonContainer radioButtonContainerChecked"
-    data-testid="default-test1-container"
-    for="default-test1"
+  <div
+    class=""
   >
-    <div
-      class="header"
+    <input
+      checked=""
+      class="radioInput"
+      data-testid="radio-default-test1"
+      id="default-test1"
+      name="default"
+      type="radio"
+      value="test1"
+    />
+    <label
+      class="radioButtonContainer radioButtonContainerChecked"
+      data-testid="default-test1-container"
+      for="default-test1"
     >
       <div
-        class="checkBox"
+        class="header"
       >
         <div
-          class="checkBoxFilling"
-        />
+          class="checkBox"
+        >
+          <div
+            class="checkBoxFilling"
+          />
+        </div>
+        <span
+          class="title"
+        >
+          Test option 1
+        </span>
       </div>
-      <span
-        class="title"
-      >
-        Test option 1
-      </span>
-    </div>
-  </label>
-  <input
-    class="radioInput"
-    data-testid="radio-default-test2"
-    id="default-test2"
-    name="default"
-    type="radio"
-    value="test2"
-  />
-  <label
-    class="radioButtonContainer"
-    data-testid="default-test2-container"
-    for="default-test2"
-  >
-    <div
-      class="header"
+    </label>
+    <input
+      class="radioInput"
+      data-testid="radio-default-test2"
+      id="default-test2"
+      name="default"
+      type="radio"
+      value="test2"
+    />
+    <label
+      class="radioButtonContainer"
+      data-testid="default-test2-container"
+      for="default-test2"
     >
       <div
-        class="checkBox"
+        class="header"
       >
         <div
-          class="checkBoxFilling"
-        />
+          class="checkBox"
+        >
+          <div
+            class="checkBoxFilling"
+          />
+        </div>
+        <span
+          class="title"
+        >
+          Test option 2
+        </span>
       </div>
-      <span
-        class="title"
-      >
-        Test option 2
-      </span>
-    </div>
-  </label>
-  <input
-    class="radioInput"
-    data-testid="radio-default-test3"
-    id="default-test3"
-    name="default"
-    type="radio"
-    value="test3"
-  />
-  <label
-    class="radioButtonContainer"
-    data-testid="default-test3-container"
-    for="default-test3"
-  >
-    <div
-      class="header"
+    </label>
+    <input
+      class="radioInput"
+      data-testid="radio-default-test3"
+      id="default-test3"
+      name="default"
+      type="radio"
+      value="test3"
+    />
+    <label
+      class="radioButtonContainer"
+      data-testid="default-test3-container"
+      for="default-test3"
     >
       <div
-        class="checkBox"
+        class="header"
       >
         <div
-          class="checkBoxFilling"
-        />
+          class="checkBox"
+        >
+          <div
+            class="checkBoxFilling"
+          />
+        </div>
+        <span
+          class="title"
+        >
+          Test option 3
+        </span>
       </div>
-      <span
-        class="title"
-      >
-        Test option 3
-      </span>
-    </div>
-  </label>
+    </label>
+  </div>
 </DocumentFragment>
 `;
 
 exports[`Radio description snapshot 1`] = `
 <DocumentFragment>
-  <input
-    checked=""
-    class="radioInput"
-    data-testid="radio-default-test1"
-    id="default-test1"
-    name="default"
-    type="radio"
-    value="test1"
-  />
-  <label
-    class="radioButtonContainer radioButtonContainerChecked"
-    data-testid="default-test1-container"
-    for="default-test1"
+  <div
+    class=""
   >
-    <div
-      class="header"
+    <input
+      checked=""
+      class="radioInput"
+      data-testid="radio-default-test1"
+      id="default-test1"
+      name="default"
+      type="radio"
+      value="test1"
+    />
+    <label
+      class="radioButtonContainer radioButtonContainerChecked"
+      data-testid="default-test1-container"
+      for="default-test1"
     >
       <div
-        class="checkBox"
+        class="header"
       >
         <div
-          class="checkBoxFilling"
-        />
+          class="checkBox"
+        >
+          <div
+            class="checkBoxFilling"
+          />
+        </div>
+        <span
+          class="title"
+        >
+          Test option 1
+        </span>
       </div>
-      <span
-        class="title"
+      <p
+        class="description"
       >
-        Test option 1
-      </span>
-    </div>
-    <p
-      class="description"
-    >
-      Lalalalalalala
-    </p>
-  </label>
-  <input
-    class="radioInput"
-    data-testid="radio-default-test2"
-    id="default-test2"
-    name="default"
-    type="radio"
-    value="test2"
-  />
-  <label
-    class="radioButtonContainer"
-    data-testid="default-test2-container"
-    for="default-test2"
-  >
-    <div
-      class="header"
+        Lalalalalalala
+      </p>
+    </label>
+    <input
+      class="radioInput"
+      data-testid="radio-default-test2"
+      id="default-test2"
+      name="default"
+      type="radio"
+      value="test2"
+    />
+    <label
+      class="radioButtonContainer"
+      data-testid="default-test2-container"
+      for="default-test2"
     >
       <div
-        class="checkBox"
+        class="header"
       >
         <div
-          class="checkBoxFilling"
-        />
+          class="checkBox"
+        >
+          <div
+            class="checkBoxFilling"
+          />
+        </div>
+        <span
+          class="title"
+        >
+          Test option 2
+        </span>
       </div>
-      <span
-        class="title"
+      <p
+        class="description"
       >
-        Test option 2
-      </span>
-    </div>
-    <p
-      class="description"
-    >
-      Lololololololo
-    </p>
-  </label>
-  <input
-    class="radioInput"
-    data-testid="radio-default-test3"
-    id="default-test3"
-    name="default"
-    type="radio"
-    value="test3"
-  />
-  <label
-    class="radioButtonContainer"
-    data-testid="default-test3-container"
-    for="default-test3"
-  >
-    <div
-      class="header"
+        Lololololololo
+      </p>
+    </label>
+    <input
+      class="radioInput"
+      data-testid="radio-default-test3"
+      id="default-test3"
+      name="default"
+      type="radio"
+      value="test3"
+    />
+    <label
+      class="radioButtonContainer"
+      data-testid="default-test3-container"
+      for="default-test3"
     >
       <div
-        class="checkBox"
+        class="header"
       >
         <div
-          class="checkBoxFilling"
-        />
+          class="checkBox"
+        >
+          <div
+            class="checkBoxFilling"
+          />
+        </div>
+        <span
+          class="title"
+        >
+          Test option 3
+        </span>
       </div>
-      <span
-        class="title"
+      <p
+        class="description"
       >
-        Test option 3
-      </span>
-    </div>
-    <p
-      class="description"
-    >
-      Lelelelelelele
-    </p>
-  </label>
+        Lelelelelelele
+      </p>
+    </label>
+  </div>
 </DocumentFragment>
 `;
