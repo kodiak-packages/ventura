@@ -29,8 +29,6 @@ const RadioGroup: React.FC<Props> = ({
 }: Props) => {
   const [selectedValue, setSelectedValue] = useState(defaultValue);
 
-  const radioGroupClassNames = classNames(className);
-
   const onRadioItemChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSelectedValue(e.target.value);
     if (onChange) {
@@ -40,7 +38,7 @@ const RadioGroup: React.FC<Props> = ({
 
   return (
     <radioContext.Provider value={{ selectedValue, onChange: onRadioItemChange, name, groupRef }}>
-      <div className={radioGroupClassNames}>{children}</div>
+      <div className={className}>{children}</div>
     </radioContext.Provider>
   );
 };
