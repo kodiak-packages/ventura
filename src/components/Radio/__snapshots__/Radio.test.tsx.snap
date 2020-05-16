@@ -2,9 +2,7 @@
 
 exports[`Radio default snapshot 1`] = `
 <DocumentFragment>
-  <div
-    class=""
-  >
+  <div>
     <input
       checked=""
       class="radioInput"
@@ -102,9 +100,7 @@ exports[`Radio default snapshot 1`] = `
 
 exports[`Radio description snapshot 1`] = `
 <DocumentFragment>
-  <div
-    class=""
-  >
+  <div>
     <input
       checked=""
       class="radioInput"
