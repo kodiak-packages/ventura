@@ -1,5 +1,5 @@
 import React, { ComponentProps } from 'react';
-import { render } from '@testing-library/react';
+import { fireEvent, render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import Input from './Input';
@@ -34,6 +34,17 @@ describe('Input', () => {
 
     expect(onChangeFn).toHaveBeenCalledTimes(firstName.length);
     expect((inputElement as any).value).toBe(firstName);
+  });
+
+  test('onBlur prop', async () => {
+    const onBlurFn = jest.fn();
+    const component = <Input {...defaultButtonProps} onBlur={onBlurFn} />;
+    const { getByTestId } = render(component);
+    const inputElement = getByTestId('input-firstname');
+
+    fireEvent.blur(inputElement);
+
+    expect(onBlurFn).toHaveBeenCalledTimes(1);
   });
 
   test('placeholder prop', () => {
