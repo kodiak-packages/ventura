@@ -3,6 +3,7 @@ import classNames from 'classnames';
 
 import Spinner from '../utils/Spinner/Spinner';
 
+import cssReset from '../../css-reset.module.css';
 import styles from './Button.module.css';
 
 interface Props {
@@ -29,6 +30,7 @@ const Button: React.FC<Props> = ({
   name,
 }: Props) => {
   const buttonClassNames = classNames(
+    cssReset.ventura,
     styles.button,
     {
       [styles.typePrimary]: type === 'primary',

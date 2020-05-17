@@ -2,7 +2,9 @@
 
 exports[`Radio default snapshot 1`] = `
 <DocumentFragment>
-  <div>
+  <div
+    class="ventura"
+  >
     <input
       checked=""
       class="radioInput"
@@ -13,7 +15,7 @@ exports[`Radio default snapshot 1`] = `
       value="test1"
     />
     <label
-      class="radioButtonContainer radioButtonContainerChecked"
+      class="ventura radioButtonContainer radioButtonContainerChecked"
       data-testid="default-test1-container"
       for="default-test1"
     >
@@ -43,7 +45,7 @@ exports[`Radio default snapshot 1`] = `
       value="test2"
     />
     <label
-      class="radioButtonContainer"
+      class="ventura radioButtonContainer"
       data-testid="default-test2-container"
       for="default-test2"
     >
@@ -73,7 +75,7 @@ exports[`Radio default snapshot 1`] = `
       value="test3"
     />
     <label
-      class="radioButtonContainer"
+      class="ventura radioButtonContainer"
       data-testid="default-test3-container"
       for="default-test3"
     >
@@ -100,7 +102,9 @@ exports[`Radio default snapshot 1`] = `
 
 exports[`Radio description snapshot 1`] = `
 <DocumentFragment>
-  <div>
+  <div
+    class="ventura"
+  >
     <input
       checked=""
       class="radioInput"
@@ -111,7 +115,7 @@ exports[`Radio description snapshot 1`] = `
       value="test1"
     />
     <label
-      class="radioButtonContainer radioButtonContainerChecked"
+      class="ventura radioButtonContainer radioButtonContainerChecked"
       data-testid="default-test1-container"
       for="default-test1"
     >
@@ -146,7 +150,7 @@ exports[`Radio description snapshot 1`] = `
       value="test2"
     />
     <label
-      class="radioButtonContainer"
+      class="ventura radioButtonContainer"
       data-testid="default-test2-container"
       for="default-test2"
     >
@@ -181,7 +185,7 @@ exports[`Radio description snapshot 1`] = `
       value="test3"
     />
     <label
-      class="radioButtonContainer"
+      class="ventura radioButtonContainer"
       data-testid="default-test3-container"
       for="default-test3"
     >

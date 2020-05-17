@@ -1,0 +1,12 @@
+.ventura {
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  color: var(--font-color);
+  box-sizing: border-box;
+}
+
+.ventura *,
+.ventura *:before,
+.ventura *:after {
+  box-sizing: border-box;
+}
