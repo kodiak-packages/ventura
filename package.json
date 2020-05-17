@@ -12,12 +12,13 @@
   "main": "dist/index.js",
   "scripts": {
     "start": "docz dev",
-    "build": "rm -rf dist && tsc --project tsconfig-build.json && cpx './src/**/!(docAssets)/*.css' 'dist' && cpx './src/*.css' 'dist'",
+    "build": "rm -rf dist && tsc --project tsconfig-build.json && yarn copy:assets",
     "test": "jest --detectOpenHandles --watchAll",
     "document": "docz build",
     "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'",
     "lint:fix": "yarn lint --fix",
-    "release": "semantic-release"
+    "release": "semantic-release",
+    "copy:assets": " cpx './src/**/!(docAssets)/*.css' 'dist' && cpx './src/*.css' 'dist'"
   },
   "peerDependencies": {
     "react": "^16",
