@@ -13,6 +13,7 @@ export interface Props {
   name: string;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   groupRef?: React.Ref<HTMLInputElement>;
+  className?: string;
 }
 
 export const radioContext = React.createContext<RadioContext | null>(null);
@@ -23,6 +24,7 @@ const RadioGroup: React.FC<Props> = ({
   onChange,
   name,
   groupRef,
+  className,
 }: Props) => {
   const [selectedValue, setSelectedValue] = useState(defaultValue);
 
@@ -35,7 +37,7 @@ const RadioGroup: React.FC<Props> = ({
 
   return (
     <radioContext.Provider value={{ selectedValue, onChange: onRadioItemChange, name, groupRef }}>
-      {children}
+      <div className={className}>{children}</div>
     </radioContext.Provider>
   );
 };
