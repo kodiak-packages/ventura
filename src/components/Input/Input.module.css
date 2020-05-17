@@ -28,9 +28,3 @@
 .containsError:focus {
   box-shadow: 0 0 0 3px var(--color-error-light);
 }
-
-.errorMessage {
-  display: block;
-  margin-top: 4px;
-  color: var(--color-error);
-}

@@ -1,5 +1,5 @@
 import React, { ComponentProps } from 'react';
-import { render } from '@testing-library/react';
+import { fireEvent, render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import Input from './Input';
@@ -36,6 +36,17 @@ describe('Input', () => {
     expect((inputElement as any).value).toBe(firstName);
   });
 
+  test('onBlur prop', async () => {
+    const onBlurFn = jest.fn();
+    const component = <Input {...defaultButtonProps} onBlur={onBlurFn} />;
+    const { getByTestId } = render(component);
+    const inputElement = getByTestId('input-firstname');
+
+    fireEvent.blur(inputElement);
+
+    expect(onBlurFn).toHaveBeenCalledTimes(1);
+  });
+
   test('placeholder prop', () => {
     const component = <Input {...defaultButtonProps} placeholder="First name" />;
     const { getByTestId } = render(component);
@@ -53,14 +64,11 @@ describe('Input', () => {
   });
 
   test('errorMessage prop', () => {
-    const errorMessage = 'This is an error message';
-    const component = <Input {...defaultButtonProps} errorMessage={errorMessage} />;
-    const { getByTestId, queryByText } = render(component);
+    const component = <Input {...defaultButtonProps} isInvalid />;
+    const { getByTestId } = render(component);
     const inputElement = getByTestId('input-firstname');
-    const spanElement = queryByText(errorMessage);
 
     expect(inputElement.classList).toContain('containsError');
-    expect(spanElement).not.toEqual(null);
   });
 
   test('spellCheck prop', () => {
