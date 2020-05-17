@@ -10,8 +10,3 @@
 .ventura *:after {
   box-sizing: border-box;
 }
-
-svg[viewBox='0 0 24 24'][stroke-linejoin='round'][stroke-linecap='round'] {
-  width: var(--font-size);
-  height: var(--font-size);
-}
