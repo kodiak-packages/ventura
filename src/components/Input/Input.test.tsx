@@ -53,14 +53,11 @@ describe('Input', () => {
   });
 
   test('errorMessage prop', () => {
-    const errorMessage = 'This is an error message';
-    const component = <Input {...defaultButtonProps} errorMessage={errorMessage} />;
-    const { getByTestId, queryByText } = render(component);
+    const component = <Input {...defaultButtonProps} isInvalid />;
+    const { getByTestId } = render(component);
     const inputElement = getByTestId('input-firstname');
-    const spanElement = queryByText(errorMessage);
 
     expect(inputElement.classList).toContain('containsError');
-    expect(spanElement).not.toEqual(null);
   });
 
   test('spellCheck prop', () => {

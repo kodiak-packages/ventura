@@ -1,4 +1,4 @@
-import React, { ChangeEventHandler } from 'react';
+import React, { ChangeEventHandler, FocusEventHandler } from 'react';
 import classNames from 'classnames';
 
 import styles from './Input.module.css';
@@ -7,6 +7,7 @@ interface Props {
   name: string;
   value?: string;
   onChange?: ChangeEventHandler<HTMLInputElement>;
+  onBlur?: FocusEventHandler<HTMLInputElement>;
   placeholder?: string;
   type?: 'text' | 'email' | 'password';
   errorMessage?: string;
@@ -14,6 +15,7 @@ interface Props {
   autoComplete?: boolean;
   maxLength?: number;
   className?: string;
+  isInvalid?: boolean;
 }
 
 const Input = React.forwardRef<HTMLInputElement, Props>(
@@ -22,9 +24,10 @@ const Input = React.forwardRef<HTMLInputElement, Props>(
       name,
       value,
       onChange,
+      onBlur,
       placeholder,
       type = 'text',
-      errorMessage,
+      isInvalid = false,
       spellCheck = false,
       autoComplete = false,
       maxLength,
@@ -34,7 +37,7 @@ const Input = React.forwardRef<HTMLInputElement, Props>(
   ) => {
     const mergedContainerClassName = classNames(styles.container, className);
     const mergedInputClassName = classNames(styles.input, {
-      [styles.containsError]: Boolean(errorMessage),
+      [styles.containsError]: Boolean(isInvalid),
     });
     return (
       <div className={mergedContainerClassName} data-testid="container">
@@ -50,8 +53,8 @@ const Input = React.forwardRef<HTMLInputElement, Props>(
           ref={ref}
           className={mergedInputClassName}
           data-testid={`input-${name}`}
+          onBlur={onBlur}
         />
-        {Boolean(errorMessage) && <span className={styles.errorMessage}>{errorMessage}</span>}
       </div>
     );
   },
