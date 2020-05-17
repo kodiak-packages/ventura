@@ -10,7 +10,7 @@
   box-sizing: border-box;
 }
 
-.ventura svg[viewBox='0 0 24 24'][stroke-linejoin='round'][stroke-linecap='round'] {
+svg[viewBox='0 0 24 24'][stroke-linejoin='round'][stroke-linecap='round'] {
   width: var(--font-size);
   height: var(--font-size);
 }
