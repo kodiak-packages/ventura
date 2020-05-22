@@ -17,6 +17,7 @@
   align-items: flex-start;
   flex: 1 1 0;
   width: auto;
+  font-family: var(--font-family);
 }
 
 .radioInput + .radioButtonContainer .header {
@@ -49,6 +50,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
+  font-family: var(--font-family);
 }
 
 .radioInput:disabled + .radioButtonContainer .header .title {
