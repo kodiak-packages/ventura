@@ -1,0 +1,30 @@
+.overlay {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background: rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(6px);
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  width: 90%;
+  max-width: 650px;
+  border-radius: var(--border-radius-small);
+  background-color: var(--color-neutral-1);
+  outline: none;
+  margin: 5%;
+  padding: 30px 40px;
+}
+
+.title {
+  font-weight: 500;
+  font-size: 18px;
+  color: var(--color-neutral-9);
+  margin: 0 0 24px 0;
+}
