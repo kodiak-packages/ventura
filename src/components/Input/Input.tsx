@@ -36,10 +36,14 @@ const Input = React.forwardRef<HTMLInputElement, Props>(
     }: Props,
     ref,
   ) => {
-    const inputClassNames = classNames(cssReset.ventura, styles.input, {
-      [styles.containsError]: Boolean(isInvalid),
+    const inputClassNames = classNames(
+      cssReset.ventura,
+      styles.input,
+      {
+        [styles.containsError]: Boolean(isInvalid),
+      },
       className,
-    });
+    );
 
     return (
       <input
