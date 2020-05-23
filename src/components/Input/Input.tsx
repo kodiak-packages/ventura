@@ -36,27 +36,26 @@ const Input = React.forwardRef<HTMLInputElement, Props>(
     }: Props,
     ref,
   ) => {
-    const mergedContainerClassName = classNames(cssReset.ventura, styles.container, className);
-    const mergedInputClassName = classNames(styles.input, {
+    const inputClassNames = classNames(cssReset.ventura, styles.input, {
       [styles.containsError]: Boolean(isInvalid),
+      className,
     });
+
     return (
-      <div className={mergedContainerClassName} data-testid="container">
-        <input
-          name={name}
-          value={value}
-          onChange={onChange}
-          placeholder={placeholder}
-          type={type}
-          spellCheck={spellCheck}
-          autoComplete={autoComplete ? 'on' : 'off'}
-          maxLength={maxLength}
-          ref={ref}
-          className={mergedInputClassName}
-          data-testid={`input-${name}`}
-          onBlur={onBlur}
-        />
-      </div>
+      <input
+        name={name}
+        value={value}
+        onChange={onChange}
+        placeholder={placeholder}
+        type={type}
+        spellCheck={spellCheck}
+        autoComplete={autoComplete ? 'on' : 'off'}
+        maxLength={maxLength}
+        ref={ref}
+        className={inputClassNames}
+        data-testid={`input-${name}`}
+        onBlur={onBlur}
+      />
     );
   },
 );
