@@ -1,0 +1,51 @@
+@keyframes overlayAnimation {
+  from {
+    background: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6px);
+  }
+  to {
+    background: rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(12px);
+  }
+}
+
+.overlay {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  z-index: 100;
+  display: flex;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  animation: overlayAnimation 1.5s ease-out forwards;
+}
+
+@keyframes modalAnimation {
+  from {
+    transform: scale(0.96, 0.96);
+  }
+  to {
+    transform: scale(1, 1);
+  }
+}
+
+.modal {
+  width: 90%;
+  max-width: 650px;
+  border-radius: var(--border-radius-small);
+  background-color: var(--color-neutral-1);
+  outline: none;
+  margin: 5%;
+  padding: 30px 40px;
+  animation: modalAnimation 0.08s ease-out forwards;
+}
+
+.title {
+  font-weight: 500;
+  font-size: 18px;
+  color: var(--color-neutral-9);
+  margin: 0 0 12px 0;
+}

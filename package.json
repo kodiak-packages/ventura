@@ -33,6 +33,7 @@
     "@types/react": "^16.9.34",
     "@types/react-dom": "^16.9.6",
     "@types/react-modal": "^3.10.5",
+    "@types/react-portal": "^4.0.2",
     "@typescript-eslint/eslint-plugin": "^2.17.0",
     "cpx": "1.5.0",
     "docz": "^2.3.1",
@@ -61,7 +62,7 @@
   "dependencies": {
     "classnames": "^2.2.6",
     "react-feather": "^2.0.8",
-    "react-modal": "^3.11.2"
+    "react-portal": "^4.2.1"
   },
   "keywords": [
     "kodiak",

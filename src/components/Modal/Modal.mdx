@@ -5,7 +5,7 @@ route: /modal
 ---
 
 import { Playground, Props } from 'docz';
-import { Modal } from '../..';
+import { Modal, Button } from '../..';
 
 # Modal
 
@@ -13,16 +13,35 @@ A modal is a dialog that appears on top of the main content to require user inte
 
 ## Best practices
 
-- `Modal.Footer` is designed to contain your buttons
+- Wrapping your buttons inside `Modal.Footer` will allow them to be automatically displayed right
 
 ## Examples
 
 ### Basic usage
 
 <Playground>
-  <Modal title="Lol" />
+  {() => {
+    const [isOpen, setIsOpen] = React.useState(false);
+    return (
+      <>
+        <Button onClick={() => setIsOpen(true)}>Open basic modal</Button>
+        <Modal.Dialog title="This is the title" isOpen={isOpen}>
+          <span>Insert your text or form elements here</span>
+          <Modal.Footer>
+            <Button type='secondary' onClick={() => setIsOpen(false)}>Cancel</Button>
+            <Button onClick={() => 'do some logic here'}>Create</Button>
+          </Modal.Footer>
+        </Modal.Dialog>
+      </>
+    );
+}}
+
 </Playground>
 
-## API
+## Modal.Dialog API
 
-<Props of={Modal} />
+<Props of={Modal.Dialog} />
+
+## Modal.Footer API
+
+<Props of={Modal.Footer} />

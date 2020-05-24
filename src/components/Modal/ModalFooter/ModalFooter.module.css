@@ -1,0 +1,9 @@
+.container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.container > *:not(:last-child) {
+  margin-right: 6px;
+}
