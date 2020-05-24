@@ -13,11 +13,11 @@ type Props = {
   children?: ReactNode;
 };
 
-const enableBodyScroll = (isEnabled: boolean) => {
-  if (isEnabled) {
-    document.body.style.overflow = 'inherit';
-  } else {
+const disableBodyScroll = (isDisabled: boolean) => {
+  if (isDisabled) {
     document.body.style.overflow = 'hidden';
+  } else {
+    document.body.style.overflow = 'inherit';
   }
 };
 
@@ -31,7 +31,7 @@ const ModalDialog: React.FC = ({
   const modalRef = React.useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    enableBodyScroll(!isOpen);
+    disableBodyScroll(isOpen);
     // eslint-disable-next-line no-unused-expressions
     if (isOpen) modalRef.current?.focus();
   }, [isOpen, modalRef]);
@@ -51,6 +51,8 @@ const ModalDialog: React.FC = ({
           ref={modalRef}
           className={styles.modal}
           onKeyDown={handleKeyDown}
+          // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
+          tabIndex={0}
           role="presentation"
         >
           {title && <h1 className={styles.title}>{title}</h1>}
