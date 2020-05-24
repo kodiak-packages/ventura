@@ -19,6 +19,7 @@
 .svg {
   animation: loadingKeyframes 2s linear infinite;
   height: 12px;
+  color: inherit;
 }
 
 .circle {
@@ -26,7 +27,7 @@
   stroke-dasharray: 300;
   stroke-width: 16;
   stroke-miterlimit: 10;
-  stroke-linecap: 10;
+  stroke-linecap: round;
   animation: loadingCircleKeyFrames 1.6s cubic-bezier(0.4, 0.15, 0.6, 0.85) infinite;
   stroke: currentColor;
   fill: transparent;

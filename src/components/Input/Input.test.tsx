@@ -99,9 +99,9 @@ describe('Input', () => {
 
   test('className prop', () => {
     const className = 'center';
-    const component = <Input {...defaultButtonProps} className={className} />;
+    const component = <Input {...defaultButtonProps} name="classname" className={className} />;
     const { getByTestId } = render(component);
-    const containerElement = getByTestId('container');
+    const containerElement = getByTestId('input-classname');
 
     const renderedClassNames = containerElement.className.split(' ');
     expect(renderedClassNames).toContain(className);
