@@ -21,7 +21,7 @@ const disableBodyScroll = (isDisabled: boolean) => {
   }
 };
 
-const ModalDialog: React.FC = ({
+const ModalDialog: React.FC<Props> = ({
   title,
   isOpen = false,
   onEscKeyDown,
@@ -55,7 +55,7 @@ const ModalDialog: React.FC = ({
           tabIndex={0}
           role="presentation"
         >
-          {title && <h1 className={styles.title}>{title}</h1>}
+          {Boolean(title) && <h1 className={styles.title}>{title}</h1>}
           {children}
         </article>
       </div>

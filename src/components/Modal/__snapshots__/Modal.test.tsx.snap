@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Modal snapshot when hidden 1`] = `<DocumentFragment />`;
+
+exports[`Modal snapshot when shown 1`] = `
+<DocumentFragment>
+  <div>
+    <div
+      class="ventura overlay"
+      role="article"
+    >
+      <article
+        class="modal"
+        role="presentation"
+        tabindex="0"
+      >
+        <h1
+          class="title"
+        >
+          This is the title
+        </h1>
+        <span>
+          Insert your text or form elements here
+        </span>
+        <div
+          class="container"
+        >
+          Buttons are placed here
+        </div>
+      </article>
+    </div>
+  </div>
+</DocumentFragment>
+`;
