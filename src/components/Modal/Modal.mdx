@@ -5,7 +5,7 @@ route: /modal
 ---
 
 import { Playground, Props } from 'docz';
-import { Button, Modal } from '../../index.ts';
+import { Button, Modal, Input } from '../../index.ts';
 
 # Modal
 
@@ -30,6 +30,33 @@ A modal is a dialog that appears on top of the main content to require user inte
           <Modal.Footer>
             <Button type='secondary' onClick={() => setIsOpen(false)}>Cancel</Button>
             <Button onClick={() => 'do some logic here'}>Create</Button>
+          </Modal.Footer>
+        </Modal.Dialog>
+      </>
+    );
+}}
+
+</Playground>
+
+### Modal with async action
+
+<Playground>
+  {() => {
+    const [isOpen, setIsOpen] = React.useState(false);
+    const [isLoading, setIsLoading] = React.useState(false);
+    const createHandler = async () => {
+      // await a promise here
+      setIsLoading(true);
+      setTimeout(() => {setIsLoading(false); setIsOpen(false)}, 1000);
+    }
+    return (
+      <>
+        <Button onClick={() => setIsOpen(true)}>Create Todo</Button>
+        <Modal.Dialog title="Create a Todo" isOpen={isOpen}>
+          <Input />
+          <Modal.Footer>
+            <Button type='secondary' onClick={() => setIsOpen(false)}>Cancel</Button>
+            <Button onClick={createHandler} isLoading={isLoading}>Create</Button>
           </Modal.Footer>
         </Modal.Dialog>
       </>
