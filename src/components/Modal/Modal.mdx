@@ -1,0 +1,76 @@
+---
+name: Modal
+menu: Components
+route: /modal
+---
+
+import { Playground, Props } from 'docz';
+import { Button, Modal, Input } from '../../index.ts';
+
+# Modal
+
+A modal is a dialog that appears on top of the main content to require user interaction. This modal disables the main content until the user explicitly interacts with it.
+
+## Best practices
+
+- Wrapping your buttons inside `Modal.Footer` will allow them to be automatically displayed right
+
+## Examples
+
+### Basic usage
+
+<Playground>
+  {() => {
+    const [isOpen, setIsOpen] = React.useState(false);
+    return (
+      <>
+        <Button onClick={() => setIsOpen(true)}>Open basic modal</Button>
+        <Modal.Dialog title="This is the title" isOpen={isOpen}>
+          <span>Insert your text or form elements here</span>
+          <Modal.Footer>
+            <Button type='secondary' onClick={() => setIsOpen(false)}>Cancel</Button>
+            <Button onClick={() => 'do some logic here'}>Create</Button>
+          </Modal.Footer>
+        </Modal.Dialog>
+      </>
+    );
+}}
+
+</Playground>
+
+### Modal with async action
+
+<Playground>
+  {() => {
+    const [isOpen, setIsOpen] = React.useState(false);
+    const [isLoading, setIsLoading] = React.useState(false);
+    const createHandler = async () => {
+      // await a promise here
+      setIsLoading(true);
+      setTimeout(() => {setIsLoading(false); setIsOpen(false)}, 1000);
+    }
+    return (
+      <>
+        <Button onClick={() => setIsOpen(true)}>Create Todo</Button>
+        <Modal.Dialog title="Create a Todo" isOpen={isOpen}>
+          <Input />
+          <Modal.Footer>
+            <Button type='secondary' onClick={() => setIsOpen(false)}>Cancel</Button>
+            <Button onClick={createHandler} isLoading={isLoading}>Create</Button>
+          </Modal.Footer>
+        </Modal.Dialog>
+      </>
+    );
+}}
+
+</Playground>
+
+## API
+
+### Modal.Dialog
+
+<Props of={Modal.Dialog} />
+
+### Modal.Footer
+
+<Props of={Modal.Footer} />
