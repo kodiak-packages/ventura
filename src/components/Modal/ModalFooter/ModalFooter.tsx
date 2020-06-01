@@ -8,7 +8,7 @@ type Props = {
   children?: ReactNode;
 };
 
-const ModalFooter: React.FC = ({ className, children }: Props) => {
+const ModalFooter: React.FC<Props> = ({ className, children }: Props) => {
   const mergedClassNames = classNames(styles.container, className);
   return <div className={mergedClassNames}>{children}</div>;
 };

@@ -8,10 +8,10 @@ describe('Modal', () => {
 
   test('snapshot when shown', () => {
     const { asFragment, container } = render(
-      <Modal.Dialog title="This is the title" isOpen>
+      <Modal title="This is the title" isOpen>
         <span>Insert your text or form elements here</span>
         <Modal.Footer>Buttons are placed here</Modal.Footer>
-      </Modal.Dialog>,
+      </Modal>,
       { container: document.body },
     );
     expect(asFragment()).toMatchSnapshot();
@@ -19,7 +19,7 @@ describe('Modal', () => {
   });
 
   test('snapshot when hidden', () => {
-    const { asFragment, container } = render(<Modal.Dialog>Invisible</Modal.Dialog>, {
+    const { asFragment, container } = render(<Modal>Invisible</Modal>, {
       container: document.body,
     });
     expect(asFragment()).toMatchSnapshot();
@@ -29,9 +29,9 @@ describe('Modal', () => {
   test('className prop', () => {
     const className = 'center';
     const { getByText } = render(
-      <Modal.Dialog isOpen className={className}>
+      <Modal isOpen className={className}>
         Content
-      </Modal.Dialog>,
+      </Modal>,
       { container: document.body },
     );
     const overlayElement = getByText(/Content/).parentElement!;
@@ -45,9 +45,9 @@ describe('Modal', () => {
   test('modal should close on pressing ESC', () => {
     const mockOnEscKeyDown = jest.fn();
     const { getByText } = render(
-      <Modal.Dialog isOpen onEscKeyDown={mockOnEscKeyDown}>
+      <Modal isOpen onEscKeyDown={mockOnEscKeyDown}>
         Content
-      </Modal.Dialog>,
+      </Modal>,
       { container: document.body },
     );
     const modalElement = getByText(/Content/)!;
@@ -56,7 +56,7 @@ describe('Modal', () => {
   });
 
   test('the modal should receive focus on open', () => {
-    const { getByText } = render(<Modal.Dialog isOpen>Content</Modal.Dialog>, {
+    const { getByText } = render(<Modal isOpen>Content</Modal>, {
       container: document.body,
     });
     const modalElement = getByText(/Content/)!;

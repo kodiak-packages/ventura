@@ -2,8 +2,10 @@ import React, { ReactNode, useEffect } from 'react';
 import { Portal } from 'react-portal';
 import classNames from 'classnames';
 
-import cssReset from '../../../css-reset.module.css';
-import styles from './ModalDialog.module.css';
+import Footer from './ModalFooter/ModalFooter';
+
+import cssReset from '../../css-reset.module.css';
+import styles from './Modal.module.css';
 
 type Props = {
   title?: string;
@@ -21,7 +23,7 @@ const disableBodyScroll = (isDisabled: boolean) => {
   }
 };
 
-const ModalDialog: React.FC<Props> = ({
+const Modal: React.FC<Props> & { Footer: typeof Footer } = ({
   title,
   isOpen = false,
   onEscKeyDown,
@@ -63,4 +65,6 @@ const ModalDialog: React.FC<Props> = ({
   ) : null;
 };
 
-export default ModalDialog;
+Modal.Footer = Footer;
+
+export default Modal;
