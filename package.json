@@ -11,7 +11,7 @@
   ],
   "main": "dist/index.js",
   "scripts": {
-    "start": "docz dev",
+    "start": "rm -rf .docz && docz dev",
     "build": "rm -rf dist && tsc --project tsconfig-build.json && yarn copy:assets",
     "test": "jest --detectOpenHandles --watchAll",
     "document": "docz build",
