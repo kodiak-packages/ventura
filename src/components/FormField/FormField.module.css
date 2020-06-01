@@ -1,0 +1,18 @@
+.label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.errorMessage {
+  display: block;
+  margin-top: 5px;
+  color: var(--color-error);
+}
+
+.hint {
+  display: block;
+  margin-top: 5px;
+  color: var(--color-neutral-6);
+}
