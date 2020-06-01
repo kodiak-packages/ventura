@@ -1,6 +1,9 @@
 @import './theme.css';
 
-svg[viewBox='0 0 24 24'][stroke-linejoin='round'][stroke-linecap='round'] {
+/* Multiple issues open to set the default svg size */
+/* https://github.com/feathericons/react-feather/pull/62 */
+/* Remove this when a better solution is available */
+svg[viewBox='0 0 24 24'] {
   width: var(--font-size);
   height: var(--font-size);
 }
