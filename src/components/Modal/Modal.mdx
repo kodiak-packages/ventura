@@ -5,7 +5,7 @@ route: /modal
 ---
 
 import { Playground, Props } from 'docz';
-import { Button, Modal, Input } from '../../index.ts';
+import { Button, Modal, Input } from '../..';
 
 # Modal
 
@@ -25,13 +25,13 @@ A modal is a dialog that appears on top of the main content to require user inte
     return (
       <>
         <Button onClick={() => setIsOpen(true)}>Open basic modal</Button>
-        <Modal.Dialog title="This is the title" isOpen={isOpen}>
+        <Modal title="This is the title" isOpen={isOpen}>
           <span>Insert your text or form elements here</span>
           <Modal.Footer>
             <Button type='secondary' onClick={() => setIsOpen(false)}>Cancel</Button>
             <Button onClick={() => 'do some logic here'}>Create</Button>
           </Modal.Footer>
-        </Modal.Dialog>
+        </Modal>
       </>
     );
 }}
@@ -52,13 +52,13 @@ A modal is a dialog that appears on top of the main content to require user inte
     return (
       <>
         <Button onClick={() => setIsOpen(true)}>Create Todo</Button>
-        <Modal.Dialog title="Create a Todo" isOpen={isOpen}>
+        <Modal title="Create a Todo" isOpen={isOpen}>
           <Input />
           <Modal.Footer>
             <Button type='secondary' onClick={() => setIsOpen(false)}>Cancel</Button>
             <Button onClick={createHandler} isLoading={isLoading}>Create</Button>
           </Modal.Footer>
-        </Modal.Dialog>
+        </Modal>
       </>
     );
 }}
@@ -67,9 +67,9 @@ A modal is a dialog that appears on top of the main content to require user inte
 
 ## API
 
-### Modal.Dialog
+### Modal
 
-<Props of={Modal.Dialog} />
+<Props of={Modal} />
 
 ### Modal.Footer
 
