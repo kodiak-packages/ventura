@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { ReactNode, useContext } from 'react';
 import classNames from 'classnames';
 
 import { radioContext } from '../RadioGroup/RadioGroup';
@@ -8,7 +8,7 @@ import styles from './RadioItem.module.css';
 
 export interface Props {
   value: string;
-  label: string;
+  label: ReactNode;
   description?: string;
   className?: string;
   isDisabled?: boolean;
@@ -21,7 +21,7 @@ const RadioItem = React.forwardRef<HTMLInputElement, Props>(
     if (groupContext === null) {
       // eslint-disable-next-line no-console
       console.warn(
-        `The ${label} Radio.Item component needs to wrapped in a Radio.Group component.`,
+        `The ${value} Radio.Item component needs to wrapped in a Radio.Group component.`,
       );
       return null;
     }
