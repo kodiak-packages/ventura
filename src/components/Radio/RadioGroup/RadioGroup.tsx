@@ -5,14 +5,14 @@ import styles from '../../../css-reset.module.css';
 
 export interface RadioContext {
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  selectedValue: string;
+  selectedValue?: string;
   groupRef?: React.Ref<HTMLInputElement>;
   name: string;
 }
 
 export interface Props {
   children: React.ReactNode;
-  defaultValue: RadioContext['selectedValue'];
+  defaultValue?: RadioContext['selectedValue'];
   name: string;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   groupRef?: React.Ref<HTMLInputElement>;
