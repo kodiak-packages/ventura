@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
 
-import styles from '../../../css-reset.module.css';
+import cssReset from '../../../css-reset.module.css';
+import styles from './RadioGroup.module.css';
 
 export interface RadioContext {
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
@@ -38,7 +39,7 @@ const RadioGroup: React.FC<Props> = ({
     }
   };
 
-  const mergedClassNames = classNames(styles.ventura, className);
+  const mergedClassNames = classNames(cssReset.ventura, styles.group, className);
 
   return (
     <radioContext.Provider value={{ selectedValue, onChange: onRadioItemChange, name, groupRef }}>
