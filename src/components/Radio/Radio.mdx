@@ -26,9 +26,7 @@ The `Radio.Item` component must be wrapped in a `Radio.Group` component to funct
 <Playground>
   <Radio.Group name="classes1" defaultValue="react">
     <Radio.Item value="react" label="Introduction To React" />
-    <br />
     <Radio.Item value="docker" label="Introduction To Docker" />
-    <br />
     <Radio.Item value="python" label="Introduction To Python" />
   </Radio.Group>
 </Playground>
@@ -40,9 +38,7 @@ The label property on the button component also accepts JSX. This allows you to 
 <Playground>
   <Radio.Group name="classes2" defaultValue="react">
     <Radio.Item value="react" label={<React.Fragment><img src={reactImage} style={{ height: '20px', marginRight: '6px'}} />Introduction To React</React.Fragment>} />
-    <br />
     <Radio.Item value="docker" label={<React.Fragment><img src={dockerImage} style={{ height: '20px', marginRight: '6px'}} />Introduction To Docker</React.Fragment>}/>
-    <br />
     <Radio.Item value="python" label={<React.Fragment><img src={pythonImage} style={{ height: '20px', marginRight: '6px'}} />Introduction To Python</React.Fragment>} />
   </Radio.Group>
 </Playground>
@@ -52,9 +48,7 @@ The label property on the button component also accepts JSX. This allows you to 
 <Playground>
   <Radio.Group name="classes3" defaultValue="react">
     <Radio.Item value="react" label="Introduction To React" description="This course is for React newbies and anyone looking to build a solid foundation. It’s designed to teach you everything you need to start building web applications in React right away."/>
-    <br />
     <Radio.Item value="docker" label="Introduction To Docker" description="In this course we will take a simple Node.js app that connects to a MongoDB database and uses an Express web server, and how to properly “Dockerize” the app."/>
-    <br />
     <Radio.Item value="python" label="Introduction To Python" description="At the end of this course, you’ll have a great working knowledge of Python, fully capable of creating your own Python projects from scratch or jumping into an existing application."/>
   </Radio.Group>
 </Playground>
@@ -64,9 +58,7 @@ The label property on the button component also accepts JSX. This allows you to 
 <Playground>
   <Radio.Group name="classes4" defaultValue="react">
     <Radio.Item isDisabled value="react" label="Introduction To React" description="This course is for React newbies and anyone looking to build a solid foundation. It’s designed to teach you everything you need to start building web applications in React right away."/>
-    <br />
     <Radio.Item isDisabled value="docker" label="Introduction To Docker" description="In this course we will take a simple Node.js app that connects to a MongoDB database and uses an Express web server, and how to properly “Dockerize” the app."/>
-    <br />
     <Radio.Item isDisabled value="python" label="Introduction To Python" description="At the end of this course, you’ll have a great working knowledge of Python, fully capable of creating your own Python projects from scratch or jumping into an existing application."/>
   </Radio.Group>
 </Playground>
