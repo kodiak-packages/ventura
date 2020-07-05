@@ -1,5 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Button button should have type="submit" 1`] = `
+<DocumentFragment>
+  <button
+    class="ventura button typePrimary"
+    data-testid="button-submit"
+    type="submit"
+  >
+    <span
+      class=""
+    >
+      Click me
+    </span>
+  </button>
+</DocumentFragment>
+`;
+
 exports[`Button default snapshot 1`] = `
 <DocumentFragment>
   <button

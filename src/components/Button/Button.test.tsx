@@ -85,6 +85,22 @@ describe('Button', () => {
     expect(onClickFn).toHaveBeenCalledTimes(0);
   });
 
+  test('button should have type="submit"', () => {
+    const component = (
+      <Button isSubmit name="submit">
+        Click me
+      </Button>
+    );
+    const { asFragment, getByTestId } = render(component);
+
+    expect(asFragment()).toMatchSnapshot();
+
+    const button = getByTestId('button-submit');
+
+    expect(button.hasAttribute('type')).toBe(true);
+    expect(button.getAttribute('type')).toBe('submit');
+  });
+
   test('prefix icon button', () => {
     const component = <Button prefixIcon={<GitHub />}>Click me</Button>;
     const { asFragment } = render(component);
