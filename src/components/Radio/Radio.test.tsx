@@ -6,7 +6,7 @@ import Radio from './Radio';
 describe('Radio', () => {
   test('default snapshot', () => {
     const component = (
-      <Radio.Group name="default" defaultValue="test1">
+      <Radio.Group name="default" value="test1">
         <Radio.Item value="test1" label="Test option 1" />
         <Radio.Item value="test2" label="Test option 2" />
         <Radio.Item value="test3" label="Test option 3" />
@@ -18,7 +18,7 @@ describe('Radio', () => {
 
   test('description snapshot', () => {
     const component = (
-      <Radio.Group name="default" defaultValue="test1">
+      <Radio.Group name="default" value="test1">
         <Radio.Item value="test1" label="Test option 1" description="Lalalalalalala" />
         <Radio.Item value="test2" label="Test option 2" description="Lololololololo" />
         <Radio.Item value="test3" label="Test option 3" description="Lelelelelelele" />
@@ -32,7 +32,7 @@ describe('Radio', () => {
     const onChangeFn = jest.fn();
 
     const component = (
-      <Radio.Group name="default" defaultValue="test1" onChange={onChangeFn}>
+      <Radio.Group name="default" value="test1" onChange={onChangeFn}>
         <Radio.Item value="test1" label="Test option 1" />
         <Radio.Item value="test2" label="Test option 2" />
         <Radio.Item value="test3" label="Test option 3" />
@@ -57,7 +57,7 @@ describe('Radio', () => {
     const onChangeFn = jest.fn();
 
     const component = (
-      <Radio.Group name="default" defaultValue="test1" onChange={onChangeFn}>
+      <Radio.Group name="default" value="test1" onChange={onChangeFn}>
         <Radio.Item isDisabled value="test1" label="Test option 1" />
         <Radio.Item isDisabled value="test2" label="Test option 2" />
         <Radio.Item isDisabled value="test3" label="Test option 3" />
@@ -78,7 +78,7 @@ describe('Radio', () => {
   test('className prop', () => {
     const className = 'center';
     const component = (
-      <Radio.Group name="default" defaultValue="test1">
+      <Radio.Group name="default" value="test1">
         <Radio.Item className={className} value="test1" label="Test option 1" />
         <Radio.Item value="test2" label="Test option 2" />
         <Radio.Item value="test3" label="Test option 3" />

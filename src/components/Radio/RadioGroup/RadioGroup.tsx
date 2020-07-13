@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import classNames from 'classnames';
 
 import cssReset from '../../../css-reset.module.css';
@@ -13,7 +13,7 @@ export interface RadioContext {
 
 export interface Props {
   children: React.ReactNode;
-  defaultValue?: RadioContext['selectedValue'];
+  value?: RadioContext['selectedValue'];
   name: string;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   groupRef?: React.Ref<HTMLInputElement>;
@@ -24,16 +24,13 @@ export const radioContext = React.createContext<RadioContext | null>(null);
 
 const RadioGroup: React.FC<Props> = ({
   children,
-  defaultValue,
+  value,
   onChange,
   name,
   groupRef,
   className,
 }: Props) => {
-  const [selectedValue, setSelectedValue] = useState(defaultValue);
-
   const onRadioItemChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSelectedValue(e.target.value);
     if (onChange) {
       onChange(e);
     }
@@ -41,8 +38,10 @@ const RadioGroup: React.FC<Props> = ({
 
   const mergedClassNames = classNames(cssReset.ventura, styles.group, className);
 
+  const radioContextValues = { selectedValue: value, onChange: onRadioItemChange, name, groupRef };
+
   return (
-    <radioContext.Provider value={{ selectedValue, onChange: onRadioItemChange, name, groupRef }}>
+    <radioContext.Provider value={radioContextValues}>
       <div className={mergedClassNames}>{children}</div>
     </radioContext.Provider>
   );
