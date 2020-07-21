@@ -5,6 +5,7 @@ exports[`Button button should have type="submit" 1`] = `
   <button
     class="ventura button typePrimary"
     data-testid="button-test"
+    name="test"
     type="submit"
   >
     <span
@@ -38,6 +39,7 @@ exports[`Button loading button 1`] = `
     class="ventura button typePrimary"
     data-testid="button-loading"
     disabled=""
+    name="loading"
     type="button"
   >
     <svg

@@ -53,6 +53,7 @@ const Button: React.FC<Props> = ({
       className={buttonClassNames}
       type={htmlType}
       onClick={isLoading || suffixIcon ? undefined : onClick}
+      name={name}
       data-testid={`button-${name}`}
     >
       {isLoading ? <Spinner className={styles.spinner} /> : prefixIcon}
