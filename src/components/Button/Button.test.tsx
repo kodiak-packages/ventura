@@ -87,7 +87,7 @@ describe('Button', () => {
 
   test('button should have type="submit"', () => {
     const component = (
-      <Button isSubmit name="submit">
+      <Button htmlType="submit" name="test">
         Click me
       </Button>
     );
@@ -95,7 +95,7 @@ describe('Button', () => {
 
     expect(asFragment()).toMatchSnapshot();
 
-    const button = getByTestId('button-submit');
+    const button = getByTestId('button-test');
 
     expect(button.hasAttribute('type')).toBe(true);
     expect(button.getAttribute('type')).toBe('submit');
