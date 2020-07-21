@@ -4,7 +4,7 @@ exports[`Button button should have type="submit" 1`] = `
 <DocumentFragment>
   <button
     class="ventura button typePrimary"
-    data-testid="button-submit"
+    data-testid="button-test"
     type="submit"
   >
     <span
