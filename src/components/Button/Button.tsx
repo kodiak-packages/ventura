@@ -13,6 +13,7 @@ interface Props {
   className?: string;
   isDisabled?: boolean;
   isLoading?: boolean;
+  htmlType?: 'button' | 'submit';
   prefixIcon?: React.ReactElement;
   suffixIcon?: React.ReactElement;
   name?: string;
@@ -25,6 +26,7 @@ const Button: React.FC<Props> = ({
   className,
   isDisabled,
   isLoading,
+  htmlType = 'button',
   prefixIcon,
   suffixIcon,
   name,
@@ -45,10 +47,11 @@ const Button: React.FC<Props> = ({
   });
 
   return (
+    // eslint-disable-next-line react/button-has-type
     <button
       disabled={isDisabled || isLoading}
       className={buttonClassNames}
-      type="button"
+      type={htmlType}
       onClick={isLoading || suffixIcon ? undefined : onClick}
       data-testid={`button-${name}`}
     >
