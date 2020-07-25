@@ -4,10 +4,11 @@
   padding: 5.5px 14px;
   border: none;
   cursor: pointer;
-  display: flex;
+  display: inline-flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  vertical-align: middle;
 }
 
 .typePrimary:hover {
@@ -20,12 +21,12 @@
 
 .typePrimary:focus {
   outline: none;
-  box-shadow: 0 0 0 3px var(--color-focus);
+  box-shadow: 0 0 0 2px var(--color-focus);
 }
 
 .typeSecondary:focus {
   outline: none;
-  box-shadow: 0 0 0 3px var(--color-focus);
+  box-shadow: 0 0 0 2px var(--color-focus);
 }
 
 .typePrimary,
@@ -46,14 +47,19 @@
 
 .labelWithPrefixIcon {
   margin-left: 8px;
+  flex-shrink: 0;
 }
 
 .labelWithSuffixIcon {
   margin-right: 8px;
 }
 
+.medium {
+  line-height: 17px;
+}
+
 .small {
-  line-height: 18px;
+  line-height: 14px;
 }
 
 .spinner {
