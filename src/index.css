@@ -6,4 +6,5 @@
 svg[viewBox='0 0 24 24'] {
   width: var(--font-size);
   height: var(--font-size);
+  vertical-align: middle;
 }

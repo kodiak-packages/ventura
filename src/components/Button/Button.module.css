@@ -4,11 +4,7 @@
   padding: 5.5px 14px;
   border: none;
   cursor: pointer;
-  display: inline-flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  vertical-align: middle;
+  display: inline-block;
 }
 
 .typePrimary:hover {
@@ -47,7 +43,6 @@
 
 .labelWithPrefixIcon {
   margin-left: 8px;
-  flex-shrink: 0;
 }
 
 .labelWithSuffixIcon {
@@ -60,6 +55,7 @@
 
 .small {
   line-height: 14px;
+  max-height: 25px;
 }
 
 .spinner {
