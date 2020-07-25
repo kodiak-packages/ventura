@@ -52,6 +52,10 @@
   margin-right: 8px;
 }
 
+.small {
+  line-height: 18px;
+}
+
 .spinner {
   width: 14px;
   height: 14px;
