@@ -2,7 +2,21 @@
   text-align: left;
   height: 32px;
   line-height: 32px;
-  padding: 0 14px;
+  padding-left: 14px;
+  padding-right: 6px;
+  vertical-align: middle;
+}
+
+.cellAlignLeft {
+  text-align: left;
+}
+
+.cellAlignRight {
+  text-align: right;
+}
+
+.cellAlignCenter {
+  text-align: center;
 }
 
 .cell:hover ~ .cell {

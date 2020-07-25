@@ -7,13 +7,23 @@ type Props = {
   className?: string;
   children?: React.ReactNode;
   colSpan?: number;
+  align?: 'center' | 'left' | 'right';
 };
 
-const TableCell: React.FC<Props> = ({ className, children, colSpan }: Props) => {
-  const tableClassNames = classNames(styles.cell, styles.row, className);
+const TableCell: React.FC<Props> = ({ className, children, colSpan, align = 'left' }: Props) => {
+  const tableCellClassNames = classNames(
+    {
+      [styles.cellAlignLeft]: align === 'left',
+      [styles.cellAlignRight]: align === 'right',
+      [styles.cellAlignCenter]: align === 'center',
+    },
+    styles.cell,
+    styles.row,
+    className,
+  );
 
   return (
-    <td colSpan={colSpan} className={tableClassNames}>
+    <td colSpan={colSpan} className={tableCellClassNames}>
       {children}
     </td>
   );
