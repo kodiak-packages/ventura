@@ -1,0 +1,84 @@
+---
+name: Table
+menu: Components
+route: /table
+---
+
+import { Playground, Props } from 'docz';
+import { Table } from '../..';
+
+# Table
+
+A table display data in a familiar structure. Making it easy for the user to read.
+
+## Best practices
+
+Use the different building block to correctly structure your table:
+
+- `Table`
+- `Table.Header`
+- `Table.HeaderCell`
+- `Table.Body`
+- `Table.Row`
+- `Table.Cell`
+
+## Examples
+
+### Basic usage
+
+<Playground>
+    <Table>
+      <Table.Header>
+        <Table.HeaderCell>
+          First name
+        </Table.HeaderCell>
+        <Table.HeaderCell>
+          Last name
+        </Table.HeaderCell>
+      </Table.Header>
+      <Table.Body>
+        <Table.Row>
+          <Table.Cell>
+            Bram
+          </Table.Cell>
+          <Table.Cell>
+            Vanhoutte
+          </Table.Cell>
+        </Table.Row>
+        <Table.Row>
+          <Table.Cell>
+            Robin
+          </Table.Cell>
+          <Table.Cell>
+            Wijnant
+          </Table.Cell>
+        </Table.Row>
+      </Table.Body>
+    </Table>
+</Playground>
+
+## API
+
+### Table
+
+<Props of={Table} />
+
+### Table.Header
+
+<Props of={Table.Header} />
+
+### Table.HeaderCell
+
+<Props of={Table.HeaderCell} />
+
+### Table.Body
+
+<Props of={Table.Body} />
+
+### Table.Row
+
+<Props of={Table.Row} />
+
+### Table.Row
+
+<Props of={Table.Cell} />
