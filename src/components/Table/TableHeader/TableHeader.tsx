@@ -13,7 +13,7 @@ const TableHeader: React.FC<Props> = ({ className, children }: Props) => {
 
   return (
     <thead className={tableClassNames}>
-      <tr>{children}</tr>
+      <tr className={styles.headerRow}>{children}</tr>
     </thead>
   );
 };

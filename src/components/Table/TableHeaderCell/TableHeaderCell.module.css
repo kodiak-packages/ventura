@@ -1,3 +1,16 @@
-headerCell {
+.headerCell {
+  background-color: var(--color-primary-hover);
+  text-align: left;
+  height: 36px;
+  line-height: 36px;
+  padding: 0 14px;
+  color: var(--font-color-sub)
+}
 
+.headerCell:first-child {
+  border-radius: var(--border-radius-small) 0 0 var(--border-radius-small);
+}
+
+.headerCell:last-child {
+  border-radius: 0 var(--border-radius-small) var(--border-radius-small) 0;
 }
