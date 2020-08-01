@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { CellContext, cellContext } from '../TableCell/TableCell';
+import { CellContext, CellContext } from '../TableCell/TableCell';
 
 type Props = {
   className?: string;
@@ -12,9 +12,9 @@ const TableHeader: React.FC<Props> = ({ className, children }: Props) => {
 
   return (
     <thead className={className}>
-      <cellContext.Provider value={cellContextValues}>
+      <CellContext.Provider value={cellContextValues}>
         <tr>{children}</tr>
-      </cellContext.Provider>
+      </CellContext.Provider>
     </thead>
   );
 };

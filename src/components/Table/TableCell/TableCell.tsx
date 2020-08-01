@@ -14,10 +14,10 @@ export interface CellContext {
   location: 'body' | 'header';
 }
 
-export const cellContext = React.createContext<CellContext>({ location: 'body' });
+export const CellContext = React.createContext<CellContext>({ location: 'body' });
 
 const TableCell: React.FC<Props> = ({ className, children, colSpan, align = 'left' }: Props) => {
-  const cellContextValue = useContext(cellContext);
+  const cellContextValue = useContext(CellContext);
 
   const tableCellClassNames = classNames(
     {

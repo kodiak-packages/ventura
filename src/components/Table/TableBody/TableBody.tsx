@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { CellContext, cellContext } from '../TableCell/TableCell';
+import { CellContext, CellContext } from '../TableCell/TableCell';
 
 type Props = {
   className?: string;
@@ -14,7 +14,7 @@ const TableBody: React.FC<Props> = ({ className, children }: Props) => {
 
   return (
     <tbody className={className}>
-      <cellContext.Provider value={cellContextValues}>{children}</cellContext.Provider>
+      <CellContext.Provider value={cellContextValues}>{children}</CellContext.Provider>
     </tbody>
   );
 };

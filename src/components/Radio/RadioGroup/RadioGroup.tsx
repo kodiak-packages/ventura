@@ -20,7 +20,7 @@ export interface Props {
   className?: string;
 }
 
-export const radioContext = React.createContext<RadioContext | null>(null);
+export const RadioContext = React.createContext<RadioContext | null>(null);
 
 const RadioGroup: React.FC<Props> = ({
   children,
@@ -41,9 +41,9 @@ const RadioGroup: React.FC<Props> = ({
   const radioContextValues = { selectedValue: value, onChange: onRadioItemChange, name, groupRef };
 
   return (
-    <radioContext.Provider value={radioContextValues}>
+    <RadioContext.Provider value={radioContextValues}>
       <div className={mergedClassNames}>{children}</div>
-    </radioContext.Provider>
+    </RadioContext.Provider>
   );
 };
 
