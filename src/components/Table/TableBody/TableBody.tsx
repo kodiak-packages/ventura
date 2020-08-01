@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { CellContext, CellContext } from '../TableCell/TableCell';
+import { CellContext, CellContextValue } from '../TableCell/TableCell';
 
 type Props = {
   className?: string;
@@ -8,7 +8,7 @@ type Props = {
 };
 
 const TableBody: React.FC<Props> = ({ className, children }: Props) => {
-  const cellContextValues: CellContext = {
+  const cellContextValues: CellContextValue = {
     location: 'body',
   };
 

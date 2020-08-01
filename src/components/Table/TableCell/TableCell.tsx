@@ -10,11 +10,11 @@ type Props = {
   align?: 'center' | 'left' | 'right';
 };
 
-export interface CellContext {
+export interface CellContextValue {
   location: 'body' | 'header';
 }
 
-export const CellContext = React.createContext<CellContext>({ location: 'body' });
+export const CellContext = React.createContext<CellContextValue>({ location: 'body' });
 
 const TableCell: React.FC<Props> = ({ className, children, colSpan, align = 'left' }: Props) => {
   const cellContextValue = useContext(CellContext);
