@@ -24,9 +24,9 @@ describe('Table', () => {
     const component = (
       <Table>
         <Table.Header>
-          <Table.HeaderCell>Course</Table.HeaderCell>
-          <Table.HeaderCell>Length</Table.HeaderCell>
-          <Table.HeaderCell>Status</Table.HeaderCell>
+          <Table.Cell>Course</Table.Cell>
+          <Table.Cell>Length</Table.Cell>
+          <Table.Cell>Status</Table.Cell>
         </Table.Header>
         <Table.Body>
           {courses.map((course) => {

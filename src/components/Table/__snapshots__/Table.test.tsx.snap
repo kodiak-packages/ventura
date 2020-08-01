@@ -29,17 +29,17 @@ exports[`Table default snapshot 1`] = `
         class="row"
       >
         <td
-          class="cellAlignLeft cell row"
+          class="cellAlignLeft cell"
         >
           Course 1
         </td>
         <td
-          class="cellAlignLeft cell row"
+          class="cellAlignLeft cell"
         >
           2h
         </td>
         <td
-          class="cellAlignLeft cell row"
+          class="cellAlignLeft cell"
         >
           done
         </td>
@@ -48,17 +48,17 @@ exports[`Table default snapshot 1`] = `
         class="row"
       >
         <td
-          class="cellAlignLeft cell row"
+          class="cellAlignLeft cell"
         >
           Course 2
         </td>
         <td
-          class="cellAlignLeft cell row"
+          class="cellAlignLeft cell"
         >
           4h
         </td>
         <td
-          class="cellAlignLeft cell row"
+          class="cellAlignLeft cell"
         >
           in progress
         </td>
@@ -67,17 +67,17 @@ exports[`Table default snapshot 1`] = `
         class="row"
       >
         <td
-          class="cellAlignLeft cell row"
+          class="cellAlignLeft cell"
         >
           Course 3
         </td>
         <td
-          class="cellAlignLeft cell row"
+          class="cellAlignLeft cell"
         >
           1h
         </td>
         <td
-          class="cellAlignLeft cell row"
+          class="cellAlignLeft cell"
         >
           in progress
         </td>
@@ -86,17 +86,17 @@ exports[`Table default snapshot 1`] = `
         class="row"
       >
         <td
-          class="cellAlignLeft cell row"
+          class="cellAlignLeft cell"
         >
           Course 4
         </td>
         <td
-          class="cellAlignLeft cell row"
+          class="cellAlignLeft cell"
         >
           3h 43m
         </td>
         <td
-          class="cellAlignLeft cell row"
+          class="cellAlignLeft cell"
         >
           not started
         </td>
@@ -105,17 +105,17 @@ exports[`Table default snapshot 1`] = `
         class="row"
       >
         <td
-          class="cellAlignLeft cell row"
+          class="cellAlignLeft cell"
         >
           Course 5
         </td>
         <td
-          class="cellAlignLeft cell row"
+          class="cellAlignLeft cell"
         >
           1h
         </td>
         <td
-          class="cellAlignLeft cell row"
+          class="cellAlignLeft cell"
         >
           in progress
         </td>
@@ -124,17 +124,17 @@ exports[`Table default snapshot 1`] = `
         class="row"
       >
         <td
-          class="cellAlignLeft cell row"
+          class="cellAlignLeft cell"
         >
           Course 6
         </td>
         <td
-          class="cellAlignLeft cell row"
+          class="cellAlignLeft cell"
         >
           2h 15m
         </td>
         <td
-          class="cellAlignLeft cell row"
+          class="cellAlignLeft cell"
         >
           not started
         </td>
@@ -143,17 +143,17 @@ exports[`Table default snapshot 1`] = `
         class="row"
       >
         <td
-          class="cellAlignLeft cell row"
+          class="cellAlignLeft cell"
         >
           Course 7
         </td>
         <td
-          class="cellAlignLeft cell row"
+          class="cellAlignLeft cell"
         >
           3h
         </td>
         <td
-          class="cellAlignLeft cell row"
+          class="cellAlignLeft cell"
         >
           done
         </td>
