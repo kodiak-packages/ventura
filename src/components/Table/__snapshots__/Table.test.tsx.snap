@@ -5,12 +5,8 @@ exports[`Table default snapshot 1`] = `
   <table
     class="ventura table"
   >
-    <thead
-      class="header"
-    >
-      <tr
-        class="headerRow"
-      >
+    <thead>
+      <tr>
         <th
           class="cellAlignLeft headerCell"
         >
@@ -28,9 +24,7 @@ exports[`Table default snapshot 1`] = `
         </th>
       </tr>
     </thead>
-    <tbody
-      class="body"
-    >
+    <tbody>
       <tr
         class="row"
       >

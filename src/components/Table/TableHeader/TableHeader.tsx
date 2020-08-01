@@ -1,7 +1,4 @@
 import React from 'react';
-import classNames from 'classnames';
-
-import styles from './TableHeader.module.css';
 
 type Props = {
   className?: string;
@@ -9,11 +6,9 @@ type Props = {
 };
 
 const TableHeader: React.FC<Props> = ({ className, children }: Props) => {
-  const tableClassNames = classNames(styles.header, className);
-
   return (
-    <thead className={tableClassNames}>
-      <tr className={styles.headerRow}>{children}</tr>
+    <thead className={className}>
+      <tr>{children}</tr>
     </thead>
   );
 };

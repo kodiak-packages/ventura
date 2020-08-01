@@ -31,7 +31,7 @@ describe('Table', () => {
         <Table.Body>
           {courses.map((course) => {
             return (
-              <Table.Row>
+              <Table.Row key={course.name}>
                 <Table.Cell>{course.name}</Table.Cell>
                 <Table.Cell>{course.length}</Table.Cell>
                 <Table.Cell>{course.status}</Table.Cell>
