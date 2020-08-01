@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import cssReset from '../../../css-reset.module.css';
 import styles from './RadioGroup.module.css';
 
-export interface RadioContext {
+export interface RadioContextValue {
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   selectedValue?: string;
   groupRef?: React.Ref<HTMLInputElement>;
@@ -13,14 +13,14 @@ export interface RadioContext {
 
 export interface Props {
   children: React.ReactNode;
-  value?: RadioContext['selectedValue'];
+  value?: RadioContextValue['selectedValue'];
   name: string;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   groupRef?: React.Ref<HTMLInputElement>;
   className?: string;
 }
 
-export const radioContext = React.createContext<RadioContext | null>(null);
+export const RadioContext = React.createContext<RadioContextValue | null>(null);
 
 const RadioGroup: React.FC<Props> = ({
   children,
@@ -41,9 +41,9 @@ const RadioGroup: React.FC<Props> = ({
   const radioContextValues = { selectedValue: value, onChange: onRadioItemChange, name, groupRef };
 
   return (
-    <radioContext.Provider value={radioContextValues}>
+    <RadioContext.Provider value={radioContextValues}>
       <div className={mergedClassNames}>{children}</div>
-    </radioContext.Provider>
+    </RadioContext.Provider>
   );
 };
 

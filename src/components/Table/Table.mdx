@@ -1,0 +1,130 @@
+---
+name: Table
+menu: Components
+route: /table
+---
+
+import { Playground, Props } from 'docz';
+import { Table, Button, CheckCircle, Circle, PauseCircle, Share2 } from '../..';
+
+# Table
+
+A table displays data in a familiar structure, making it easy to read.
+
+## Best practices
+
+Use the different building block to correctly structure your table:
+
+- `Table`
+- `Table.Header`
+- `Table.Body`
+- `Table.Row`
+- `Table.Cell`
+
+## Examples
+
+### Basic usage
+
+<Playground>
+    <Table>
+      <Table.Header>
+        <Table.Cell>
+          Course
+        </Table.Cell>
+        <Table.Cell>
+          Length
+        </Table.Cell>
+        <Table.Cell colSpan={2}>
+          Status
+        </Table.Cell>
+      </Table.Header>
+      <Table.Body>
+        <Table.Row>
+          <Table.Cell>
+           Introduction To React
+          </Table.Cell>
+          <Table.Cell>
+            2h 27m
+          </Table.Cell>
+           <Table.Cell>
+            <CheckCircle /> Finished
+          </Table.Cell>
+           <Table.Cell align="right">
+            <Button type="primary" size="small">Open</Button>
+            {' '}
+            <Button type="primary" size="small" prefixIcon={<Share2 />}>Share</Button>
+          </Table.Cell>
+        </Table.Row>
+        <Table.Row>
+          <Table.Cell>
+           Introduction To Docker
+          </Table.Cell>
+          <Table.Cell>
+            33m
+          </Table.Cell>
+           <Table.Cell>
+           <Circle /> Not started
+          </Table.Cell>
+          <Table.Cell align="right">
+            <Button type="secondary" size="small">Open</Button>
+            {' '}
+            <Button type="secondary" size="small" prefixIcon={<Share2 />}>Share</Button>
+          </Table.Cell>
+        </Table.Row>
+        <Table.Row>
+          <Table.Cell>
+           Introduction To Python
+          </Table.Cell>
+          <Table.Cell>
+            1h 45m
+          </Table.Cell>
+           <Table.Cell>
+            <Circle /> Not started
+          </Table.Cell>
+          <Table.Cell align="right">
+            <Button type="primary" size="small">Open</Button>
+            {' '}
+            <Button type="primary" size="small" prefixIcon={<Share2 />}>Share</Button>
+          </Table.Cell>
+        </Table.Row>
+        <Table.Row>
+          <Table.Cell>
+           Introduction To Ventura
+          </Table.Cell>
+          <Table.Cell>
+           15m
+          </Table.Cell>
+           <Table.Cell>
+            <PauseCircle /> In progress
+          </Table.Cell>
+          <Table.Cell align="right">
+            <Button type="secondary" size="small">Open</Button>
+            {' '}
+            <Button type="secondary" size="small" prefixIcon={<Share2 />}>Share</Button>
+          </Table.Cell>
+        </Table.Row>
+      </Table.Body>
+    </Table>
+</Playground>
+
+## API
+
+### Table
+
+<Props of={Table} />
+
+### Table.Header
+
+<Props of={Table.Header} />
+
+### Table.Body
+
+<Props of={Table.Body} />
+
+### Table.Row
+
+<Props of={Table.Row} />
+
+### Table.Cell
+
+<Props of={Table.Cell} />

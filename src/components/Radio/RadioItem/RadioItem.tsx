@@ -1,7 +1,7 @@
 import React, { ReactNode, useContext } from 'react';
 import classNames from 'classnames';
 
-import { radioContext } from '../RadioGroup/RadioGroup';
+import { RadioContext } from '../RadioGroup/RadioGroup';
 
 import cssReset from '../../../css-reset.module.css';
 import styles from './RadioItem.module.css';
@@ -16,7 +16,7 @@ export interface Props {
 
 const RadioItem = React.forwardRef<HTMLInputElement, Props>(
   ({ value, label, description, className, isDisabled = false }: Props, ref) => {
-    const groupContext = useContext(radioContext);
+    const groupContext = useContext(RadioContext);
 
     if (groupContext === null) {
       // eslint-disable-next-line no-console

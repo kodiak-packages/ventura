@@ -1,0 +1,7 @@
+.row:nth-of-type(even) td {
+  background-color: var(--color-primary);
+}
+
+.row:hover td {
+  background-color: var(--color-primary-hover);
+}

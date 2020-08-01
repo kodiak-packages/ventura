@@ -1,0 +1,164 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Table default snapshot 1`] = `
+<DocumentFragment>
+  <table
+    class="ventura table"
+  >
+    <thead>
+      <tr>
+        <th
+          class="cellAlignLeft headerCell"
+        >
+          Course
+        </th>
+        <th
+          class="cellAlignLeft headerCell"
+        >
+          Length
+        </th>
+        <th
+          class="cellAlignLeft headerCell"
+        >
+          Status
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        class="row"
+      >
+        <td
+          class="cellAlignLeft cell"
+        >
+          Course 1
+        </td>
+        <td
+          class="cellAlignLeft cell"
+        >
+          2h
+        </td>
+        <td
+          class="cellAlignLeft cell"
+        >
+          done
+        </td>
+      </tr>
+      <tr
+        class="row"
+      >
+        <td
+          class="cellAlignLeft cell"
+        >
+          Course 2
+        </td>
+        <td
+          class="cellAlignLeft cell"
+        >
+          4h
+        </td>
+        <td
+          class="cellAlignLeft cell"
+        >
+          in progress
+        </td>
+      </tr>
+      <tr
+        class="row"
+      >
+        <td
+          class="cellAlignLeft cell"
+        >
+          Course 3
+        </td>
+        <td
+          class="cellAlignLeft cell"
+        >
+          1h
+        </td>
+        <td
+          class="cellAlignLeft cell"
+        >
+          in progress
+        </td>
+      </tr>
+      <tr
+        class="row"
+      >
+        <td
+          class="cellAlignLeft cell"
+        >
+          Course 4
+        </td>
+        <td
+          class="cellAlignLeft cell"
+        >
+          3h 43m
+        </td>
+        <td
+          class="cellAlignLeft cell"
+        >
+          not started
+        </td>
+      </tr>
+      <tr
+        class="row"
+      >
+        <td
+          class="cellAlignLeft cell"
+        >
+          Course 5
+        </td>
+        <td
+          class="cellAlignLeft cell"
+        >
+          1h
+        </td>
+        <td
+          class="cellAlignLeft cell"
+        >
+          in progress
+        </td>
+      </tr>
+      <tr
+        class="row"
+      >
+        <td
+          class="cellAlignLeft cell"
+        >
+          Course 6
+        </td>
+        <td
+          class="cellAlignLeft cell"
+        >
+          2h 15m
+        </td>
+        <td
+          class="cellAlignLeft cell"
+        >
+          not started
+        </td>
+      </tr>
+      <tr
+        class="row"
+      >
+        <td
+          class="cellAlignLeft cell"
+        >
+          Course 7
+        </td>
+        <td
+          class="cellAlignLeft cell"
+        >
+          3h
+        </td>
+        <td
+          class="cellAlignLeft cell"
+        >
+          done
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</DocumentFragment>
+`;
