@@ -19,16 +19,21 @@ import pythonImage from './docAssets/python.png'
 
 Radio buttons are made up of two components working together. The `Radio.Group` and `Radio.Item` component.
 
-The `Radio.Group` component controls the name of the radio buttons and the onChange event. Each `Radio.Group` name property should be unique. The `Radio.Item` component contains the value and label of the radio buttons. You add one `Radio.Item` per option.
+The `Radio.Group` component controls the name of the radio buttons and the onChange event. Each `Radio.Group` name property should be unique. The `Radio.Item` component contains the value and label of the radio buttons.
 
 The `Radio.Item` component must be wrapped in a `Radio.Group` component to function properly.
 
 <Playground>
-  <Radio.Group name="classes1" value="react">
-    <Radio.Item value="react" label="Introduction To React" />
-    <Radio.Item value="docker" label="Introduction To Docker" />
-    <Radio.Item value="python" label="Introduction To Python" />
-  </Radio.Group>
+  {() => {
+    const [selectedValue, setSelectedValue] = React.useState('react')
+    return (
+      <Radio.Group name="classes1" value={selectedValue} onChange={(e) => setSelectedValue(e.target.value)}>
+        <Radio.Item value="react" label="Introduction To React" />
+        <Radio.Item value="docker" label="Introduction To Docker" />
+        <Radio.Item value="python" label="Introduction To Python" />
+      </Radio.Group>
+    )
+  }}
 </Playground>
 
 ### Custom label with Icon
@@ -36,31 +41,46 @@ The `Radio.Item` component must be wrapped in a `Radio.Group` component to funct
 The label property on the button component also accepts JSX. This allows you to display custom components in the radio button label, like icons.
 
 <Playground>
-  <Radio.Group name="classes2" value="react">
-    <Radio.Item value="react" label={<React.Fragment><img src={reactImage} style={{ height: '20px', marginRight: '6px'}} />Introduction To React</React.Fragment>} />
-    <Radio.Item value="docker" label={<React.Fragment><img src={dockerImage} style={{ height: '20px', marginRight: '6px'}} />Introduction To Docker</React.Fragment>}/>
-    <Radio.Item value="python" label={<React.Fragment><img src={pythonImage} style={{ height: '20px', marginRight: '6px'}} />Introduction To Python</React.Fragment>} />
-  </Radio.Group>
+  {() => {
+    const [selectedValue, setSelectedValue] = React.useState('react')
+    return (
+      <Radio.Group name="classes2" value={selectedValue} onChange={(e) => setSelectedValue(e.target.value)}>
+        <Radio.Item value="react" label={<React.Fragment><img src={reactImage} style={{ height: '20px', marginRight: '6px'}} />Introduction To React</React.Fragment>} />
+        <Radio.Item value="docker" label={<React.Fragment><img src={dockerImage} style={{ height: '20px', marginRight: '6px'}} />Introduction To Docker</React.Fragment>}/>
+        <Radio.Item value="python" label={<React.Fragment><img src={pythonImage} style={{ height: '20px', marginRight: '6px'}} />Introduction To Python</React.Fragment>} />
+      </Radio.Group>
+    )
+  }}
 </Playground>
 
 ### Radio item with description
 
 <Playground>
-  <Radio.Group name="classes3" value="react">
-    <Radio.Item value="react" label="Introduction To React" description="This course is for React newbies and anyone looking to build a solid foundation. It’s designed to teach you everything you need to start building web applications in React right away."/>
-    <Radio.Item value="docker" label="Introduction To Docker" description="In this course we will take a simple Node.js app that connects to a MongoDB database and uses an Express web server, and how to properly “Dockerize” the app."/>
-    <Radio.Item value="python" label="Introduction To Python" description="At the end of this course, you’ll have a great working knowledge of Python, fully capable of creating your own Python projects from scratch or jumping into an existing application."/>
-  </Radio.Group>
+  {() => {
+    const [selectedValue, setSelectedValue] = React.useState('react')
+    return (
+      <Radio.Group name="classes3" value={selectedValue} onChange={(e) => setSelectedValue(e.target.value)}>
+        <Radio.Item value="react" label="Introduction To React" description="This course is for React newbies and anyone looking to build a solid foundation. It’s designed to teach you everything you need to start building web applications in React right away."/>
+        <Radio.Item value="docker" label="Introduction To Docker" description="In this course we will take a simple Node.js app that connects to a MongoDB database and uses an Express web server, and how to properly “Dockerize” the app."/>
+        <Radio.Item value="python" label="Introduction To Python" description="At the end of this course, you’ll have a great working knowledge of Python, fully capable of creating your own Python projects from scratch or jumping into an existing application."/>
+      </Radio.Group>
+    )
+  }}
 </Playground>
 
 ### Disabled radio items
 
 <Playground>
-  <Radio.Group name="classes4" value="react">
-    <Radio.Item isDisabled value="react" label="Introduction To React" description="This course is for React newbies and anyone looking to build a solid foundation. It’s designed to teach you everything you need to start building web applications in React right away."/>
-    <Radio.Item isDisabled value="docker" label="Introduction To Docker" description="In this course we will take a simple Node.js app that connects to a MongoDB database and uses an Express web server, and how to properly “Dockerize” the app."/>
-    <Radio.Item isDisabled value="python" label="Introduction To Python" description="At the end of this course, you’ll have a great working knowledge of Python, fully capable of creating your own Python projects from scratch or jumping into an existing application."/>
-  </Radio.Group>
+  {() => {
+    const [selectedValue, setSelectedValue] = React.useState('react')
+    return (
+      <Radio.Group name="classes4" value="react" onChange={(e) => setSelectedValue(e.target.value)}>
+        <Radio.Item isDisabled value="react" label="Introduction To React" description="This course is for React newbies and anyone looking to build a solid foundation. It’s designed to teach you everything you need to start building web applications in React right away."/>
+        <Radio.Item isDisabled value="docker" label="Introduction To Docker" description="In this course we will take a simple Node.js app that connects to a MongoDB database and uses an Express web server, and how to properly “Dockerize” the app."/>
+        <Radio.Item isDisabled value="python" label="Introduction To Python" description="At the end of this course, you’ll have a great working knowledge of Python, fully capable of creating your own Python projects from scratch or jumping into an existing application."/>
+      </Radio.Group>
+    )
+  }}
 </Playground>
 
 ## API
