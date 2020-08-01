@@ -19,10 +19,6 @@
   text-align: center;
 }
 
-.cell:hover ~ .cell {
-  background-color: var(--color-primary-hover);
-}
-
 .cell:first-child {
   border-radius: var(--border-radius-small) 0 0 var(--border-radius-small);
 }
