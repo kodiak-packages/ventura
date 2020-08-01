@@ -1,40 +1,35 @@
 import React from 'react';
-import { fireEvent, render } from '@testing-library/react';
+import { fireEvent, getQueriesForElement, render } from '@testing-library/react';
 
 import Modal from './Modal';
 
 describe('Modal', () => {
-  const isModalVisible = (container: HTMLElement) => container.hasChildNodes();
-
   test('snapshot when shown', () => {
-    const { asFragment, container } = render(
+    // portals don't render in the fragment so we have look in baseElement
+    // https://github.com/testing-library/react-testing-library/issues/62#issuecomment-513199414
+    const { baseElement } = render(
       <Modal title="This is the title" isOpen>
         <span>Insert your text or form elements here</span>
         <Modal.Footer>Buttons are placed here</Modal.Footer>
       </Modal>,
-      { container: document.body },
     );
-    expect(asFragment()).toMatchSnapshot();
-    expect(isModalVisible(container)).toBe(true);
+    expect(baseElement).toMatchSnapshot();
   });
 
   test('snapshot when hidden', () => {
-    const { asFragment, container } = render(<Modal>Invisible</Modal>, {
-      container: document.body,
-    });
-    expect(asFragment()).toMatchSnapshot();
-    expect(isModalVisible(container)).toBe(false);
+    const { baseElement } = render(<Modal>Invisible</Modal>);
+    const modal = getQueriesForElement(baseElement).queryByTestId('modal');
+    expect(modal).toBe(null);
   });
 
   test('className prop', () => {
     const className = 'center';
-    const { getByText } = render(
+    const { baseElement } = render(
       <Modal isOpen className={className}>
         Content
       </Modal>,
-      { container: document.body },
     );
-    const overlayElement = getByText(/Content/).parentElement!;
+    const overlayElement = getQueriesForElement(baseElement).getByText(/Content/).parentElement!;
 
     const renderedClassNames = overlayElement.className.split(' ');
     expect(renderedClassNames).toContain(className);
@@ -44,22 +39,19 @@ describe('Modal', () => {
 
   test('modal should close on pressing ESC', () => {
     const mockOnEscKeyDown = jest.fn();
-    const { getByText } = render(
+    const { baseElement } = render(
       <Modal isOpen onEscKeyDown={mockOnEscKeyDown}>
         Content
       </Modal>,
-      { container: document.body },
     );
-    const modalElement = getByText(/Content/)!;
+    const modalElement = getQueriesForElement(baseElement).getByText(/Content/)!;
     fireEvent.keyDown(modalElement, { key: 'Escape', code: 'Escape', keyCode: 27 });
     expect(mockOnEscKeyDown).toHaveBeenCalledTimes(1);
   });
 
   test('the modal should receive focus on open', () => {
-    const { getByText } = render(<Modal isOpen>Content</Modal>, {
-      container: document.body,
-    });
-    const modalElement = getByText(/Content/)!;
+    const { baseElement } = render(<Modal isOpen>Content</Modal>);
+    const modalElement = getQueriesForElement(baseElement).getByText(/Content/)!;
     expect(document.activeElement).toBe(modalElement);
   });
 });

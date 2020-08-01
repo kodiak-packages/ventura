@@ -1,12 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Modal snapshot when hidden 1`] = `<DocumentFragment />`;
-
 exports[`Modal snapshot when shown 1`] = `
-<DocumentFragment>
+<body
+  style="overflow: hidden;"
+>
+  <div />
   <div>
     <div
       class="ventura overlay"
+      data-testid="modal"
       role="article"
     >
       <article
@@ -30,5 +32,5 @@ exports[`Modal snapshot when shown 1`] = `
       </article>
     </div>
   </div>
-</DocumentFragment>
+</body>
 `;
