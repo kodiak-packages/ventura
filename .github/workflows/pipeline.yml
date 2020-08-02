@@ -1,9 +1,6 @@
-name: Build and release
+name: Pipeline
 
-on:
-  push:
-    branches:
-      - master
+on: [push]
 
 jobs:
   node:
@@ -23,13 +20,24 @@ jobs:
       - name: Install packages
         run: yarn install --frozen-lockfile
 
-      - name: Build the docs
-        run: yarn document
+      - name: Run ESLint
+        run: yarn lint --quiet --color
 
       - name: Compile src
         run: yarn build
 
+      - name: Build the docs
+        run: yarn document
+
+      - name: Run tests
+        id: tests
+        run: yarn run test --watchAll=false --colors --ci --coverage
+
+      - name: Upload coverage report to codecov
+        uses: codecov/codecov-action@v1
+
       - name: Deploy docs
+        if: github.ref == 'refs/heads/master'
         uses: crazy-max/ghaction-github-pages@v1
         with:
           target_branch: gh-pages
@@ -38,6 +46,7 @@ jobs:
           GITHUB_PAT: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
 
       - name: Release to NPM
+        if: github.ref == 'refs/heads/master'
         run: yarn release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
