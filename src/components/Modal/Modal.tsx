@@ -48,7 +48,7 @@ const Modal: React.FC<Props> & { Footer: typeof Footer } = ({
 
   return isOpen ? (
     <Portal>
-      <div className={overlayClassNames} role="article">
+      <div className={overlayClassNames} role="article" data-testid="modal">
         <article
           ref={modalRef}
           className={styles.modal}
