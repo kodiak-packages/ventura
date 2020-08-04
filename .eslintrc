@@ -12,6 +12,7 @@
     "project": "./tsconfig.json"
   },
   "rules": {
+    "react/require-default-props": "off", // Pending integration of ES6 standard for defaulting props
     "no-unused-expressions": [
       "warn",
       {
