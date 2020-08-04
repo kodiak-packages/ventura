@@ -1688,7 +1688,7 @@
   dependencies:
     defer-to-connect "^1.0.1"
 
-"@testing-library/dom@^7.17.1":
+"@testing-library/dom@^7.17.1", "@testing-library/dom@^7.21.7":
   version "7.21.7"
   resolved "https://registry.yarnpkg.com/@testing-library/dom/-/dom-7.21.7.tgz#23c57c361db5e961afa3e6f3f15bd57fbda01187"
   integrity sha512-GVNrLAt0yq7Squz1HrW8IiDVKP5jeWSv9cpgQJsfmXYXLFPpaFoRxn+H/NcUitVXyb0J62PkpVWjMe5b0fvYrQ==
@@ -1723,10 +1723,12 @@
     "@babel/runtime" "^7.10.3"
     "@testing-library/dom" "^7.17.1"
 
-"@testing-library/user-event@^10.1.0":
-  version "10.1.0"
-  resolved "https://registry.yarnpkg.com/@testing-library/user-event/-/user-event-10.1.0.tgz#6260b63db89cd5087ecbc39e00da7b4c873ccd8a"
-  integrity sha512-qutUm/2lWAD8IiKrss2Cg6Hf8AkcMeylKm09bSMtYC39Ug68aXWkcbc0H/NVD5R1zOHguTjkR/Ppuns6bWksGQ==
+"@testing-library/user-event@^12.1.0":
+  version "12.1.0"
+  resolved "https://registry.yarnpkg.com/@testing-library/user-event/-/user-event-12.1.0.tgz#a2597419466a93e338c91baa7bb22d4da0309d1d"
+  integrity sha512-aH/XuNFpPD6dA+fh754EGqKeAzpH66HpLJYkv9vOAih2yGmTM8JiZ8uisQDGWRPkc6sxE2zCqDwLR4ZskhRCxw==
+  dependencies:
+    "@babel/runtime" "^7.10.2"
 
 "@theme-ui/typography@^0.2.5":
   version "0.2.46"
