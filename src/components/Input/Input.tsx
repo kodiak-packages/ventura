@@ -11,7 +11,6 @@ interface Props {
   onBlur?: FocusEventHandler<HTMLInputElement>;
   placeholder?: string;
   type?: 'text' | 'email' | 'password';
-  errorMessage?: string;
   spellCheck?: boolean;
   autoComplete?: boolean;
   maxLength?: number;
