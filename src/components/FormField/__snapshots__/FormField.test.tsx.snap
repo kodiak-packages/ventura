@@ -1,15 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`FormField isSpaced prop 1`] = `
-<DocumentFragment>
-  <div
-    class="ventura isSpaced"
-  >
-    Form elements here
-  </div>
-</DocumentFragment>
-`;
-
 exports[`FormField snapshot 1`] = `
 <DocumentFragment>
   <div

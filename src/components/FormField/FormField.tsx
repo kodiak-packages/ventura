@@ -10,19 +10,11 @@ type Props = {
   errorMessage?: string;
   className?: string;
   children: ReactNode;
-  isSpaced?: boolean;
 };
 
-const FormField: React.FC<Props> = ({
-  label,
-  className,
-  children,
-  hint,
-  errorMessage,
-  isSpaced = false,
-}: Props) => {
+const FormField: React.FC<Props> = ({ label, className, children, hint, errorMessage }: Props) => {
   const mergedClassNames = classNames(cssReset.ventura, className, {
-    [styles.isSpaced]: isSpaced,
+    [styles.isSpaced]: Boolean(label),
   });
   return (
     <div className={mergedClassNames}>
