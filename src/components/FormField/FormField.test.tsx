@@ -33,4 +33,9 @@ describe('FormField', () => {
     // className in prop should be the last in the row
     expect(renderedClassNames.indexOf(className)).toBe(renderedClassNames.length - 1);
   });
+
+  test('isSpaced prop', () => {
+    const { asFragment } = render(<FormField isSpaced>Form elements here</FormField>);
+    expect(asFragment()).toMatchSnapshot();
+  });
 });

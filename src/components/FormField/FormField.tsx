@@ -10,7 +10,7 @@ type Props = {
   errorMessage?: string;
   className?: string;
   children: ReactNode;
-  isSpaced: boolean;
+  isSpaced?: boolean;
 };
 
 const FormField: React.FC<Props> = ({
