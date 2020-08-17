@@ -53,10 +53,10 @@ const Button: React.FC<Props> = ({
   });
 
   return (
-    // eslint-disable-next-line react/button-has-type
     <button
       disabled={isDisabled || isLoading}
       className={buttonClassNames}
+      // eslint-disable-next-line react/button-has-type
       type={htmlType}
       onClick={isLoading || suffixIcon ? undefined : onClick}
       name={name}
