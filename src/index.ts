@@ -7,5 +7,6 @@ export { default as Input } from './components/Input/Input';
 export { default as Modal } from './components/Modal/Modal';
 export { default as Radio } from './components/Radio/Radio';
 export { default as Table } from './components/Table/Table';
+export { default as TextArea } from './components/TextArea/TextArea';
 
 export * from 'react-feather';
