@@ -1,17 +1,18 @@
-.input {
+.textarea {
   background-color: var(--color-neutral-1);
   border-radius: var(--border-radius-small);
   border: 1px solid var(--color-neutral-4);
   padding: 4.5px 14px;
   width: 100%;
   color: var(--color-neutral-9);
+  resize: vertical;
 }
 
-.input::placeholder {
+.textarea::placeholder {
   color: var(--color-neutral-6);
 }
 
-.input:focus {
+.textarea:focus {
   outline: none;
   box-shadow: 0 0 0 3px var(--color-focus);
 }

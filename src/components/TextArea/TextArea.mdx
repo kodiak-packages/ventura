@@ -1,0 +1,40 @@
+---
+name: TextArea
+menu: Components
+route: /text-area
+---
+
+import { Playground, Props } from 'docz';
+import { TextArea } from '../../index.ts'
+
+# TextArea
+
+A Input can be used to let the user insert text using key strokes. A crucial form item for building interactive apps.
+
+## Best practices
+
+- TextAreas should be wrapped in a [FormField](/form-field) or should be preceded by another component serving as a label
+
+## Examples
+
+### Basic usage
+
+<Playground>
+  <TextArea name="description" />
+</Playground>
+
+### Listening for changes
+
+<Playground>
+  <TextArea name="changeLogger" onChange={(event) => console.log(`LOGGER: ${event.target.value}`)} />
+</Playground>
+
+### Input with error
+
+<Playground>
+  <TextArea name="invalidTextArea" isInvalid />
+</Playground>
+
+## API
+
+<Props of={TextArea} />
