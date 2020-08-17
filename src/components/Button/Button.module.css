@@ -1,7 +1,7 @@
 .button {
   border-radius: var(--border-radius-small);
   font-size: 14px;
-  padding: 5.5px 14px;
+  padding: 10px 14px;
   border: none;
   cursor: pointer;
   display: inline-block;
@@ -49,16 +49,16 @@
   margin-right: 8px;
 }
 
-.medium {
-  line-height: 17px;
+.smallButton {
+  padding: 3.5px 10px;
 }
 
-.small {
-  line-height: 14px;
-  max-height: 25px;
+.smallLabel {
+  font-size: calc(var(--font-size) - 2px);
 }
 
 .spinner {
   width: 14px;
   height: 14px;
+  vertical-align: -2px;
 }
