@@ -10,7 +10,6 @@ interface Props {
   onChange?: ChangeEventHandler<HTMLTextAreaElement>;
   onBlur?: FocusEventHandler<HTMLTextAreaElement>;
   placeholder?: string;
-  errorMessage?: string;
   spellCheck?: boolean;
   autoComplete?: boolean;
   maxLength?: number;
