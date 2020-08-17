@@ -2,96 +2,95 @@ import React, { ComponentProps } from 'react';
 import { fireEvent, render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import Input from './TextArea';
+import TextArea from './TextArea';
 
 describe('TextArea', () => {
   const value = 'It was nice!';
-  const defaultButtonProps: ComponentProps<typeof Input> = {
+  const defaultButtonProps: ComponentProps<typeof TextArea> = {
     name: 'comment',
   };
 
   test('default snapshot', () => {
-    const component = <Input {...defaultButtonProps} />;
+    const component = <TextArea {...defaultButtonProps} />;
     const { asFragment } = render(component);
     expect(asFragment()).toMatchSnapshot();
   });
 
   test('value prop', () => {
-    const component = <Input {...defaultButtonProps} value={value} onChange={() => {}} />;
+    const component = <TextArea {...defaultButtonProps} value={value} onChange={() => {}} />;
     const { getByTestId } = render(component);
-    const inputElement = getByTestId('textarea-comment');
+    const textAreaElement = getByTestId('textarea-comment');
 
-    expect(inputElement.innerHTML).toBe(value);
+    expect(textAreaElement.innerHTML).toBe(value);
   });
 
   test('onChange prop', async () => {
     const onChangeFn = jest.fn();
-    const component = <Input {...defaultButtonProps} onChange={onChangeFn} />;
+    const component = <TextArea {...defaultButtonProps} onChange={onChangeFn} />;
     const { getByTestId } = render(component);
-    const inputElement = getByTestId('textarea-comment');
+    const textAreaElement = getByTestId('textarea-comment');
 
-    await userEvent.type(inputElement, value);
+    await userEvent.type(textAreaElement, value);
 
     expect(onChangeFn).toHaveBeenCalledTimes(value.length);
-    expect((inputElement as any).value).toBe(value);
   });
 
   test('onBlur prop', async () => {
     const onBlurFn = jest.fn();
-    const component = <Input {...defaultButtonProps} onBlur={onBlurFn} />;
+    const component = <TextArea {...defaultButtonProps} onBlur={onBlurFn} />;
     const { getByTestId } = render(component);
-    const inputElement = getByTestId('textarea-comment');
+    const textAreaElement = getByTestId('textarea-comment');
 
-    fireEvent.blur(inputElement);
+    fireEvent.blur(textAreaElement);
 
     expect(onBlurFn).toHaveBeenCalledTimes(1);
   });
 
   test('placeholder prop', () => {
-    const component = <Input {...defaultButtonProps} placeholder="First name" />;
+    const component = <TextArea {...defaultButtonProps} placeholder="First name" />;
     const { getByTestId } = render(component);
-    const inputElement = getByTestId('textarea-comment');
+    const textAreaElement = getByTestId('textarea-comment');
 
-    expect(inputElement.getAttribute('placeholder')).toBe('First name');
+    expect(textAreaElement.getAttribute('placeholder')).toBe('First name');
   });
 
   test('errorMessage prop', () => {
-    const component = <Input {...defaultButtonProps} isInvalid />;
+    const component = <TextArea {...defaultButtonProps} isInvalid />;
     const { getByTestId } = render(component);
-    const inputElement = getByTestId('textarea-comment');
+    const textAreaElement = getByTestId('textarea-comment');
 
-    expect(inputElement.classList).toContain('containsError');
+    expect(textAreaElement.classList).toContain('containsError');
   });
 
   test('spellCheck prop', () => {
-    const component = <Input {...defaultButtonProps} spellCheck />;
+    const component = <TextArea {...defaultButtonProps} spellCheck />;
     const { getByTestId } = render(component);
-    const inputElement = getByTestId('textarea-comment');
+    const textAreaElement = getByTestId('textarea-comment');
 
-    expect(inputElement.hasAttribute('spellcheck')).toBe(true);
-    expect(inputElement.getAttribute('spellcheck')).not.toBe(false);
+    expect(textAreaElement.hasAttribute('spellcheck')).toBe(true);
+    expect(textAreaElement.getAttribute('spellcheck')).not.toBe(false);
   });
 
   test('autoComplete prop', () => {
-    const component = <Input {...defaultButtonProps} autoComplete />;
+    const component = <TextArea {...defaultButtonProps} autoComplete />;
     const { getByTestId } = render(component);
-    const inputElement = getByTestId('textarea-comment');
+    const textAreaElement = getByTestId('textarea-comment');
 
-    expect(inputElement.getAttribute('autocomplete')).toBe('on');
+    expect(textAreaElement.getAttribute('autocomplete')).toBe('on');
   });
 
   test('maxLength prop', () => {
     const maxLength = 3;
-    const component = <Input {...defaultButtonProps} maxLength={3} />;
+    const component = <TextArea {...defaultButtonProps} maxLength={3} />;
     const { getByTestId } = render(component);
-    const inputElement = getByTestId('textarea-comment');
+    const textAreaElement = getByTestId('textarea-comment');
 
-    expect(inputElement.getAttribute('maxlength')).toBe(maxLength.toString());
+    expect(textAreaElement.getAttribute('maxlength')).toBe(maxLength.toString());
   });
 
   test('className prop', () => {
     const className = 'center';
-    const component = <Input {...defaultButtonProps} className={className} />;
+    const component = <TextArea {...defaultButtonProps} className={className} />;
     const { getByTestId } = render(component);
     const containerElement = getByTestId('textarea-comment');
 
