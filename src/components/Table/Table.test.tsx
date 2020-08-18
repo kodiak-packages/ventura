@@ -78,8 +78,5 @@ describe('Table', () => {
 
     fireEvent.click(button);
     expect(onClickFn).toHaveBeenCalledTimes(1);
-
-    // const { asFragment } = render(component);
-    // expect(asFragment()).toMatchSnapshot();
   });
 });
