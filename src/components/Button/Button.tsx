@@ -44,7 +44,7 @@ const Button: React.FC<Props> = ({
     className,
   );
 
-  const labelClassNames = classNames({
+  const labelClassNames = classNames(styles.label, {
     [styles.labelWithPrefixIcon]: Boolean(prefixIcon) || isLoading,
     [styles.labelWithSuffixIcon]: Boolean(suffixIcon),
     [styles.smallLabel]: size === 'small',

@@ -46,17 +46,20 @@
   cursor: default;
 }
 
+.label {
+  line-height: inherit;
+}
+
+.smallLabel {
+  font-size: calc(var(--font-size) - 2px);
+}
+
 .labelWithPrefixIcon {
   margin-left: 8px;
 }
 
 .labelWithSuffixIcon {
   margin-right: 8px;
-}
-
-
-.smallLabel {
-  font-size: calc(var(--font-size) - 2px);
 }
 
 .spinner {
