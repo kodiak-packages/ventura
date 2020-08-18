@@ -107,6 +107,70 @@ Use the different building block to correctly structure your table:
     </Table>
 </Playground>
 
+### Table with click events
+
+<Playground>
+    <Table>
+      <Table.Header>
+        <Table.Cell>
+          Course
+        </Table.Cell>
+        <Table.Cell>
+          Length
+        </Table.Cell>
+        <Table.Cell>
+          Status
+        </Table.Cell>
+      </Table.Header>
+      <Table.Body>
+        <Table.Row onClick={() => {alert('Row clicked');}}>
+          <Table.Cell>
+           Introduction To React
+          </Table.Cell>
+          <Table.Cell>
+            2h 27m
+          </Table.Cell>
+           <Table.Cell>
+            <CheckCircle /> Finished
+          </Table.Cell>
+        </Table.Row>
+        <Table.Row onClick={() => {alert('Row clicked');}}>
+          <Table.Cell>
+           Introduction To Docker
+          </Table.Cell>
+          <Table.Cell>
+            33m
+          </Table.Cell>
+           <Table.Cell>
+           <Circle /> Not started
+          </Table.Cell>
+        </Table.Row>
+        <Table.Row onClick={() => {alert('Row clicked');}}>
+          <Table.Cell>
+           Introduction To Python
+          </Table.Cell>
+          <Table.Cell>
+            1h 45m
+          </Table.Cell>
+           <Table.Cell>
+            <Circle /> Not started
+          </Table.Cell>
+        </Table.Row>
+        <Table.Row onClick={() => {alert('Row clicked');}}>
+          <Table.Cell>
+           Introduction To Ventura
+          </Table.Cell>
+          <Table.Cell>
+           15m
+          </Table.Cell>
+           <Table.Cell>
+            <PauseCircle /> In progress
+          </Table.Cell>
+        </Table.Row>
+      </Table.Body>
+    </Table>
+</Playground>
+
 ## API
 
 ### Table
