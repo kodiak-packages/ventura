@@ -8,6 +8,10 @@
   display: inline-block;
 }
 
+.smallButton {
+  padding: 3.5px 10px;
+}
+
 .typePrimary:hover {
   background-color: var(--color-primary-hover);
 }
@@ -50,9 +54,6 @@
   margin-right: 8px;
 }
 
-.smallButton {
-  padding: 3.5px 10px;
-}
 
 .smallLabel {
   font-size: calc(var(--font-size) - 2px);
