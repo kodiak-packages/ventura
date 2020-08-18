@@ -1,5 +1,6 @@
 .button {
   border-radius: var(--border-radius-small);
+  line-height: 14px;
   font-size: 14px;
   padding: 10px 14px;
   border: none;
