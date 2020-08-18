@@ -1,10 +1,15 @@
 .button {
   border-radius: var(--border-radius-small);
+  line-height: 14px;
   font-size: 14px;
-  padding: 5.5px 14px;
+  padding: 10px 14px;
   border: none;
   cursor: pointer;
   display: inline-block;
+}
+
+.smallButton {
+  padding: 3.5px 10px;
 }
 
 .typePrimary:hover {
@@ -41,6 +46,14 @@
   cursor: default;
 }
 
+.label {
+  line-height: inherit;
+}
+
+.smallLabel {
+  font-size: calc(var(--font-size) - 2px);
+}
+
 .labelWithPrefixIcon {
   margin-left: 8px;
 }
@@ -49,16 +62,8 @@
   margin-right: 8px;
 }
 
-.medium {
-  line-height: 17px;
-}
-
-.small {
-  line-height: 14px;
-  max-height: 25px;
-}
-
 .spinner {
   width: 14px;
   height: 14px;
+  vertical-align: -2px;
 }

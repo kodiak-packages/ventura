@@ -17,7 +17,7 @@ interface Props {
   prefixIcon?: React.ReactElement;
   suffixIcon?: React.ReactElement;
   name?: string;
-  size?: 'big' | 'medium' | 'small';
+  size?: 'normal' | 'small';
 }
 
 const Button: React.FC<Props> = ({
@@ -31,7 +31,7 @@ const Button: React.FC<Props> = ({
   prefixIcon,
   suffixIcon,
   name,
-  size = 'big',
+  size = 'normal',
 }: Props) => {
   const buttonClassNames = classNames(
     cssReset.ventura,
@@ -39,17 +39,15 @@ const Button: React.FC<Props> = ({
     {
       [styles.typePrimary]: type === 'primary',
       [styles.typeSecondary]: type === 'secondary',
-      [styles.small]: size === 'small',
-      [styles.medium]: size === 'medium',
+      [styles.smallButton]: size === 'small',
     },
     className,
   );
 
-  const labelClassNames = classNames({
+  const labelClassNames = classNames(styles.label, {
     [styles.labelWithPrefixIcon]: Boolean(prefixIcon) || isLoading,
     [styles.labelWithSuffixIcon]: Boolean(suffixIcon),
-    [styles.small]: size === 'small',
-    [styles.medium]: size === 'medium',
+    [styles.smallLabel]: size === 'small',
   });
 
   return (
