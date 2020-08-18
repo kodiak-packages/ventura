@@ -18,7 +18,7 @@ const TableRow: React.FC<Props> = ({ className, children, onClick, name }: Props
   );
 
   return (
-    <tr onClick={onClick} className={tableClassNames} data-testid={`row-${name}`}>
+    <tr onClick={onClick} className={tableClassNames} data-testid={name && `row-${name}`}>
       {children}
     </tr>
   );
