@@ -21,7 +21,6 @@ exports[`Button default snapshot 1`] = `
 <DocumentFragment>
   <button
     class="ventura button typePrimary"
-    data-testid="button-undefined"
     type="button"
   >
     <span
@@ -68,7 +67,6 @@ exports[`Button prefix icon button 1`] = `
 <DocumentFragment>
   <button
     class="ventura button typePrimary"
-    data-testid="button-undefined"
     type="button"
   >
     <svg
@@ -99,7 +97,6 @@ exports[`Button secondary button 1`] = `
 <DocumentFragment>
   <button
     class="ventura button typeSecondary"
-    data-testid="button-undefined"
     type="button"
   >
     <span
@@ -115,7 +112,6 @@ exports[`Button suffix icon button 1`] = `
 <DocumentFragment>
   <button
     class="ventura button typePrimary"
-    data-testid="button-undefined"
     type="button"
   >
     <span

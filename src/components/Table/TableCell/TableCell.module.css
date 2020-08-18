@@ -28,7 +28,7 @@
 }
 
 .headerCell {
-  background-color: var(--color-primary-hover);
+  background-color: var(--color-primary);
   height: 36px;
   line-height: 36px;
   padding-left: 14px;

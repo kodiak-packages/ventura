@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { fireEvent, render } from '@testing-library/react';
 
 import Table from './Table';
 
@@ -43,5 +43,40 @@ describe('Table', () => {
     );
     const { asFragment } = render(component);
     expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('onClick property', () => {
+    const onClickFn = jest.fn();
+
+    const component = (
+      <Table>
+        <Table.Header>
+          <Table.Cell>Course</Table.Cell>
+          <Table.Cell>Length</Table.Cell>
+          <Table.Cell>Status</Table.Cell>
+        </Table.Header>
+        <Table.Body>
+          {courses.map((course, index) => {
+            return (
+              <Table.Row
+                key={course.name}
+                name={index === 0 ? 'click' : undefined}
+                onClick={onClickFn}
+              >
+                <Table.Cell>{course.name}</Table.Cell>
+                <Table.Cell>{course.length}</Table.Cell>
+                <Table.Cell>{course.status}</Table.Cell>
+              </Table.Row>
+            );
+          })}
+        </Table.Body>
+      </Table>
+    );
+
+    const { getByTestId } = render(component);
+    const button = getByTestId('row-click');
+
+    fireEvent.click(button);
+    expect(onClickFn).toHaveBeenCalledTimes(1);
   });
 });

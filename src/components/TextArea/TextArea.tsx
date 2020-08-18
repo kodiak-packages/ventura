@@ -53,7 +53,7 @@ const TextArea = React.forwardRef<HTMLTextAreaElement, Props>(
         maxLength={maxLength}
         ref={ref}
         className={textareaClassNames}
-        data-testid={`textarea-${name}`}
+        data-testid={name && `textarea-${name}`}
         onBlur={onBlur}
       />
     );

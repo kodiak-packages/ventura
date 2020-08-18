@@ -58,7 +58,7 @@ const Button: React.FC<Props> = ({
       type={htmlType}
       onClick={isLoading || suffixIcon ? undefined : onClick}
       name={name}
-      data-testid={`button-${name}`}
+      data-testid={name && `button-${name}`}
     >
       {isLoading ? <Spinner className={styles.spinner} /> : prefixIcon}
       <span className={labelClassNames}>{children}</span>

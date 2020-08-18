@@ -56,7 +56,7 @@ const Input = React.forwardRef<HTMLInputElement, Props>(
         maxLength={maxLength}
         ref={ref}
         className={inputClassNames}
-        data-testid={`input-${name}`}
+        data-testid={name && `input-${name}`}
         onBlur={onBlur}
       />
     );
