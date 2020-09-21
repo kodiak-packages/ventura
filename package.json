@@ -55,7 +55,7 @@
     "prettier": "^2.0.4",
     "react": "^16",
     "react-dom": "^16",
-    "semantic-release": "^17.0.7",
+    "semantic-release": "^17.1.2",
     "ts-jest": "^25.5.1",
     "typescript": "^3.9.7"
   },
