@@ -8,5 +8,6 @@ export { default as Modal } from './components/Modal/Modal';
 export { default as Radio } from './components/Radio/Radio';
 export { default as Table } from './components/Table/Table';
 export { default as TextArea } from './components/TextArea/TextArea';
+export { default as DropdownMenu } from './components/DropdownMenu/DropdownMenu';
 
 export * from 'react-feather';
