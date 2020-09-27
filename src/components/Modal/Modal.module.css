@@ -35,6 +35,8 @@
 .modal {
   width: 90%;
   max-width: 650px;
+  overflow: auto;
+  max-height: 100vh;
   border-radius: var(--border-radius-small);
   background-color: var(--color-neutral-1);
   outline: none;
