@@ -4,11 +4,11 @@ import { usePopper } from 'react-popper';
 
 import Button from '../Button/Button';
 
-import styles from './DropdownMenu.module.css';
+import styles from './Popover.module.css';
 
 interface Props {}
 
-const DropdownMenu: React.FC<Props> = () => {
+const Popover: React.FC<Props> = () => {
   const buttonRef = useRef<HTMLButtonElement>(null);
   const menuRef = useRef<HTMLDivElement>(null);
 
@@ -54,4 +54,4 @@ const DropdownMenu: React.FC<Props> = () => {
   );
 };
 
-export default DropdownMenu;
+export default Popover;
