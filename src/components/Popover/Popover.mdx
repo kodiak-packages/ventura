@@ -23,9 +23,12 @@ A Popover is used to display extra information
   {() => {
     const [isVisible, setIsVisible] = React.useState(false);
     const popoverContent = (<p>Hello</p>);
+    const onClose = () => {
+      setIsVisible(false);
+    }
     return (
       <>
-        <Popover isVisible={isVisible} setIsVisible={setIsVisible} content={popoverContent}>
+        <Popover isVisible={isVisible} onClose={setIsVisible} content={popoverContent}>
           <Button onClick={() => setIsVisible(!isVisible)}>Open basic modal</Button>
         </ Popover>
         <br />

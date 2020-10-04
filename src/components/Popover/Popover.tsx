@@ -12,7 +12,7 @@ interface Props {
   content?: React.ReactNode;
   children?: React.ReactNode;
   isVisible: boolean;
-  setIsVisible: React.Dispatch<React.SetStateAction<boolean>>;
+  onClose: Function;
   placement?: Placement;
 }
 
@@ -20,7 +20,7 @@ const Popover: React.FC<Props> = ({
   content,
   children,
   isVisible,
-  setIsVisible,
+  onClose,
   placement = 'bottom-start',
 }) => {
   const divRef = useRef<HTMLDivElement>(null);
@@ -29,7 +29,7 @@ const Popover: React.FC<Props> = ({
   const [arrowRef, setArrowRef] = useState<HTMLDivElement | null>(null);
 
   useOutsideClick(() => {
-    setIsVisible(!isVisible);
+    onClose();
   }, menuRef);
 
   const { styles: popperStyles, attributes } = usePopper(divRef.current, menuRef.current, {
