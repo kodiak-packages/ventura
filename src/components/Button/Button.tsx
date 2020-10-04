@@ -1,4 +1,4 @@
-import React, { MouseEventHandler } from 'react';
+import React, { FocusEventHandler, MouseEventHandler } from 'react';
 import classNames from 'classnames';
 
 import Spinner from '../utils/Spinner/Spinner';
@@ -10,6 +10,8 @@ interface Props {
   children: React.ReactNode;
   type?: 'primary' | 'secondary';
   onClick?: MouseEventHandler<HTMLButtonElement>;
+  onFocus?: FocusEventHandler<HTMLButtonElement>;
+  onBlur?: FocusEventHandler<HTMLButtonElement>;
   className?: string;
   isDisabled?: boolean;
   isLoading?: boolean;
@@ -26,6 +28,8 @@ const Button = React.forwardRef<HTMLButtonElement, Props>(
       children,
       type = 'primary',
       onClick,
+      onFocus,
+      onBlur,
       className,
       isDisabled,
       isLoading,
@@ -61,6 +65,8 @@ const Button = React.forwardRef<HTMLButtonElement, Props>(
         // eslint-disable-next-line react/button-has-type
         type={htmlType}
         onClick={isLoading || isDisabled ? undefined : onClick}
+        onFocus={isLoading || isDisabled ? undefined : onFocus}
+        onBlur={onBlur}
         name={name}
         data-testid={name && `button-${name}`}
         ref={ref}
