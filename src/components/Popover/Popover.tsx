@@ -1,21 +1,30 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable react/jsx-props-no-spreading */
 import React, { useRef, useState } from 'react';
 import { usePopper } from 'react-popper';
-
-import Button from '../Button/Button';
+import { Placement } from '@popperjs/core';
 
 import styles from './Popover.module.css';
 
-interface Props {}
+interface Props {
+  content?: React.ReactNode;
+  children?: React.ReactNode;
+  isVisible?: boolean;
+  placement?: Placement;
+}
 
-const Popover: React.FC<Props> = () => {
-  const buttonRef = useRef<HTMLButtonElement>(null);
+const Popover: React.FC<Props> = ({
+  content,
+  children,
+  isVisible = false,
+  placement = 'bottom-start',
+}) => {
+  const divRef = useRef<HTMLDivElement>(null);
   const menuRef = useRef<HTMLDivElement>(null);
 
   const [arrowRef, setArrowRef] = useState<HTMLDivElement | null>(null);
 
-  const [isMenuVisible, setIsMenuVisible] = useState(false);
-  const { styles: popperStyles, attributes } = usePopper(buttonRef.current, menuRef.current, {
+  const { styles: popperStyles, attributes } = usePopper(divRef.current, menuRef.current, {
     modifiers: [
       {
         name: 'offset',
@@ -30,16 +39,14 @@ const Popover: React.FC<Props> = () => {
         },
       },
     ],
-    placement: 'bottom-start',
+    placement,
   });
 
   return (
     <>
-      <Button ref={buttonRef} onClick={() => setIsMenuVisible(!isMenuVisible)}>
-        Dropdown
-      </Button>
+      <div ref={divRef}>{children}</div>
 
-      {isMenuVisible && (
+      {isVisible && (
         <div
           ref={menuRef}
           style={popperStyles.popper}
@@ -47,7 +54,7 @@ const Popover: React.FC<Props> = () => {
           className={styles.menu}
         >
           <div ref={setArrowRef} style={popperStyles.arrow} className="arrow" />
-          <p>A ridiculously long sentence for a popper.</p>
+          {content}
         </div>
       )}
     </>
