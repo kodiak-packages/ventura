@@ -4,7 +4,7 @@ import { fireEvent, render } from '@testing-library/react';
 import { GitHub } from '../../index';
 import Menu from './Menu';
 
-describe('TextArea', () => {
+describe('Menu', () => {
   test('default snapshot', () => {
     const component = (
       <Menu>
