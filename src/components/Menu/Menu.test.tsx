@@ -16,17 +16,6 @@ describe('TextArea', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  test('default snapshot', () => {
-    const component = (
-      <Menu>
-        <Menu.Item>Option 1</Menu.Item>
-        <Menu.Item prefixIcon={<GitHub />}>Option 2</Menu.Item>
-      </Menu>
-    );
-    const { asFragment } = render(component);
-    expect(asFragment()).toMatchSnapshot();
-  });
-
   test('onClick should be triggered when clicked', () => {
     const onClickFn = jest.fn();
     const component = (
