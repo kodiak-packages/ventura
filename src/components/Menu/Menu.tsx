@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import MenuItem from './MenuItem/MenuItem';
 
 import cssReset from '../../css-reset.module.css';
-import styles from './Table.module.css';
+import styles from './Menu.module.css';
 
 type Props = {
   className?: string;

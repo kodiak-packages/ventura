@@ -5,11 +5,11 @@ route: /dropdown-menu
 ---
 
 import { Playground, Props } from 'docz';
-import { Popover } from '../../index.ts';
+import { Popover, Menu, Button } from '../../index.ts';
 
 # Popover
 
-A Popover is used to display extra information 
+A Popover is used to display extra information
 
 ## Best practices
 
@@ -20,10 +20,21 @@ A Popover is used to display extra information
 ### Basic usage
 
 <Playground>
-  <Popover />
-  <br />
-  <br />
-  <br />
+  {() => {
+    const [isVisible, setIsVisible] = React.useState(false);
+    const popoverContent = (<p>Hello</p>);
+    return (
+      <>
+        <Popover isVisible={isVisible} setIsVisible={setIsVisible} content={popoverContent}>
+          <Button onClick={() => setIsVisible(!isVisible)}>Open basic modal</Button>
+        </ Popover>
+        <br />
+        <br />
+        <br />
+      </>
+    );
+  }}
+
 </Playground>
 
 ## API

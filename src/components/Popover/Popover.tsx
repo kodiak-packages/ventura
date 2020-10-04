@@ -4,25 +4,33 @@ import React, { useRef, useState } from 'react';
 import { usePopper } from 'react-popper';
 import { Placement } from '@popperjs/core';
 
+import { useOutsideClick } from '../../utils/hooks/useOutsideClick';
+
 import styles from './Popover.module.css';
 
 interface Props {
   content?: React.ReactNode;
   children?: React.ReactNode;
-  isVisible?: boolean;
+  isVisible: boolean;
+  setIsVisible: React.Dispatch<React.SetStateAction<boolean>>;
   placement?: Placement;
 }
 
 const Popover: React.FC<Props> = ({
   content,
   children,
-  isVisible = false,
+  isVisible,
+  setIsVisible,
   placement = 'bottom-start',
 }) => {
   const divRef = useRef<HTMLDivElement>(null);
   const menuRef = useRef<HTMLDivElement>(null);
 
   const [arrowRef, setArrowRef] = useState<HTMLDivElement | null>(null);
+
+  useOutsideClick(() => {
+    setIsVisible(!isVisible);
+  }, menuRef);
 
   const { styles: popperStyles, attributes } = usePopper(divRef.current, menuRef.current, {
     modifiers: [

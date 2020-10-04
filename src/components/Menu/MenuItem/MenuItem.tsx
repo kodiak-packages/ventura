@@ -1,8 +1,8 @@
 import React from 'react';
 import classNames from 'classnames';
 
-import cssReset from '../../css-reset.module.css';
-import styles from './Table.module.css';
+import cssReset from '../../../css-reset.module.css';
+import styles from './MenuItem.module.css';
 
 type Props = {
   className?: string;

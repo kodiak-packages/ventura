@@ -9,5 +9,6 @@ export { default as Radio } from './components/Radio/Radio';
 export { default as Table } from './components/Table/Table';
 export { default as TextArea } from './components/TextArea/TextArea';
 export { default as Popover } from './components/Popover/Popover';
+export { default as Menu } from './components/Menu/Menu';
 
 export * from 'react-feather';
