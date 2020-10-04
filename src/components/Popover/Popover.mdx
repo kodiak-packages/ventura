@@ -22,13 +22,16 @@ A Popover is used to display extra information
 <Playground>
   {() => {
     const [isVisible, setIsVisible] = React.useState(false);
-    const popoverContent = (<p>Hello</p>);
+    const popoverContent = (
+      <Menu>
+      <Menu.Item>Option 1</Menu.Item>
+      </Menu>);
     const onClose = () => {
       setIsVisible(false);
     }
     return (
       <>
-        <Popover isVisible={isVisible} onClose={setIsVisible} content={popoverContent}>
+        <Popover isVisible={true} onClose={setIsVisible} content={popoverContent}>
           <Button onClick={() => setIsVisible(!isVisible)}>Open basic modal</Button>
         </ Popover>
         <br />

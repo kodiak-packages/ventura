@@ -60,7 +60,7 @@ const Button = React.forwardRef<HTMLButtonElement, Props>(
         className={buttonClassNames}
         // eslint-disable-next-line react/button-has-type
         type={htmlType}
-        onClick={isLoading || suffixIcon ? undefined : onClick}
+        onClick={isLoading || isDisabled ? undefined : onClick}
         name={name}
         data-testid={name && `button-${name}`}
         ref={ref}
