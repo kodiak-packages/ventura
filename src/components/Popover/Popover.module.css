@@ -1,5 +1,10 @@
-.menu {
+.contentContainer {
   border-radius: var(--border-radius-small);
   background-color: var(--color-secondary);
   box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+}
+
+.triggerContainer {
+  display: inline-block;
 }

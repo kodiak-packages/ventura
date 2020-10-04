@@ -52,14 +52,16 @@ const Popover: React.FC<Props> = ({
 
   return (
     <>
-      <div ref={divRef}>{children}</div>
+      <div className={styles.triggerContainer} ref={divRef}>
+        {children}
+      </div>
 
       {isVisible && (
         <div
           ref={menuRef}
           style={popperStyles.popper}
           {...attributes.popper}
-          className={styles.menu}
+          className={styles.contentContainer}
         >
           <div ref={setArrowRef} style={popperStyles.arrow} className="arrow" />
           {content}

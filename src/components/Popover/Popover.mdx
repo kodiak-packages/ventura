@@ -5,15 +5,15 @@ route: /dropdown-menu
 ---
 
 import { Playground, Props } from 'docz';
-import { Popover, Menu, Button } from '../../index.ts';
+import { Popover, Menu, Button, Trash } from '../../index.ts';
 
 # Popover
 
-A Popover is used to display extra information
+A Popover is used to display extra information or actions in a compact way.
 
 ## Best practices
 
-- Check
+- Make sure the correct popover events are covered, depending on the event. (Click, hover, focus, etc...).
 
 ## Examples
 
@@ -24,20 +24,40 @@ A Popover is used to display extra information
     const [isVisible, setIsVisible] = React.useState(false);
     const popoverContent = (
       <Menu>
-      <Menu.Item>Option 1</Menu.Item>
+        <Menu.Item>Option 1</Menu.Item>
+        <Menu.Item prefixIcon={<Trash />}>Option 2</Menu.Item>
       </Menu>);
     const onClose = () => {
       setIsVisible(false);
     }
     return (
-      <>
-        <Popover isVisible={true} onClose={setIsVisible} content={popoverContent}>
-          <Button onClick={() => setIsVisible(!isVisible)}>Open basic modal</Button>
-        </ Popover>
-        <br />
-        <br />
-        <br />
-      </>
+      <Popover isVisible={isVisible} onClose={setIsVisible} content={popoverContent}>
+        <Button onClick={() => setIsVisible(!isVisible)}>Open basic modal</Button>
+      </ Popover>
+    );
+  }}
+
+</Playground>
+
+### Popover on hover
+
+<Playground>
+  {() => {
+    const [isVisible, setIsVisible] = React.useState(false);
+    const popoverContent = (
+      <span>
+        A handy tooltip!
+      </span>);
+    const closePopover = () => {
+      setIsVisible(false);
+    }
+    const openPopover = () => {
+      setIsVisible(true);
+    }
+    return (
+      <Popover placement={'top'} isVisible={isVisible} onClose={setIsVisible} content={popoverContent}>
+        <Trash onMouseEnter={openPopover} onMouseLeave={closePopover}/>
+      </ Popover>
     );
   }}
 

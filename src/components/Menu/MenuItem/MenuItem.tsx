@@ -10,26 +10,32 @@ type Props = {
   prefixIcon?: React.ReactElement;
   isDisabled?: boolean;
   onClick?: MouseEventHandler<HTMLButtonElement>;
+  name?: string;
 };
 
-const MenuItem: React.FC<Props> = ({ className, children, isDisabled = false, onClick }: Props) => {
-  const menuItemClassNames = classNames(cssReset.ventura, styles.table, className);
+const MenuItem = React.forwardRef<HTMLButtonElement, Props>(
+  ({ className, children, isDisabled = false, onClick, name, prefixIcon }: Props, ref) => {
+    const menuItemClassNames = classNames(cssReset.ventura, styles.menuItem, className);
 
-  return (
-    <button
-      disabled={isDisabled}
-      className={menuItemClassNames}
-      type="button"
-      onClick={isLoading || suffixIcon ? undefined : onClick}
-      name={name}
-      data-testid={name && `button-${name}`}
-      ref={ref}
-    >
-      {isLoading ? <Spinner className={styles.spinner} /> : prefixIcon}
-      <span className={labelClassNames}>{children}</span>
-      {isLoading || suffixIcon}
-    </button>
-  );
-};
+    const labelClassNames = classNames(styles.label, {
+      [styles.labelWithPrefixIcon]: Boolean(prefixIcon),
+    });
+
+    return (
+      <button
+        disabled={isDisabled}
+        className={menuItemClassNames}
+        type="button"
+        onClick={isDisabled ? undefined : onClick}
+        name={name}
+        data-testid={name && `menu-item-${name}`}
+        ref={ref}
+      >
+        {prefixIcon}
+        <span className={labelClassNames}>{children}</span>
+      </button>
+    );
+  },
+);
 
 export default MenuItem;

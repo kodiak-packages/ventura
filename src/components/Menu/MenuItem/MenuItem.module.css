@@ -1,0 +1,28 @@
+.menuItem {
+  line-height: 14px;
+  font-size: 14px;
+  padding: 10px 14px;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  background-color: var(--color-secondary);
+  text-align: left;
+}
+
+.menuItem:focus {
+  background-color: var(--color-secondary-hover);
+  outline: none;
+}
+
+.menuItem:hover {
+  background-color: var(--color-secondary-hover);
+}
+
+.label {
+  line-height: inherit;
+}
+
+.labelWithPrefixIcon {
+  margin-left: 8px;
+}
+

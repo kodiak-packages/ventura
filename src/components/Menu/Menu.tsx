@@ -14,7 +14,7 @@ type Props = {
 const Menu: React.FC<Props> & {
   Item: typeof MenuItem;
 } = ({ className, children }: Props) => {
-  const menuClassNames = classNames(cssReset.ventura, styles.table, className);
+  const menuClassNames = classNames(cssReset.ventura, styles.menu, className);
 
   return <div className={menuClassNames}>{children}</div>;
 };
