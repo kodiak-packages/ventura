@@ -1,4 +1,4 @@
-import React, { MouseEventHandler } from 'react';
+import React, { FocusEventHandler, MouseEventHandler } from 'react';
 import classNames from 'classnames';
 
 import Spinner from '../utils/Spinner/Spinner';
@@ -10,6 +10,8 @@ interface Props {
   children: React.ReactNode;
   type?: 'primary' | 'secondary';
   onClick?: MouseEventHandler<HTMLButtonElement>;
+  onFocus?: FocusEventHandler<HTMLButtonElement>;
+  onBlur?: FocusEventHandler<HTMLButtonElement>;
   className?: string;
   isDisabled?: boolean;
   isLoading?: boolean;
@@ -20,51 +22,60 @@ interface Props {
   size?: 'normal' | 'small';
 }
 
-const Button: React.FC<Props> = ({
-  children,
-  type = 'primary',
-  onClick,
-  className,
-  isDisabled,
-  isLoading,
-  htmlType = 'button',
-  prefixIcon,
-  suffixIcon,
-  name,
-  size = 'normal',
-}: Props) => {
-  const buttonClassNames = classNames(
-    cssReset.ventura,
-    styles.button,
+const Button = React.forwardRef<HTMLButtonElement, Props>(
+  (
     {
-      [styles.typePrimary]: type === 'primary',
-      [styles.typeSecondary]: type === 'secondary',
-      [styles.smallButton]: size === 'small',
-    },
-    className,
-  );
+      children,
+      type = 'primary',
+      onClick,
+      onFocus,
+      onBlur,
+      className,
+      isDisabled,
+      isLoading,
+      htmlType = 'button',
+      prefixIcon,
+      suffixIcon,
+      name,
+      size = 'normal',
+    }: Props,
+    ref,
+  ) => {
+    const buttonClassNames = classNames(
+      cssReset.ventura,
+      styles.button,
+      {
+        [styles.typePrimary]: type === 'primary',
+        [styles.typeSecondary]: type === 'secondary',
+        [styles.smallButton]: size === 'small',
+      },
+      className,
+    );
 
-  const labelClassNames = classNames(styles.label, {
-    [styles.labelWithPrefixIcon]: Boolean(prefixIcon) || isLoading,
-    [styles.labelWithSuffixIcon]: Boolean(suffixIcon),
-    [styles.smallLabel]: size === 'small',
-  });
+    const labelClassNames = classNames(styles.label, {
+      [styles.labelWithPrefixIcon]: Boolean(prefixIcon) || isLoading,
+      [styles.labelWithSuffixIcon]: Boolean(suffixIcon),
+      [styles.smallLabel]: size === 'small',
+    });
 
-  return (
-    <button
-      disabled={isDisabled || isLoading}
-      className={buttonClassNames}
-      // eslint-disable-next-line react/button-has-type
-      type={htmlType}
-      onClick={isLoading || suffixIcon ? undefined : onClick}
-      name={name}
-      data-testid={name && `button-${name}`}
-    >
-      {isLoading ? <Spinner className={styles.spinner} /> : prefixIcon}
-      <span className={labelClassNames}>{children}</span>
-      {isLoading || suffixIcon}
-    </button>
-  );
-};
-
+    return (
+      <button
+        disabled={isDisabled || isLoading}
+        className={buttonClassNames}
+        // eslint-disable-next-line react/button-has-type
+        type={htmlType}
+        onClick={isLoading || isDisabled ? undefined : onClick}
+        onFocus={isLoading || isDisabled ? undefined : onFocus}
+        onBlur={onBlur}
+        name={name}
+        data-testid={name && `button-${name}`}
+        ref={ref}
+      >
+        {isLoading ? <Spinner className={styles.spinner} /> : prefixIcon}
+        <span className={labelClassNames}>{children}</span>
+        {isLoading || suffixIcon}
+      </button>
+    );
+  },
+);
 export default Button;
