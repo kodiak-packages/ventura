@@ -7,6 +7,7 @@ import styles from './Input.module.css';
 interface Props {
   name: string;
   value?: string;
+  defaultValue?: string;
   onChange?: ChangeEventHandler<HTMLInputElement>;
   onBlur?: FocusEventHandler<HTMLInputElement>;
   placeholder?: string;
@@ -24,6 +25,7 @@ const Input = React.forwardRef<HTMLInputElement, Props>(
     {
       name,
       value,
+      defaultValue,
       onChange,
       onBlur,
       placeholder,
@@ -50,6 +52,7 @@ const Input = React.forwardRef<HTMLInputElement, Props>(
       <input
         name={name}
         value={value}
+        defaultValue={defaultValue}
         onChange={onChange}
         placeholder={placeholder}
         type={type}
