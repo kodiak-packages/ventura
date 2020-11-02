@@ -13,3 +13,18 @@ exports[`Input default snapshot 1`] = `
   />
 </DocumentFragment>
 `;
+
+exports[`Input isDisabled prop 1`] = `
+<DocumentFragment>
+  <input
+    autocomplete="off"
+    class="ventura input"
+    data-testid="input-firstname"
+    disabled=""
+    name="firstname"
+    spellcheck="false"
+    type="text"
+    value=""
+  />
+</DocumentFragment>
+`;
