@@ -41,7 +41,7 @@ const Input = React.forwardRef<HTMLInputElement, Props>(
       cssReset.ventura,
       styles.input,
       {
-        [styles.containsError]: Boolean(isInvalid),
+        [styles.containsError]: isInvalid,
       },
       className,
     );
