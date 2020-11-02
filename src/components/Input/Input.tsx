@@ -16,6 +16,7 @@ interface Props {
   maxLength?: number;
   className?: string;
   isInvalid?: boolean;
+  isDisabled?: boolean;
 }
 
 const Input = React.forwardRef<HTMLInputElement, Props>(
@@ -30,6 +31,7 @@ const Input = React.forwardRef<HTMLInputElement, Props>(
       isInvalid = false,
       spellCheck = false,
       autoComplete = false,
+      isDisabled = false,
       maxLength,
       className,
     }: Props,
@@ -58,6 +60,7 @@ const Input = React.forwardRef<HTMLInputElement, Props>(
         className={inputClassNames}
         data-testid={name && `input-${name}`}
         onBlur={onBlur}
+        disabled={isDisabled}
       />
     );
   },
