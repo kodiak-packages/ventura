@@ -23,6 +23,19 @@ describe('Input', () => {
     expect(inputElement.getAttribute('value')).toBe('Robin');
   });
 
+  test('isDisabled prop', async () => {
+    const onChangeFn = jest.fn();
+    const firstName = 'Bram';
+    const component = <Input {...defaultButtonProps} isDisabled onChange={onChangeFn} />;
+    const { asFragment, getByTestId } = render(component);
+    const inputElement = getByTestId('input-firstname');
+
+    expect(asFragment()).toMatchSnapshot();
+
+    await userEvent.type(inputElement, firstName);
+    expect(onChangeFn).toHaveBeenCalledTimes(0);
+  });
+
   test('onChange prop', async () => {
     const onChangeFn = jest.fn();
     const firstName = 'Robin';

@@ -7,6 +7,7 @@ import styles from './Input.module.css';
 interface Props {
   name: string;
   value?: string;
+  defaultValue?: string;
   onChange?: ChangeEventHandler<HTMLInputElement>;
   onBlur?: FocusEventHandler<HTMLInputElement>;
   placeholder?: string;
@@ -16,6 +17,7 @@ interface Props {
   maxLength?: number;
   className?: string;
   isInvalid?: boolean;
+  isDisabled?: boolean;
 }
 
 const Input = React.forwardRef<HTMLInputElement, Props>(
@@ -23,6 +25,7 @@ const Input = React.forwardRef<HTMLInputElement, Props>(
     {
       name,
       value,
+      defaultValue,
       onChange,
       onBlur,
       placeholder,
@@ -30,6 +33,7 @@ const Input = React.forwardRef<HTMLInputElement, Props>(
       isInvalid = false,
       spellCheck = false,
       autoComplete = false,
+      isDisabled = false,
       maxLength,
       className,
     }: Props,
@@ -39,7 +43,7 @@ const Input = React.forwardRef<HTMLInputElement, Props>(
       cssReset.ventura,
       styles.input,
       {
-        [styles.containsError]: Boolean(isInvalid),
+        [styles.containsError]: isInvalid,
       },
       className,
     );
@@ -48,6 +52,7 @@ const Input = React.forwardRef<HTMLInputElement, Props>(
       <input
         name={name}
         value={value}
+        defaultValue={defaultValue}
         onChange={onChange}
         placeholder={placeholder}
         type={type}
@@ -58,6 +63,7 @@ const Input = React.forwardRef<HTMLInputElement, Props>(
         className={inputClassNames}
         data-testid={name && `input-${name}`}
         onBlur={onBlur}
+        disabled={isDisabled}
       />
     );
   },
