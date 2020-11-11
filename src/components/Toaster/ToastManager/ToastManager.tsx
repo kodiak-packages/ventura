@@ -26,9 +26,9 @@ export type ToastCallHandler = (message: string, settings: ToastSettings) => voi
 
 interface Props {
   bindNotify: (handler: ToastCallHandler) => void;
-  bindRemove: (handler: ToastCallHandler) => void;
-  bindGetToasts: (handler: ToastCallHandler) => void;
-  bindCloseAll: (handler: ToastCallHandler) => void;
+  bindRemove: (handler: (id: string) => void) => void;
+  bindGetToasts: (handler: () => ToastInstance[]) => void;
+  bindCloseAll: (handler: () => void) => void;
 }
 
 const hasCustomId = (settings: ToastSettings) => Object.hasOwnProperty.call(settings, 'id');
