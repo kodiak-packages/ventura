@@ -3,7 +3,7 @@ import { Transition } from 'react-transition-group';
 
 import Alert from '../../Alert/Alert';
 
-import styles from 'Toast.modules.css';
+import styles from './Toast.module.css';
 
 interface Props {
   duration: number;
