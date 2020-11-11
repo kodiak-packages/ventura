@@ -61,10 +61,10 @@ const Toast: React.FC<Props> = memo(
       if (isShownProp !== isShown && typeof isShownProp === 'boolean') {
         setIsShown(isShownProp);
       }
-    }, [isShownProp]);
+    }, [isShown, isShownProp]);
 
     const handleMouseEnter = useCallback(() => clearCloseTimer(), [clearCloseTimer]);
-    const handleMouseLeave = useCallback(() => startCloseTimer(), [clearCloseTimer]);
+    const handleMouseLeave = useCallback(() => startCloseTimer(), [startCloseTimer]);
 
     const onRef = useCallback(
       (ref) => {

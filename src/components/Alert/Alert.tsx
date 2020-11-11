@@ -5,8 +5,10 @@ import classNames from 'classnames';
 import cssReset from '../../css-reset.module.css';
 import styles from './Alert.module.css';
 
+export type AlertIntent = 'error' | 'success';
+
 interface Props {
-  intent?: 'error' | 'success';
+  intent?: AlertIntent;
   message: string;
   className?: string;
 }
