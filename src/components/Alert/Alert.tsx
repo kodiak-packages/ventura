@@ -6,7 +6,7 @@ import cssReset from '../../css-reset.module.css';
 import styles from './Alert.module.css';
 
 interface Props {
-  intent?: 'error';
+  intent?: 'error' | 'success';
   message: string;
   className?: string;
 }
