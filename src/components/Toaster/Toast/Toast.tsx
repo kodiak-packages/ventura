@@ -70,6 +70,8 @@ const Toast: React.FC<Props> = memo(
       (ref) => {
         if (ref === null) return;
 
+        const test = ref.getBoundingClientRect();
+
         const { height: rectHeight } = ref.getBoundingClientRect();
         setHeight(rectHeight);
       },
@@ -88,19 +90,20 @@ const Toast: React.FC<Props> = memo(
       <Transition appear unmountOnExit timeout={240} in={isShown} onExited={onRemove}>
         {(state) => (
           <div
-            ref={onRef}
             data-state={state}
             className={styles.toastContainer}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
             style={dynamicStyles}
           >
-            <Alert
-              intent={intent}
-              message={message}
-              // isRemoveable={hasCloseButton}
-              // onRemove={close}
-            />
+            <div ref={onRef} className={styles.toastPadding}>
+              <Alert
+                intent="error"
+                message={message}
+                // isRemoveable={hasCloseButton}
+                // onRemove={close}
+              />
+            </div>
           </div>
         )}
       </Transition>

@@ -21,19 +21,21 @@ class Toaster {
   closeAllHandler?: () => void;
 
   constructor() {
-    const container = document.createElement('div');
-    container.setAttribute('id', 'ventura-toasters');
-    document.body.appendChild(container);
+    if (typeof document !== 'undefined') {
+      const container = document.createElement('div');
+      container.setAttribute('id', 'ventura-toasters');
+      document.body.appendChild(container);
 
-    ReactDOM.render(
-      <ToastManager
-        bindNotify={this.bindNotify}
-        bindRemove={this.bindRemove}
-        bindGetToasts={this.bindGetToasts}
-        bindCloseAll={this.bindCloseAll}
-      />,
-      container,
-    );
+      ReactDOM.render(
+        <ToastManager
+          bindNotify={this.bindNotify}
+          bindRemove={this.bindRemove}
+          bindGetToasts={this.bindGetToasts}
+          bindCloseAll={this.bindCloseAll}
+        />,
+        container,
+      );
+    }
   }
 
   private bindNotify = (handler: ToastCallHandler) => {
