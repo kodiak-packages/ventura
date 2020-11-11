@@ -1,0 +1,24 @@
+---
+name: Toaster
+menu: Components
+route: /toaster
+---
+
+import { Playground, Props } from 'docz';
+import { toaster, Button } from '../../index.ts'
+
+# Toaster
+
+Toaster allow you to display status messages.
+
+## Examples
+
+### Basic usage
+
+<Playground>
+   <Button onClick={(event) => toaster.error('Error toaster')}>Click me</Button>
+</Playground>
+
+## API
+
+<Props of={Alert} />

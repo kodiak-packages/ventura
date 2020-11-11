@@ -60,19 +60,19 @@ class Toaster {
     return this.closeAllHandler && this.closeAllHandler();
   };
 
-  // info = (message: string, settings: ToastSettings) => {
+  // info = (message: string, settings?: ToastSettings) => {
   //   return this.notifyHandler(message, { ...settings, intent: 'info' });
   // };
 
-  success = (message: string, settings: ToastSettings) => {
+  success = (message: string, settings?: ToastSettings) => {
     return this.notifyHandler && this.notifyHandler(message, { ...settings, intent: 'success' });
   };
 
-  // warning = (message: string, settings: ToastSettings) => {
+  // warning = (message: string, settings?: ToastSettings) => {
   //   return this.notifyHandler(message, { ...settings, intent: 'warning' });
   // };
 
-  error = (message: string, settings: ToastSettings) => {
+  error = (message: string, settings?: ToastSettings) => {
     return this.notifyHandler && this.notifyHandler(message, { ...settings, intent: 'error' });
   };
 
