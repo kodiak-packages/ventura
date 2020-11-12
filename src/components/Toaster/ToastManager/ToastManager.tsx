@@ -115,7 +115,7 @@ const ToastManager = memo(({ bindNotify, bindRemove, bindGetToasts, bindCloseAll
 
   return (
     <span className={styles.toastManagerContainer}>
-      {toasts.map(({ id, duration, isShown, message }) => {
+      {toasts.map(({ id, duration, isShown, message, intent }) => {
         return (
           <Toast
             key={id}
@@ -123,6 +123,7 @@ const ToastManager = memo(({ bindNotify, bindRemove, bindGetToasts, bindCloseAll
             duration={duration}
             isShown={isShown}
             message={message}
+            intent={intent}
           />
         );
       })}

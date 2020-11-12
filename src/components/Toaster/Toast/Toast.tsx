@@ -9,7 +9,7 @@ interface Props {
   duration: number;
   onRemove: () => void;
   isShown: boolean;
-  intent?: 'success' | 'error';
+  intent: 'success' | 'error';
   message: string;
   hasCloseButton?: boolean;
 }
@@ -20,7 +20,7 @@ const Toast: React.FC<Props> = memo(
     onRemove,
     isShown: isShownProp,
     // Template props
-    intent = 'success',
+    intent,
     message,
     hasCloseButton = false,
   }: Props) => {
@@ -38,7 +38,7 @@ const Toast: React.FC<Props> = memo(
     const close = useCallback(() => {
       clearCloseTimer();
       setIsShown(false);
-    }, [clearCloseTimer, setIsShown]);
+    }, [clearCloseTimer]);
 
     const startCloseTimer = useCallback(() => {
       if (duration) {
@@ -61,7 +61,7 @@ const Toast: React.FC<Props> = memo(
       if (isShownProp !== isShown && typeof isShownProp === 'boolean') {
         setIsShown(isShownProp);
       }
-    }, [isShown, isShownProp]);
+    }, [isShownProp]);
 
     const handleMouseEnter = useCallback(() => clearCloseTimer(), [clearCloseTimer]);
     const handleMouseLeave = useCallback(() => startCloseTimer(), [startCloseTimer]);
@@ -70,10 +70,8 @@ const Toast: React.FC<Props> = memo(
       (ref) => {
         if (ref === null) return;
 
-        const test = ref.getBoundingClientRect();
-
-        const { height: rectHeight } = ref.getBoundingClientRect();
-        setHeight(rectHeight);
+        const { height: toastHeight } = ref.getBoundingClientRect();
+        setHeight(toastHeight);
       },
       [setHeight],
     );
@@ -86,26 +84,30 @@ const Toast: React.FC<Props> = memo(
       [isShown, height],
     );
 
+    console.log(isShown);
+
     return (
       <Transition appear unmountOnExit timeout={240} in={isShown} onExited={onRemove}>
-        {(state) => (
-          <div
-            data-state={state}
-            className={styles.toastContainer}
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-            style={dynamicStyles}
-          >
-            <div ref={onRef} className={styles.toastPadding}>
-              <Alert
-                intent="error"
-                message={message}
-                // isRemoveable={hasCloseButton}
-                // onRemove={close}
-              />
+        {(state) => {
+          return (
+            <div
+              data-state={state}
+              className={styles.toastContainer}
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+              style={dynamicStyles}
+            >
+              <div ref={onRef} className={styles.toastPadding}>
+                <Alert
+                  intent={intent}
+                  message={message}
+                  // isRemoveable={hasCloseButton}
+                  // onRemove={close}
+                />
+              </div>
             </div>
-          </div>
-        )}
+          );
+        }}
       </Transition>
     );
   },

@@ -1,9 +1,10 @@
 .toastContainer {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-end;
   height: 0;
   transition: all 240ms cubic-bezier(0.0, 0.0, 0.2, 1);
+  pointer-events: all;
 }
 
 .toastContainer[data-state="entering"], .toastContainer[data-state="entered"] {
@@ -15,7 +16,8 @@
 }
 
 .toastPadding {
-  padding-top: 8px;
+  padding: 8px 8px 0 0;
+
 }
 
 
