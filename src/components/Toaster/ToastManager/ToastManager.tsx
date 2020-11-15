@@ -7,7 +7,7 @@ import styles from './ToastManager.module.css';
 
 export interface ToastSettings {
   id?: string;
-  hasCloseButton?: boolean;
+  isClosable?: boolean;
   duration?: number;
   intent: AlertIntent;
 }
@@ -15,7 +15,7 @@ export interface ToastSettings {
 export interface ToastInstance {
   id: string;
   message: string;
-  hasCloseButton: boolean;
+  isClosable: boolean;
   duration: number;
   onClose: () => void;
   intent: AlertIntent;
@@ -81,7 +81,7 @@ const ToastManager = memo(({ bindNotify, bindRemove, bindGetToasts, bindCloseAll
 
   const createToastInstance = (
     message: string,
-    { hasCloseButton = true, duration = 5, id, intent }: ToastSettings,
+    { isClosable = true, duration = 5, id, intent }: ToastSettings,
   ): ToastInstance => {
     const uniqueId = idCounter;
     setIdCounter(idCounter + 1);
@@ -90,7 +90,7 @@ const ToastManager = memo(({ bindNotify, bindRemove, bindGetToasts, bindCloseAll
     return {
       id: generatedId,
       message,
-      hasCloseButton,
+      isClosable,
       duration,
       onClose: () => safeCloseToast(generatedId),
       intent,
@@ -115,7 +115,7 @@ const ToastManager = memo(({ bindNotify, bindRemove, bindGetToasts, bindCloseAll
 
   return (
     <span className={styles.toastManagerContainer}>
-      {toasts.map(({ id, duration, isShown, message, intent }) => {
+      {toasts.map(({ id, duration, isShown, message, intent, isClosable }) => {
         return (
           <Toast
             key={id}
@@ -124,6 +124,7 @@ const ToastManager = memo(({ bindNotify, bindRemove, bindGetToasts, bindCloseAll
             isShown={isShown}
             message={message}
             intent={intent}
+            isClosable={isClosable}
           />
         );
       })}

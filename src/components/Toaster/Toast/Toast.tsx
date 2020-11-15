@@ -11,7 +11,7 @@ interface Props {
   isShown: boolean;
   intent: 'success' | 'error';
   message: string;
-  hasCloseButton?: boolean;
+  isClosable: boolean;
 }
 
 const Toast: React.FC<Props> = memo(
@@ -22,7 +22,7 @@ const Toast: React.FC<Props> = memo(
     // Template props
     intent,
     message,
-    hasCloseButton = false,
+    isClosable,
   }: Props) => {
     const [isShown, setIsShown] = useState(true);
     const [height, setHeight] = useState(0);
@@ -84,8 +84,6 @@ const Toast: React.FC<Props> = memo(
       [isShown, height],
     );
 
-    console.log(isShown);
-
     return (
       <Transition appear unmountOnExit timeout={240} in={isShown} onExited={onRemove}>
         {(state) => {
@@ -98,12 +96,7 @@ const Toast: React.FC<Props> = memo(
               style={dynamicStyles}
             >
               <div ref={onRef} className={styles.toastPadding}>
-                <Alert
-                  intent={intent}
-                  message={message}
-                  // isRemoveable={hasCloseButton}
-                  // onRemove={close}
-                />
+                <Alert intent={intent} message={message} onClose={isClosable ? close : undefined} />
               </div>
             </div>
           );
