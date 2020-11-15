@@ -1,5 +1,5 @@
 import React from 'react';
-import { AlertCircle, CheckCircle } from 'react-feather';
+import { AlertCircle, CheckCircle, X } from 'react-feather';
 import classNames from 'classnames';
 
 import cssReset from '../../css-reset.module.css';
@@ -11,9 +11,10 @@ interface Props {
   intent?: AlertIntent;
   message: string;
   className?: string;
+  onClose?: () => void;
 }
 
-const Alert: React.FC<Props> = ({ intent = 'error', message, className }: Props) => {
+const Alert: React.FC<Props> = ({ intent = 'error', message, className, onClose }: Props) => {
   const mergedClassNames = classNames(
     cssReset.ventura,
     styles.alert,
@@ -24,13 +25,26 @@ const Alert: React.FC<Props> = ({ intent = 'error', message, className }: Props)
     className,
   );
 
+  const contentContainer = classNames(styles.contentContainer, {
+    [styles.closable]: Boolean(onClose),
+  });
+
   return (
     <div className={mergedClassNames}>
-      {intent === 'error' && <AlertCircle className={classNames(styles.icon, styles.iconError)} />}
-      {intent === 'success' && (
-        <CheckCircle className={classNames(styles.icon, styles.iconSuccess)} />
+      <div className={contentContainer}>
+        {intent === 'error' && (
+          <AlertCircle className={classNames(styles.icon, styles.iconError)} />
+        )}
+        {intent === 'success' && (
+          <CheckCircle className={classNames(styles.icon, styles.iconSuccess)} />
+        )}
+        <span className={styles.message}>{message}</span>
+      </div>
+      {onClose && (
+        <div className={styles.closeContainer}>
+          <X onClick={onClose} className={styles.closeAlert} />
+        </div>
       )}
-      <span className={styles.message}>{message}</span>
     </div>
   );
 };

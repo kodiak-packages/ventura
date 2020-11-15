@@ -1,7 +1,7 @@
 .alert {
-  padding: 14.5px 18px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   border-radius: var(--border-radius-small);
 }
 
@@ -11,6 +11,29 @@
 
 .alert.alertSuccess {
   background-color: var(--color-success-light);
+}
+
+.alert .contentContainer {
+  padding: 14.5px 18px;
+  display: flex;
+  align-items: center;
+}
+
+.alert .contentContainer.closable {
+  padding-right: 18px;
+}
+
+.alert .closeContainer {
+  padding: 13.5px 17px 13.5px 13.5px;
+  display: flex;
+  align-items: center;
+}
+
+.alert .closeAlert {
+  color: var(--color-neutral-5);
+  cursor: pointer;
+  height: 18px;
+  width: 18px;
 }
 
 .message {
