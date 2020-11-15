@@ -18,8 +18,26 @@ Toaster allow you to display status messages.
 <Playground>
   <Button onClick={(event) => {
     toaster.error('Error toaster')}
-    }>Click me</Button>
+    }>Error toaster</Button>
+  {' '}
   <Button onClick={(event) => {
     toaster.success('Success toaster')}
+    }>Success toaster</Button>
+</Playground>
+
+### Non closable toaster
+
+<Playground>
+  <Button onClick={(event) => {
+    toaster.error('Error toaster', { isClosable: false })}
     }>Click me</Button>
 </Playground>
+
+### Custom toaster duration
+
+<Playground>
+  <Button onClick={(event) => {
+    toaster.success('I\'m here for a looong time.', { duration: 60 })}
+    }>Click me</Button>
+</Playground>
+
