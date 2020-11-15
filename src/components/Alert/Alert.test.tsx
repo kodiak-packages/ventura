@@ -22,7 +22,7 @@ describe('Input', () => {
   test('className prop', () => {
     const className = 'center';
     const { getByText } = render(<Alert {...defaultProps} className={className} />);
-    const alertElement = getByText(/Something went wrong./).parentElement!;
+    const alertElement = getByText(/Something went wrong./).parentElement?.parentElement!;
 
     const renderedClassNames = alertElement.className.split(' ');
     expect(renderedClassNames).toContain(className);
