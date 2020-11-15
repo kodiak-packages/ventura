@@ -55,12 +55,13 @@ const Toast: React.FC<Props> = memo(
       return () => {
         clearCloseTimer();
       };
-    }, []);
+    }, [clearCloseTimer, startCloseTimer]);
 
     useEffect(() => {
       if (isShownProp !== isShown && typeof isShownProp === 'boolean') {
         setIsShown(isShownProp);
       }
+      // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [isShownProp]);
 
     const handleMouseEnter = useCallback(() => clearCloseTimer(), [clearCloseTimer]);
