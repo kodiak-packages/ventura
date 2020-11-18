@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { ComponentProps, useState } from 'react';
 
 import { AlertIntent } from '../../Alert/Alert';
 import Toast from '../Toast/Toast';
@@ -12,14 +12,8 @@ export interface ToastSettings {
   intent: AlertIntent;
 }
 
-export interface ToastInstance {
+export interface ToastInstance extends ComponentProps<typeof Toast> {
   id: string;
-  message: string;
-  isClosable: boolean;
-  durationInSeconds: number;
-  onClose: () => void;
-  intent: AlertIntent;
-  isShown: boolean;
 }
 
 export type ToastCallHandler = (message: string, settings: ToastSettings) => void;
