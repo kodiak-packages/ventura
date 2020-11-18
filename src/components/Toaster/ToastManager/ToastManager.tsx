@@ -43,10 +43,6 @@ const ToastManager = memo(({ bindNotify, bindRemove, bindGetToasts, bindCloseAll
     setToasts(toasts.map((toast) => ({ ...toast, isShown: false })));
   };
 
-  /**
-   * This will set isShown on the Toast which will close the toast.
-   * It won't remove the toast until onExited triggers onRemove.
-   */
   const closeToast = (id: string) => {
     setToasts(
       toasts.map((toast) => {
