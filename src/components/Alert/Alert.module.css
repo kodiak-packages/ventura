@@ -1,9 +1,39 @@
 .alert {
-  padding: 14.5px 18px;
-  background-color: var(--color-error-light);
   display: flex;
   align-items: center;
+  justify-content: space-between;
   border-radius: var(--border-radius-small);
+}
+
+.alert.alertError {
+  background-color: var(--color-error-light);
+}
+
+.alert.alertSuccess {
+  background-color: var(--color-success-light);
+}
+
+.alert .contentContainer {
+  padding: 14.5px 18px;
+  display: flex;
+  align-items: center;
+}
+
+.alert .contentContainer.closable {
+  padding-right: 18px;
+}
+
+.alert .closeContainer {
+  padding: 13.5px 17px 13.5px 13.5px;
+  display: flex;
+  align-items: center;
+}
+
+.alert .closeAlert {
+  color: var(--color-neutral-5);
+  cursor: pointer;
+  height: 18px;
+  width: 18px;
 }
 
 .message {
@@ -12,7 +42,14 @@
 
 svg.icon {
   margin-right: 10px;
-  color: var(--color-error);
   height: 16px;
   width: 16px;
+}
+
+svg.icon.iconSuccess {
+  color: var(--color-success);
+}
+
+svg.icon.iconError {
+  color: var(--color-error);
 }
