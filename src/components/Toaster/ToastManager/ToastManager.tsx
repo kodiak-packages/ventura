@@ -119,7 +119,7 @@ const ToastManager = memo(({ bindNotify, bindRemove, bindGetToasts, bindCloseAll
         return (
           <Toast
             key={id}
-            onRemove={() => removeToast(id)}
+            onClose={() => removeToast(id)}
             duration={duration}
             isShown={isShown}
             message={message}

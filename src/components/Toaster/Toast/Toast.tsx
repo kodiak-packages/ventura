@@ -1,29 +1,27 @@
-import React, { memo, useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import React, {
+  ComponentProps,
+  memo,
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
 import { Transition } from 'react-transition-group';
 
-import Alert from '../../Alert/Alert';
+import Alert, { AlertIntent } from '../../Alert/Alert';
 
 import styles from './Toast.module.css';
 
-interface Props {
+interface Props extends Pick<ComponentProps<typeof Alert>, 'intent' | 'onClose' | 'message'> {
   duration: number;
-  onRemove: () => void;
   isShown: boolean;
-  intent: 'success' | 'error';
-  message: string;
+  intent: AlertIntent;
   isClosable: boolean;
 }
 
 const Toast: React.FC<Props> = memo(
-  ({
-    duration,
-    onRemove,
-    isShown: isShownProp,
-    // Template props
-    intent,
-    message,
-    isClosable,
-  }: Props) => {
+  ({ duration, onClose, isShown: isShownProp, intent, message, isClosable }: Props) => {
     const [isShown, setIsShown] = useState(true);
     const [height, setHeight] = useState(0);
     const closeTimer = useRef<number | null>(null);
@@ -86,7 +84,7 @@ const Toast: React.FC<Props> = memo(
     );
 
     return (
-      <Transition appear unmountOnExit timeout={240} in={isShown} onExited={onRemove}>
+      <Transition appear unmountOnExit timeout={240} in={isShown} onExited={onClose}>
         {(state) => {
           return (
             <div
