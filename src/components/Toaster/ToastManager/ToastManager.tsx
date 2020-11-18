@@ -27,7 +27,6 @@ interface Props {
 
 const ToastManager = ({ bindNotify, bindRemove, bindGetToasts, bindCloseAll }: Props) => {
   const [toasts, setToasts] = useState<ToastInstance[]>([]);
-  const [idCounter, setIdCounter] = useState(0);
 
   const getToasts = () => toasts;
 
@@ -71,8 +70,7 @@ const ToastManager = ({ bindNotify, bindRemove, bindGetToasts, bindCloseAll }: P
     message: string,
     { isClosable = true, durationInSeconds = 5, id, intent }: ToastSettings,
   ): ToastInstance => {
-    const uniqueId = idCounter;
-    setIdCounter(idCounter + 1);
+    const uniqueId = new Date().getTime();
     const generatedId = id ? `${id}-${uniqueId}` : `${uniqueId}`;
 
     return {
