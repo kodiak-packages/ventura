@@ -8,7 +8,7 @@ import styles from './ToastManager.module.css';
 export interface ToastSettings {
   id?: string;
   isClosable?: boolean;
-  duration?: number;
+  durationInSeconds?: number;
   intent: AlertIntent;
 }
 
@@ -16,7 +16,7 @@ export interface ToastInstance {
   id: string;
   message: string;
   isClosable: boolean;
-  duration: number;
+  durationInSeconds: number;
   onClose: () => void;
   intent: AlertIntent;
   isShown: boolean;
@@ -77,7 +77,7 @@ const ToastManager = memo(({ bindNotify, bindRemove, bindGetToasts, bindCloseAll
 
   const createToastInstance = (
     message: string,
-    { isClosable = true, duration = 5, id, intent }: ToastSettings,
+    { isClosable = true, durationInSeconds = 5, id, intent }: ToastSettings,
   ): ToastInstance => {
     const uniqueId = idCounter;
     setIdCounter(idCounter + 1);
@@ -87,7 +87,7 @@ const ToastManager = memo(({ bindNotify, bindRemove, bindGetToasts, bindCloseAll
       id: generatedId,
       message,
       isClosable,
-      duration,
+      durationInSeconds,
       onClose: () => safeCloseToast(generatedId),
       intent,
       isShown: true,
@@ -111,12 +111,12 @@ const ToastManager = memo(({ bindNotify, bindRemove, bindGetToasts, bindCloseAll
 
   return (
     <span className={styles.toastManagerContainer}>
-      {toasts.map(({ id, duration, isShown, message, intent, isClosable }) => {
+      {toasts.map(({ id, durationInSeconds, isShown, message, intent, isClosable }) => {
         return (
           <Toast
             key={id}
             onClose={() => removeToast(id)}
-            duration={duration}
+            durationInSeconds={durationInSeconds}
             isShown={isShown}
             message={message}
             intent={intent}

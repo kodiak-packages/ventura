@@ -14,14 +14,14 @@ import Alert, { AlertIntent } from '../../Alert/Alert';
 import styles from './Toast.module.css';
 
 interface Props extends Pick<ComponentProps<typeof Alert>, 'intent' | 'onClose' | 'message'> {
-  duration: number;
+  durationInSeconds: number;
   isShown: boolean;
   intent: AlertIntent;
   isClosable: boolean;
 }
 
 const Toast: React.FC<Props> = memo(
-  ({ duration, onClose, isShown: isShownProp, intent, message, isClosable }: Props) => {
+  ({ durationInSeconds, onClose, isShown: isShownProp, intent, message, isClosable }: Props) => {
     const [isShown, setIsShown] = useState(true);
     const [height, setHeight] = useState(0);
     const closeTimer = useRef<number | null>(null);
@@ -39,13 +39,13 @@ const Toast: React.FC<Props> = memo(
     }, [clearCloseTimer]);
 
     const startCloseTimer = useCallback(() => {
-      if (duration) {
+      if (durationInSeconds) {
         clearCloseTimer();
         closeTimer.current = window.setTimeout(() => {
           close();
-        }, duration * 1000);
+        }, durationInSeconds * 1000);
       }
-    }, [duration, clearCloseTimer, closeTimer, close]);
+    }, [durationInSeconds, clearCloseTimer, closeTimer, close]);
 
     useEffect(() => {
       startCloseTimer();
