@@ -1,4 +1,4 @@
-import React, { memo, useState } from 'react';
+import React, { useState } from 'react';
 
 import { AlertIntent } from '../../Alert/Alert';
 import Toast from '../Toast/Toast';
@@ -31,9 +31,7 @@ interface Props {
   bindCloseAll: (handler: () => void) => void;
 }
 
-const hasCustomId = (settings: ToastSettings) => Object.hasOwnProperty.call(settings, 'id');
-
-const ToastManager = memo(({ bindNotify, bindRemove, bindGetToasts, bindCloseAll }: Props) => {
+const ToastManager = ({ bindNotify, bindRemove, bindGetToasts, bindCloseAll }: Props) => {
   const [toasts, setToasts] = useState<ToastInstance[]>([]);
   const [idCounter, setIdCounter] = useState(0);
 
@@ -95,11 +93,7 @@ const ToastManager = memo(({ bindNotify, bindRemove, bindGetToasts, bindCloseAll
   };
 
   const notify = (message: string, settings: ToastSettings) => {
-    let tempToasts = toasts;
-    if (hasCustomId(settings)) {
-      tempToasts = removeToast(settings?.id);
-    }
-
+    const tempToasts = settings.id ? removeToast(settings.id) : toasts;
     const instance = createToastInstance(message, settings);
     setToasts([instance, ...tempToasts]);
   };
@@ -126,6 +120,6 @@ const ToastManager = memo(({ bindNotify, bindRemove, bindGetToasts, bindCloseAll
       })}
     </span>
   );
-});
+};
 
 export default ToastManager;
