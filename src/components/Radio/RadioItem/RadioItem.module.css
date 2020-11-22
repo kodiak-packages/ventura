@@ -58,7 +58,7 @@
 .radioInput + .radioButtonContainer .description {
   color: var(--font-color-sub);
   font-size: 13px;
-  margin: 0px 0px 0px 30px;
+  margin: 6px 0px 0px 30px;
 }
 
 .radioButtonContainer:hover {
