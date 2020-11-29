@@ -27,7 +27,7 @@ A slider component lets the user pick a value between a minimum and maximum valu
 <Playground>
   {() => {
     const [value, setValue] = React.useState(1);
-    return <Slider name='minimal-slider' valueBoundaries={[0,10]} value={value} onChange={setValue} numberOfDecimals={2} stepSize={0.05} />
+    return <Slider name='decimal-slider' valueBoundaries={[0,10]} value={value} onChange={setValue} numberOfDecimals={2} stepSize={0.05} />
   }}
 </Playground>
 
@@ -36,7 +36,7 @@ A slider component lets the user pick a value between a minimum and maximum valu
 <Playground>
   {() => {
     const [value, setValue] = React.useState(5);
-    return <Slider name='minimal-slider' valueBoundaries={[0,10]} textBoundaries={['Not accurate at all', 'Very accurate']} value={value} stepSize={1} onChange={setValue} />
+    return <Slider name='text-boundaries-slider' valueBoundaries={[0,10]} textBoundaries={['Not accurate at all', 'Very accurate']} value={value} stepSize={1} onChange={setValue} />
   }}
 </Playground>
 
@@ -45,7 +45,7 @@ A slider component lets the user pick a value between a minimum and maximum valu
 <Playground>
   {() => {
     const [value, setValue] = React.useState(50);
-    return <Slider name='minimal-slider' valueBoundaries={[0,100]} value={value} onChange={setValue} showTooltip={false} />
+    return <Slider name='no-tooltip-slider' valueBoundaries={[0,100]} value={value} onChange={setValue} showTooltip={false} />
   }}
 </Playground>
 
@@ -54,7 +54,7 @@ A slider component lets the user pick a value between a minimum and maximum valu
 <Playground>
   {() => {
     const [value, setValue] = React.useState(50);
-    return <Slider name='minimal-slider' valueBoundaries={[0,100]} value={value} onChange={setValue} isDisabled />
+    return <Slider name='disabled-slider' valueBoundaries={[0,100]} value={value} onChange={setValue} isDisabled />
   }}
 </Playground>
 
