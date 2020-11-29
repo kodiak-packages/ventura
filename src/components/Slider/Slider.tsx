@@ -10,7 +10,6 @@ import cssReset from '../../css-reset.module.css';
 import styles from './Slider.module.css';
 
 type Props = {
-  name: string;
   value: number;
   onChange: (value: number) => void;
   valueBoundaries: [number, number];
@@ -22,7 +21,6 @@ type Props = {
 };
 
 const Slider: React.FC<Props> = ({
-  name,
   value,
   onChange,
   valueBoundaries,
@@ -47,11 +45,9 @@ const Slider: React.FC<Props> = ({
       <CompoundSlider
         step={stepSize ?? (maxValue - minValue) / 100}
         domain={valueBoundaries}
-        reversed={minValue > maxValue}
         className={styles.slider}
         onChange={(values) => onChange(values[0])}
         values={[value]}
-        data-testid={`slider-${name}`}
         disabled={isDisabled}
       >
         <Rail>{({ getRailProps }) => <SliderRail getRailProps={getRailProps} />}</Rail>
