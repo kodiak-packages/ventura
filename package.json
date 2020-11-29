@@ -63,6 +63,7 @@
   "dependencies": {
     "@popperjs/core": "^2.4.4",
     "classnames": "^2.2.6",
+    "react-compound-slider": "^3.3.1",
     "react-feather": "^2.0.8",
     "react-popper": "^2.2.3",
     "react-portal": "^4.2.1",

@@ -1,0 +1,63 @@
+---
+name: Slider
+menu: Components
+route: /slider
+---
+
+import { Playground, Props } from 'docz';
+import { Slider } from '../../index.ts'
+
+# Slider
+
+A slider component lets the user pick a value between a minimum and maximum value.
+
+## Examples
+
+### Minimal slider
+
+<Playground>
+  {() => {
+    const [value, setValue] = React.useState(50);
+    return <Slider name='minimal-slider' valueBoundaries={[0,100]} value={value} onChange={setValue} />
+  }}
+</Playground>
+
+### Slider with decimal values
+
+<Playground>
+  {() => {
+    const [value, setValue] = React.useState(1);
+    return <Slider name='minimal-slider' valueBoundaries={[0,10]} value={value} onChange={setValue} numberOfDecimals={2} stepSize={0.05} />
+  }}
+</Playground>
+
+### Slider with text boundaries
+
+<Playground>
+  {() => {
+    const [value, setValue] = React.useState(5);
+    return <Slider name='minimal-slider' valueBoundaries={[0,10]} textBoundaries={['Not accurate at all', 'Very accurate']} value={value} stepSize={1} onChange={setValue} />
+  }}
+</Playground>
+
+### Slider without tooltip
+
+<Playground>
+  {() => {
+    const [value, setValue] = React.useState(50);
+    return <Slider name='minimal-slider' valueBoundaries={[0,100]} value={value} onChange={setValue} showTooltip={false} />
+  }}
+</Playground>
+
+### Disabled slider
+
+<Playground>
+  {() => {
+    const [value, setValue] = React.useState(50);
+    return <Slider name='minimal-slider' valueBoundaries={[0,100]} value={value} onChange={setValue} isDisabled />
+  }}
+</Playground>
+
+## API
+
+<Props of={Slider} />
