@@ -12,7 +12,7 @@ describe('Slider', () => {
 
   test('default snapshot', () => {
     const { asFragment } = render(<Slider {...defaultProps} />);
-    expect(asFragment).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   test('3 decimals should be displayed', () => {
