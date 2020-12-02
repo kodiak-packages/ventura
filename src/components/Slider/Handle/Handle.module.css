@@ -1,0 +1,42 @@
+.container {
+  position: absolute;
+  top: 0;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  cursor: grab;
+  transform: translate(-50%, -50%);
+}
+
+.handle {
+  width: 4px;
+  height: 4px;
+  border: 8px solid var(--color-neutral-7);
+  border-radius: 50%;
+  transition: all 0.3s;
+}
+
+.dragging .handle,
+.container:hover .handle {
+  background-color: var(--color-neutral-7);
+}
+
+.container.disabled .handle {
+  border-color: var(--color-neutral-3);
+}
+
+.dragging .handle {
+  transform: scale(1.4);
+}
+
+.tooltip {
+  position: absolute;
+  bottom: 38px;
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: var(--border-radius-small);
+  background-color: var(--color-neutral-3);
+}
