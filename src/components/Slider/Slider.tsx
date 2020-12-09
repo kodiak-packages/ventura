@@ -18,6 +18,7 @@ type Props = {
   numberOfDecimals?: number;
   isDisabled?: boolean;
   showTooltip?: boolean;
+  className?: string;
 };
 
 const Slider: React.FC<Props> = ({
@@ -29,6 +30,7 @@ const Slider: React.FC<Props> = ({
   numberOfDecimals = 0,
   isDisabled = false,
   showTooltip = true,
+  className,
 }: Props) => {
   const formatValue = (val: number) =>
     (Math.round(val * (10 ** numberOfDecimals || 1)) / (10 ** numberOfDecimals || 1)).toFixed(
@@ -36,9 +38,14 @@ const Slider: React.FC<Props> = ({
     );
   const minValue = valueBoundaries[0];
   const maxValue = valueBoundaries[1];
-  const classNames = classnames(cssReset.ventura, styles.sliderWrapper, {
-    [styles.disabled]: isDisabled,
-  });
+  const classNames = classnames(
+    cssReset.ventura,
+    styles.sliderWrapper,
+    {
+      [styles.disabled]: isDisabled,
+    },
+    className,
+  );
 
   return (
     <div className={classNames}>
