@@ -5,15 +5,16 @@ import classnames from 'classnames';
 import { Handle } from './Handle/Handle';
 import { SliderRail } from './SliderRail/SliderRail';
 import { Tick } from './Tick/Tick';
+import { countDecimals } from '../../utils/math';
 
 import cssReset from '../../css-reset.module.css';
 import styles from './Slider.module.css';
 
 type Props = {
   value: number;
-  onChange: (value: number) => void;
+  onChange?: (value: number) => void;
   valueBoundaries: [number, number];
-  textBoundaries?: [string, string];
+  textBoundaries?: [string | undefined, string | undefined];
   stepSize?: number;
   numberOfDecimals?: number;
   isDisabled?: boolean;
@@ -26,18 +27,21 @@ const Slider: React.FC<Props> = ({
   onChange,
   valueBoundaries,
   textBoundaries,
-  stepSize,
-  numberOfDecimals = 0,
+  stepSize: defaultStepSize,
+  numberOfDecimals: defaultNumberOfDecimals,
   isDisabled = false,
   showTooltip = true,
   className,
 }: Props) => {
+  const minValue = valueBoundaries[0];
+  const maxValue = valueBoundaries[1];
+  const numberOfDecimals =
+    defaultNumberOfDecimals ?? Math.max(...valueBoundaries.map(countDecimals));
+  const stepSize = defaultStepSize ?? valueBoundaries[1] <= 100 ? 1 : (maxValue - minValue) / 100;
   const formatValue = (val: number) =>
     (Math.round(val * (10 ** numberOfDecimals || 1)) / (10 ** numberOfDecimals || 1)).toFixed(
       numberOfDecimals,
     );
-  const minValue = valueBoundaries[0];
-  const maxValue = valueBoundaries[1];
   const classNames = classnames(
     cssReset.ventura,
     styles.sliderWrapper,
@@ -50,10 +54,10 @@ const Slider: React.FC<Props> = ({
   return (
     <div className={classNames}>
       <CompoundSlider
-        step={stepSize ?? (maxValue - minValue) / 100}
+        step={stepSize}
         domain={valueBoundaries}
         className={styles.slider}
-        onChange={(values) => onChange(values[0])}
+        onChange={(values) => onChange && onChange(values[0])}
         values={[value]}
         disabled={isDisabled}
       >

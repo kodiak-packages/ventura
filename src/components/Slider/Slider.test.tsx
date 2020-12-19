@@ -15,6 +15,12 @@ describe('Slider', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
+  test('the displayed decimals should be the same as the value boundaries', () => {
+    const { queryByText } = render(<Slider {...defaultProps} valueBoundaries={[10, 10.05]} />);
+    expect(queryByText('10.00')).not.toBe(null);
+    expect(queryByText('10.05')).not.toBe(null);
+  });
+
   test('3 decimals should be displayed', () => {
     const { queryByText } = render(<Slider {...defaultProps} numberOfDecimals={3} />);
     expect(queryByText('100.000')).not.toBe(null);

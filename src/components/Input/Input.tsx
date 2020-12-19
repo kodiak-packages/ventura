@@ -11,7 +11,7 @@ interface Props {
   onChange?: ChangeEventHandler<HTMLInputElement>;
   onBlur?: FocusEventHandler<HTMLInputElement>;
   placeholder?: string;
-  type?: 'text' | 'email' | 'password';
+  type?: 'text' | 'email' | 'password' | 'number';
   spellCheck?: boolean;
   autoComplete?: boolean;
   maxLength?: number;
