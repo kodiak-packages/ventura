@@ -16,6 +16,24 @@ describe('FormField', () => {
     expect(queryByText(/Something went wrong/)).not.toBe(null);
   });
 
+  test('undefined errorMessage should not be rendered', () => {
+    const { queryByText } = render(
+      <FormField errorMessage={undefined}>Form elements here</FormField>,
+    );
+    expect(queryByText(/undefined/)).toBe(null);
+  });
+
+  test('array of error messages should all be rendered', () => {
+    const { queryByText } = render(
+      <FormField errorMessage={['A first error', 'A second error', undefined]}>
+        Form elements here
+      </FormField>,
+    );
+    expect(queryByText(/A second error/)).not.toBe(null);
+    expect(queryByText(/A first error/)).not.toBe(null);
+    expect(queryByText(/undefined/)).toBe(null);
+  });
+
   test('hint should be rendered', () => {
     const { queryByText } = render(
       <FormField hint={<span>You should look here</span>}>Form elements here</FormField>,
