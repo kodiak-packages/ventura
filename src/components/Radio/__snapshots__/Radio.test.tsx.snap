@@ -15,7 +15,7 @@ exports[`Radio default snapshot 1`] = `
       value="test1"
     />
     <label
-      class="ventura radioButtonContainer radioButtonContainerChecked"
+      class="ventura radioButtonContainer isChecked"
       data-testid="default-test1-container"
       for="default-test1"
     >
@@ -115,7 +115,7 @@ exports[`Radio description snapshot 1`] = `
       value="test1"
     />
     <label
-      class="ventura radioButtonContainer radioButtonContainerChecked"
+      class="ventura radioButtonContainer isChecked"
       data-testid="default-test1-container"
       for="default-test1"
     >
