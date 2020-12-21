@@ -1,4 +1,4 @@
-import React, { ReactNode, useContext } from 'react';
+import React, { ReactNode, useContext, useState } from 'react';
 import classNames from 'classnames';
 
 import { RadioContext } from '../RadioGroup/RadioGroup';
@@ -17,6 +17,7 @@ export interface Props {
 const RadioItem = React.forwardRef<HTMLInputElement, Props>(
   ({ value, label, description, className, isDisabled = false }: Props, ref) => {
     const groupContext = useContext(RadioContext);
+    const [isFocused, setIsFocused] = useState(false);
 
     if (groupContext === null) {
       // eslint-disable-next-line no-console
@@ -32,8 +33,9 @@ const RadioItem = React.forwardRef<HTMLInputElement, Props>(
       cssReset.ventura,
       styles.radioButtonContainer,
       {
-        [styles.radioButtonContainerChecked]: isChecked,
-        [styles.radioButtonContainerDisabled]: isDisabled,
+        [styles.isChecked]: isChecked,
+        [styles.isDisabled]: isDisabled,
+        [styles.isFocused]: isFocused,
       },
       className,
     );
@@ -51,6 +53,8 @@ const RadioItem = React.forwardRef<HTMLInputElement, Props>(
           disabled={isDisabled}
           data-testid={`radio-${groupContext.name}-${value}`}
           className={styles.radioInput}
+          onFocus={() => setIsFocused(true)}
+          onBlur={() => setIsFocused(false)}
         />
         <label
           className={labelClassNames}
