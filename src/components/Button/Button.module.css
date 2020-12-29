@@ -48,6 +48,7 @@
 
 .label {
   line-height: inherit;
+  max-height: 14px;
 }
 
 .smallLabel {
