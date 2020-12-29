@@ -47,6 +47,7 @@
 }
 
 .label {
+  max-height: 14px;
   line-height: inherit;
 }
 
