@@ -1,5 +1,5 @@
 import React from 'react';
-import { AlertCircle, AlertTriangle, CheckCircle, X } from 'react-feather';
+import { AlertTriangle, CheckCircle, X, XOctagon } from 'react-feather';
 import classNames from 'classnames';
 
 import cssReset from '../../css-reset.module.css';
@@ -33,9 +33,7 @@ const Alert: React.FC<Props> = ({ intent = 'error', message, className, onClose 
   return (
     <div className={mergedClassNames}>
       <div className={contentContainer}>
-        {intent === 'error' && (
-          <AlertCircle className={classNames(styles.icon, styles.iconError)} />
-        )}
+        {intent === 'error' && <XOctagon className={classNames(styles.icon, styles.iconError)} />}
         {intent === 'success' && (
           <CheckCircle className={classNames(styles.icon, styles.iconSuccess)} />
         )}
