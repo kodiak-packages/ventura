@@ -17,6 +17,8 @@
   --color-success-2:#5cc767;
   --color-error-1: #ffe2e2;
   --color-error-2: #eb3737;
+  --color-warning-1: #fff3d5;
+  --color-warning-2: #f7b655;
 }
 
 /* ==================
@@ -35,6 +37,8 @@
 
   --color-success: var(--color-success-2);
   --color-success-light: var(--color-success-1);
+  --color-warning: var(--color-warning-2);
+  --color-warning-light: var(--color-warning-1);
   --color-error: var(--color-error-2);
   --color-error-light: var(--color-error-1);
 

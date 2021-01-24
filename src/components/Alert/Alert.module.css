@@ -5,12 +5,16 @@
   border-radius: var(--border-radius-small);
 }
 
-.alert.alertError {
-  background-color: var(--color-error-light);
-}
-
 .alert.alertSuccess {
   background-color: var(--color-success-light);
+}
+
+.alert.alertWarning {
+  background-color: var(--color-warning-light);
+}
+
+.alert.alertError {
+  background-color: var(--color-error-light);
 }
 
 .alert .contentContainer {
@@ -48,6 +52,10 @@ svg.icon {
 
 svg.icon.iconSuccess {
   color: var(--color-success);
+}
+
+svg.icon.iconWarning {
+  color: var(--color-warning);
 }
 
 svg.icon.iconError {
