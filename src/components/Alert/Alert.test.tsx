@@ -13,6 +13,21 @@ describe('Input', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
+  test('success snapshot', () => {
+    const { asFragment } = render(<Alert {...defaultProps} intent="success" />);
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('warning snapshot', () => {
+    const { asFragment } = render(<Alert {...defaultProps} intent="warning" />);
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('error snapshot', () => {
+    const { asFragment } = render(<Alert {...defaultProps} intent="error" />);
+    expect(asFragment()).toMatchSnapshot();
+  });
+
   test('the message should be rendered', () => {
     const { queryByText } = render(<Alert {...defaultProps} />);
     const alertElement = queryByText(/Something went wrong./);
