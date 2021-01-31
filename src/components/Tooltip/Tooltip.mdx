@@ -1,0 +1,38 @@
+---
+name: Tooltip
+menu: Components
+route: /tooltip
+---
+
+import { Playground, Props } from 'docz';
+import { Tooltip, Menu, Button, Trash } from '../../index.ts';
+
+# Tooltip
+
+A Popover is used to display extra information or actions in a compact way.
+
+## Best practices
+
+- Make sure the correct popover events are covered, depending on the event. (Click, hover, focus, etc...).
+
+## Examples
+
+### Basic usage
+
+<Playground>
+  <Tooltip content="More info here">
+    <Button>Hover here</Button>
+  </Tooltip>
+</Playground>
+
+### Bottom placement
+
+<Playground>
+  <Tooltip placement="bottom" content="This is placed on the bottom">
+    <Button>Hover here</Button>
+  </Tooltip>
+</Playground>
+
+## API
+
+<Props of={Tooltip} />
