@@ -10,15 +10,23 @@ interface Props {
   content?: React.ReactNode;
   children?: React.ReactNode;
   placement?: Placement;
-  className?: string;
+  contentClassName?: string;
+  childrenClassName?: string;
 }
 
-const Popover: React.FC<Props> = ({ content, children, placement = 'top', className }: Props) => {
+const Popover: React.FC<Props> = ({
+  content,
+  children,
+  placement = 'top',
+  contentClassName,
+  childrenClassName,
+}: Props) => {
   const [isShown, setIsShown] = useState(false);
   const divRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
   const [arrowRef, setArrowRef] = useState<HTMLDivElement | null>(null);
-  const contentClassNames = classnames(styles.content, className);
+  const contentClassNames = classnames(styles.content, contentClassName);
+  const childrenClassNames = classnames(styles.triggerContainer, childrenClassName);
 
   const hide = () => setIsShown(false);
   const show = () => setIsShown(true);
@@ -43,7 +51,7 @@ const Popover: React.FC<Props> = ({ content, children, placement = 'top', classN
 
   return (
     <>
-      <div className={styles.triggerContainer} ref={divRef} onMouseEnter={show} onMouseLeave={hide}>
+      <div className={childrenClassNames} ref={divRef} onMouseEnter={show} onMouseLeave={hide}>
         {children}
       </div>
 
