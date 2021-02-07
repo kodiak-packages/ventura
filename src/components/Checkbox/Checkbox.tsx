@@ -1,4 +1,4 @@
-import React, { ChangeEventHandler, FocusEventHandler, ReactNode, useState } from 'react';
+import React, { ChangeEventHandler, ReactNode, useState } from 'react';
 import classNames from 'classnames';
 
 import checkIcon from './check.svg';
