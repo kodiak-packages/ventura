@@ -1,4 +1,5 @@
 @import './theme.css';
+@import './fonts.css';
 
 /* Multiple issues open to set the default svg size */
 /* https://github.com/feathericons/react-feather/pull/62 */
