@@ -1,0 +1,82 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Checkbox default checked snapshot 1`] = `
+<DocumentFragment>
+  <label
+    class="ventura container isChecked"
+    data-testid="checkbox-label-enabled"
+    for="enabled"
+  >
+    <input
+      checked=""
+      class="input"
+      data-testid="checkbox-enabled"
+      id="enabled"
+      name="enabled"
+      type="checkbox"
+    />
+    <div
+      class="box"
+      style="background-image: url(undefined);"
+    />
+    <span
+      class="title"
+    >
+      Enable me
+    </span>
+  </label>
+</DocumentFragment>
+`;
+
+exports[`Checkbox default snapshot 1`] = `
+<DocumentFragment>
+  <label
+    class="ventura container"
+    data-testid="checkbox-label-enabled"
+    for="enabled"
+  >
+    <input
+      class="input"
+      data-testid="checkbox-enabled"
+      id="enabled"
+      name="enabled"
+      type="checkbox"
+    />
+    <div
+      class="box"
+    />
+    <span
+      class="title"
+    >
+      Enable me
+    </span>
+  </label>
+</DocumentFragment>
+`;
+
+exports[`Checkbox isDisabled prop 1`] = `
+<DocumentFragment>
+  <label
+    class="ventura container isDisabled"
+    data-testid="checkbox-label-enabled"
+    for="enabled"
+  >
+    <input
+      class="input"
+      data-testid="checkbox-enabled"
+      disabled=""
+      id="enabled"
+      name="enabled"
+      type="checkbox"
+    />
+    <div
+      class="box"
+    />
+    <span
+      class="title"
+    >
+      Enable me
+    </span>
+  </label>
+</DocumentFragment>
+`;

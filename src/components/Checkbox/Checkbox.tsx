@@ -2,15 +2,14 @@ import React, { ChangeEventHandler, FocusEventHandler, ReactNode, useState } fro
 import classNames from 'classnames';
 
 import checkIcon from './check.svg';
+
 import cssReset from '../../css-reset.module.css';
 import styles from './Checkbox.module.css';
 
 interface Props {
   name: string;
   value?: boolean;
-  defaultValue?: boolean;
   onChange?: ChangeEventHandler<HTMLInputElement>;
-  onBlur?: FocusEventHandler<HTMLInputElement>;
   className?: string;
   isDisabled?: boolean;
   description?: boolean;
@@ -18,10 +17,7 @@ interface Props {
 }
 
 const Input = React.forwardRef<HTMLInputElement, Props>(
-  (
-    { name, value, onChange, onBlur, isDisabled = false, className, description, children }: Props,
-    ref,
-  ) => {
+  ({ name, value, onChange, isDisabled = false, className, description, children }: Props, ref) => {
     const [isChecked, setIsChecked] = useState<boolean>(value ?? false);
 
     const labelClassNames = classNames(
@@ -35,7 +31,10 @@ const Input = React.forwardRef<HTMLInputElement, Props>(
     );
 
     const onClick = (event: React.ChangeEvent<HTMLInputElement>) => {
-      setIsChecked(!isChecked);
+      // https://fb.me/react-event-pooling
+      event.persist();
+
+      setIsChecked(event.target.checked);
 
       if (onChange) {
         onChange(event);
@@ -43,7 +42,7 @@ const Input = React.forwardRef<HTMLInputElement, Props>(
     };
 
     return (
-      <label htmlFor={name} className={labelClassNames}>
+      <label htmlFor={name} className={labelClassNames} data-testid={`checkbox-label-${name}`}>
         <input
           type="checkbox"
           id={name}
@@ -52,7 +51,6 @@ const Input = React.forwardRef<HTMLInputElement, Props>(
           onChange={onClick}
           ref={ref}
           data-testid={name && `checkbox-${name}`}
-          onBlur={onBlur}
           disabled={isDisabled}
           className={styles.input}
         />

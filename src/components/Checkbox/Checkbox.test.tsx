@@ -1,122 +1,67 @@
 import React, { ComponentProps } from 'react';
 import { fireEvent, render } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
 
 import Checkbox from './Checkbox';
 
 describe('Checkbox', () => {
-  const defaultButtonProps: ComponentProps<typeof Checkbox> = {
-    name: 'firstname',
+  const defaultProps: ComponentProps<typeof Checkbox> = {
+    name: 'enabled',
+    children: 'Enable me',
   };
 
   test('default snapshot', () => {
-    const component = <Input {...defaultButtonProps} />;
+    const component = <Checkbox {...defaultProps} />;
     const { asFragment } = render(component);
     expect(asFragment()).toMatchSnapshot();
   });
 
-  test('value prop', () => {
-    const component = <Input {...defaultButtonProps} value="Robin" onChange={() => {}} />;
-    const { getByTestId } = render(component);
-    const inputElement = getByTestId('input-firstname');
+  test('default checked snapshot', () => {
+    const component = <Checkbox {...defaultProps} value />;
+    const { getByTestId, asFragment } = render(component);
 
-    expect(inputElement.getAttribute('value')).toBe('Robin');
-  });
-
-  test('isDisabled prop', async () => {
-    const onChangeFn = jest.fn();
-    const firstName = 'Bram';
-    const component = <Input {...defaultButtonProps} isDisabled onChange={onChangeFn} />;
-    const { asFragment, getByTestId } = render(component);
-    const inputElement = getByTestId('input-firstname');
+    const checkboxElement = getByTestId('checkbox-enabled');
+    expect(checkboxElement.getAttribute('checked')).toBe('');
 
     expect(asFragment()).toMatchSnapshot();
-
-    await userEvent.type(inputElement, firstName);
-    expect(onChangeFn).toHaveBeenCalledTimes(0);
   });
 
-  test('onChange prop', async () => {
+  test('isDisabled prop', () => {
     const onChangeFn = jest.fn();
-    const firstName = 'Robin';
-    const component = <Input {...defaultButtonProps} onChange={onChangeFn} />;
-    const { getByTestId } = render(component);
-    const inputElement = getByTestId('input-firstname');
+    const component = <Checkbox {...defaultProps} isDisabled onChange={onChangeFn} />;
+    const { asFragment, getByTestId } = render(component);
 
-    await userEvent.type(inputElement, firstName);
+    const checkboxLabel = getByTestId('checkbox-label-enabled');
+    fireEvent.click(checkboxLabel);
 
-    expect(onChangeFn).toHaveBeenCalledTimes(firstName.length);
-    expect((inputElement as any).value).toBe(firstName);
+    expect(onChangeFn).toHaveBeenCalledTimes(0);
+    expect(asFragment()).toMatchSnapshot();
   });
 
-  test('onBlur prop', async () => {
-    const onBlurFn = jest.fn();
-    const component = <Input {...defaultButtonProps} onBlur={onBlurFn} />;
+  test('onChange prop', () => {
+    const onChangeFn = jest.fn();
+    const component = <Checkbox {...defaultProps} onChange={onChangeFn} />;
     const { getByTestId } = render(component);
-    const inputElement = getByTestId('input-firstname');
 
-    fireEvent.blur(inputElement);
+    const checkboxLabel = getByTestId('checkbox-label-enabled');
+    fireEvent.click(checkboxLabel);
 
-    expect(onBlurFn).toHaveBeenCalledTimes(1);
-  });
-
-  test('placeholder prop', () => {
-    const component = <Input {...defaultButtonProps} placeholder="First name" />;
-    const { getByTestId } = render(component);
-    const inputElement = getByTestId('input-firstname');
-
-    expect(inputElement.getAttribute('placeholder')).toBe('First name');
-  });
-
-  test('type prop', () => {
-    const component = <Input {...defaultButtonProps} type="password" />;
-    const { getByTestId } = render(component);
-    const inputElement = getByTestId('input-firstname');
-
-    expect(inputElement.getAttribute('type')).toBe('password');
-  });
-
-  test('errorMessage prop', () => {
-    const component = <Input {...defaultButtonProps} isInvalid />;
-    const { getByTestId } = render(component);
-    const inputElement = getByTestId('input-firstname');
-
-    expect(inputElement.classList).toContain('containsError');
-  });
-
-  test('spellCheck prop', () => {
-    const component = <Input {...defaultButtonProps} spellCheck />;
-    const { getByTestId } = render(component);
-    const inputElement = getByTestId('input-firstname');
-
-    expect(inputElement.hasAttribute('spellcheck')).toBe(true);
-    expect(inputElement.getAttribute('spellcheck')).not.toBe(false);
-  });
-
-  test('autoComplete prop', () => {
-    const component = <Input {...defaultButtonProps} autoComplete />;
-    const { getByTestId } = render(component);
-    const inputElement = getByTestId('input-firstname');
-
-    expect(inputElement.getAttribute('autocomplete')).toBe('on');
-  });
-
-  test('maxLength prop', () => {
-    const maxLength = 3;
-    const component = <Input {...defaultButtonProps} maxLength={3} />;
-    const { getByTestId } = render(component);
-    const inputElement = getByTestId('input-firstname');
-
-    expect(inputElement.getAttribute('maxlength')).toBe(maxLength.toString());
+    expect(onChangeFn).toHaveBeenNthCalledWith(
+      1,
+      expect.objectContaining({
+        target: expect.objectContaining({
+          checked: true,
+        }),
+      }),
+    );
   });
 
   test('className prop', () => {
     const className = 'center';
-    const component = <Input {...defaultButtonProps} name="classname" className={className} />;
+    const component = <Checkbox {...defaultProps} className={className} />;
     const { getByTestId } = render(component);
-    const containerElement = getByTestId('input-classname');
+    const checkboxLabel = getByTestId('checkbox-label-enabled');
 
-    const renderedClassNames = containerElement.className.split(' ');
+    const renderedClassNames = checkboxLabel.className.split(' ');
     expect(renderedClassNames).toContain(className);
     // className in prop should be the last in the row
     expect(renderedClassNames.indexOf(className)).toBe(renderedClassNames.length - 1);
