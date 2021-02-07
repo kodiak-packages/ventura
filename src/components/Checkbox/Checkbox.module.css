@@ -1,16 +1,55 @@
-.checkbox {
-  display: flex;
+.container {
+  display: grid;
+  grid-template-areas: 'box title' 'box description';
+  grid-template-columns: min-content auto;
 }
 
-.checkbox.disabled .input {
-  color: var(--color-neutral-4);
+.box {
+  grid-area: box;
+  content: '';
+  height: 17px;
+  width: 17px;
+  border: 2px solid var(--color-neutral-7);
+  margin-right: 10px;
+  border-radius: 4px;
+}
+
+.isChecked .box {
+  background-color: var(--color-neutral-7);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 70%;
+  border: none;
+}
+
+.isDisabled .box {
+  border-color: var(--color-neutral-4);
+}
+
+.isChecked.isDisabled .box {
+  background-color: var(--color-neutral-4);
+}
+
+.input {
+  opacity: 0;
+  position: absolute;
 }
 
 .title {
+  grid-area: title;
   display: block;
+  font-weight: 500;
+  font-size: 15px;
 }
 
 .description {
+  grid-area: description;
   display: block;
+  color: var(--color-neutral-6);
+  margin-top: 8px;
+}
+
+.isDisabled .title,
+.isDisabled .description {
   color: var(--color-neutral-5);
 }

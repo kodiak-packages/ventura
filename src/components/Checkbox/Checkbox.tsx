@@ -1,6 +1,7 @@
-import React, { ChangeEventHandler, FocusEventHandler, ReactNode } from 'react';
+import React, { ChangeEventHandler, FocusEventHandler, ReactNode, useState } from 'react';
 import classNames from 'classnames';
 
+import checkIcon from './check.svg';
 import cssReset from '../../css-reset.module.css';
 import styles from './Checkbox.module.css';
 
@@ -18,27 +19,28 @@ interface Props {
 
 const Input = React.forwardRef<HTMLInputElement, Props>(
   (
-    {
-      name,
-      value,
-      defaultValue,
-      onChange,
-      onBlur,
-      isDisabled = false,
-      className,
-      description,
-      children,
-    }: Props,
+    { name, value, onChange, onBlur, isDisabled = false, className, description, children }: Props,
     ref,
   ) => {
+    const [isChecked, setIsChecked] = useState<boolean>(value ?? false);
+
     const labelClassNames = classNames(
       cssReset.ventura,
-      styles.checkbox,
+      styles.container,
       {
         [styles.isDisabled]: isDisabled,
+        [styles.isChecked]: isChecked,
       },
       className,
     );
+
+    const onClick = (event: React.ChangeEvent<HTMLInputElement>) => {
+      setIsChecked(!isChecked);
+
+      if (onChange) {
+        onChange(event);
+      }
+    };
 
     return (
       <label htmlFor={name} className={labelClassNames}>
@@ -46,19 +48,20 @@ const Input = React.forwardRef<HTMLInputElement, Props>(
           type="checkbox"
           id={name}
           name={name}
-          checked={value}
-          defaultChecked={defaultValue}
-          onChange={onChange}
+          checked={isChecked}
+          onChange={onClick}
           ref={ref}
           data-testid={name && `checkbox-${name}`}
           onBlur={onBlur}
           disabled={isDisabled}
           className={styles.input}
         />
-        <div className={styles.text}>
-          <span className={styles.title}>{children}</span>
-          {description && <span className={styles.description}>{description}</span>}
-        </div>
+        <div
+          className={styles.box}
+          style={{ backgroundImage: isChecked ? `url(${checkIcon})` : '' }}
+        />
+        <span className={styles.title}>{children}</span>
+        {description && <span className={styles.description}>{description}</span>}
       </label>
     );
   },
