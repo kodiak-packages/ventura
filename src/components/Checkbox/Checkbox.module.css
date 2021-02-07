@@ -1,0 +1,16 @@
+.checkbox {
+  display: flex;
+}
+
+.checkbox.disabled .input {
+  color: var(--color-neutral-4);
+}
+
+.title {
+  display: block;
+}
+
+.description {
+  display: block;
+  color: var(--color-neutral-5);
+}
