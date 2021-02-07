@@ -16,7 +16,7 @@ interface Props {
   children: ReactNode;
 }
 
-const Input = React.forwardRef<HTMLInputElement, Props>(
+const Checkbox = React.forwardRef<HTMLInputElement, Props>(
   ({ name, value, onChange, isDisabled = false, className, description, children }: Props, ref) => {
     const [isChecked, setIsChecked] = useState<boolean>(value ?? false);
 
@@ -65,4 +65,4 @@ const Input = React.forwardRef<HTMLInputElement, Props>(
   },
 );
 
-export default Input;
+export default Checkbox;
