@@ -2,6 +2,7 @@ import './index.css';
 
 export { default as Alert } from './components/Alert/Alert';
 export { default as Button } from './components/Button/Button';
+export { default as Checkbox } from './components/Checkbox/Checkbox';
 export { default as FormField } from './components/FormField/FormField';
 export { default as Input } from './components/Input/Input';
 export { default as Modal } from './components/Modal/Modal';

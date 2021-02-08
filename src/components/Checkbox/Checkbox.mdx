@@ -1,0 +1,52 @@
+---
+name: Checkbox
+menu: Components
+route: /checkbox
+---
+
+import { Playground, Props } from 'docz';
+import { Checkbox } from '../../index.ts'
+
+# Checkbox
+
+A checkbox can be used enable an optional setting or feature.
+
+## Best practices
+
+- Checkboxes should be wrapped in a [FormField](/form-field) or should be preceded by another component serving as a label
+
+## Examples
+
+### Basic usage
+
+<Playground>
+  <Checkbox name="enabled">Enable me</Checkbox>
+</Playground>
+
+### Checked state
+
+<Playground>
+  <Checkbox name="enabled-2" defaultValue={true}>Disable me</Checkbox>
+</Playground>
+
+### Checkbox with description
+
+<Playground>
+  <Checkbox name="enabled-3" description="This feature can be enabled">Enable me</Checkbox>
+</Playground>
+
+### Disabled checkbox
+
+<Playground>
+  <Checkbox name="enabled-4" isDisabled>You can't enable me</Checkbox>
+</Playground>
+
+### Listening for changes
+
+<Playground>
+  <Checkbox name="enabled-5" onChange={(event) => console.log(`LOGGER: ${event.target.checked}`)}>Log</Checkbox>
+</Playground>
+
+## API
+
+<Props of={Checkbox} />
