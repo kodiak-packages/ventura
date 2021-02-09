@@ -20,31 +20,31 @@ A checkbox can be used enable an optional setting or feature.
 ### Basic usage
 
 <Playground>
-  <Checkbox name="enabled">Enable me</Checkbox>
+  <Checkbox label="Enable me" name="enabled" />
 </Playground>
 
 ### Checked state
 
 <Playground>
-  <Checkbox name="enabled-2" defaultValue={true}>Disable me</Checkbox>
+  <Checkbox label="Disable me" name="enabled-2" defaultValue={true} />
 </Playground>
 
 ### Checkbox with description
 
 <Playground>
-  <Checkbox name="enabled-3" description="This feature can be enabled">Enable me</Checkbox>
+  <Checkbox label="Enable me" name="enabled-3" description="This feature can be enabled" />
 </Playground>
 
 ### Disabled checkbox
 
 <Playground>
-  <Checkbox name="enabled-4" isDisabled>You can't enable me</Checkbox>
+  <Checkbox label="You can't enable me" name="enabled-4" isDisabled />
 </Playground>
 
 ### Listening for changes
 
 <Playground>
-  <Checkbox name="enabled-5" onChange={(event) => console.log(`LOGGER: ${event.target.checked}`)}>Log</Checkbox>
+  <Checkbox label="Log" name="enabled-5" onChange={(event) => console.log(`LOGGER: ${event.target.checked}`)} />
 </Playground>
 
 ## API
