@@ -31,7 +31,7 @@ const Checkbox = React.forwardRef<HTMLInputElement, Props>(
     );
 
     const onClick = (event: React.ChangeEvent<HTMLInputElement>) => {
-      // https://fb.me/react-event-pooling
+      // Info at https://fb.me/react-event-pooling
       event.persist();
 
       setIsChecked(event.target.checked);
