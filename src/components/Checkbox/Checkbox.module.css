@@ -13,6 +13,7 @@
   border: 2px solid var(--color-neutral-7);
   margin-right: 10px;
   border-radius: 4px;
+  cursor: pointer;
 }
 
 .isChecked .box {
@@ -34,6 +35,7 @@
 .input {
   opacity: 0;
   position: absolute;
+  cursor: pointer;
 }
 
 .title {
