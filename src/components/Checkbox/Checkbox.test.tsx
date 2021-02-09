@@ -6,7 +6,7 @@ import Checkbox from './Checkbox';
 describe('Checkbox', () => {
   const defaultProps: ComponentProps<typeof Checkbox> = {
     name: 'enabled',
-    children: 'Enable me',
+    label: 'Enable me',
   };
 
   test('default snapshot', () => {

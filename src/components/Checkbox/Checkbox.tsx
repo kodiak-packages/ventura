@@ -13,11 +13,11 @@ interface Props {
   className?: string;
   isDisabled?: boolean;
   description?: boolean;
-  children: ReactNode;
+  label: ReactNode;
 }
 
 const Checkbox = React.forwardRef<HTMLInputElement, Props>(
-  ({ name, value, onChange, isDisabled = false, className, description, children }: Props, ref) => {
+  ({ name, value, onChange, isDisabled = false, className, description, label }: Props, ref) => {
     const [isChecked, setIsChecked] = useState<boolean>(value ?? false);
 
     const labelClassNames = classNames(
@@ -58,7 +58,7 @@ const Checkbox = React.forwardRef<HTMLInputElement, Props>(
           className={styles.box}
           style={{ backgroundImage: isChecked ? `url(${checkIcon})` : '' }}
         />
-        <span className={styles.title}>{children}</span>
+        <span className={styles.title}>{label}</span>
         {description && <span className={styles.description}>{description}</span>}
       </label>
     );
