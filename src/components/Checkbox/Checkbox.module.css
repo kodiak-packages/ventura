@@ -2,6 +2,7 @@
   display: grid;
   grid-template-areas: 'box title' 'box description';
   grid-template-columns: min-content auto;
+  cursor: pointer;
 }
 
 .box {
