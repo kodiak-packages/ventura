@@ -12,7 +12,7 @@ interface Props {
   onChange?: ChangeEventHandler<HTMLInputElement>;
   className?: string;
   isDisabled?: boolean;
-  description?: boolean;
+  description?: string;
   label: ReactNode;
 }
 
