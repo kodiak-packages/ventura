@@ -18,7 +18,7 @@
     "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'",
     "lint:fix": "yarn lint --fix",
     "release": "semantic-release",
-    "copy:assets": "cpx './src/**/!(docAssets)/*.css' 'dist' && cpx './src/*.css' 'dist'"
+    "copy:assets": "cpx './src/**/!(docAssets)/*.{css,svg}' 'dist' && cpx './src/*.{css,svg}' 'dist'"
   },
   "peerDependencies": {
     "react": "^16",
