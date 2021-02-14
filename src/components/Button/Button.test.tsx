@@ -112,4 +112,16 @@ describe('Button', () => {
     const { asFragment } = render(component);
     expect(asFragment()).toMatchSnapshot();
   });
+
+  test('small button', () => {
+    const component = <Button size="small">Click me</Button>;
+    const { asFragment } = render(component);
+    expect(asFragment()).toMatchSnapshot();
+  });
+
+  test('large button', () => {
+    const component = <Button size="large">Click me</Button>;
+    const { asFragment } = render(component);
+    expect(asFragment()).toMatchSnapshot();
+  });
 });

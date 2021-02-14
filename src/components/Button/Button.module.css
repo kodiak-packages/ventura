@@ -1,15 +1,19 @@
 .button {
   border-radius: var(--border-radius-small);
-  line-height: 14px;
-  font-size: 14px;
-  padding: 10px 14px;
+  vertical-align: middle;
+  font-size: var(--font-size);
+  padding: 9px 14px;
   border: none;
   cursor: pointer;
   display: flex;
 }
 
 .smallButton {
-  padding: 3.5px 10px;
+  padding: 3px 10px;
+}
+
+.largeButton {
+  padding: 14px 15px;
 }
 
 .typePrimary:hover {
@@ -47,12 +51,16 @@
 }
 
 .label {
-  max-height: 14px;
+  max-height: var(--line-height);
   line-height: inherit;
 }
 
 .smallLabel {
   font-size: calc(var(--font-size) - 2px);
+}
+
+.largeLabel {
+  font-size: calc(var(--font-size) + 2px);
 }
 
 .labelWithPrefixIcon {
