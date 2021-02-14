@@ -32,6 +32,21 @@ exports[`Button default snapshot 1`] = `
 </DocumentFragment>
 `;
 
+exports[`Button large button 1`] = `
+<DocumentFragment>
+  <button
+    class="ventura button typePrimary largeButton"
+    type="button"
+  >
+    <span
+      class="label largeLabel"
+    >
+      Click me
+    </span>
+  </button>
+</DocumentFragment>
+`;
+
 exports[`Button loading button 1`] = `
 <DocumentFragment>
   <button
@@ -101,6 +116,21 @@ exports[`Button secondary button 1`] = `
   >
     <span
       class="label"
+    >
+      Click me
+    </span>
+  </button>
+</DocumentFragment>
+`;
+
+exports[`Button small button 1`] = `
+<DocumentFragment>
+  <button
+    class="ventura button typePrimary smallButton"
+    type="button"
+  >
+    <span
+      class="label smallLabel"
     >
       Click me
     </span>

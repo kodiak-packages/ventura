@@ -1,6 +1,5 @@
 .button {
   border-radius: var(--border-radius-small);
-  /* line-height: 14px; */
   vertical-align: middle;
   font-size: var(--font-size);
   padding: 9px 14px;
@@ -14,7 +13,7 @@
 }
 
 .largeButton {
-  padding: 12px 14px;
+  padding: 14px 15px;
 }
 
 .typePrimary:hover {
