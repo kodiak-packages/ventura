@@ -19,7 +19,7 @@ interface Props {
   prefixIcon?: React.ReactElement;
   suffixIcon?: React.ReactElement;
   name?: string;
-  size?: 'normal' | 'small';
+  size?: 'normal' | 'small' | 'large';
 }
 
 const Button = React.forwardRef<HTMLButtonElement, Props>(
@@ -48,6 +48,7 @@ const Button = React.forwardRef<HTMLButtonElement, Props>(
         [styles.typePrimary]: type === 'primary',
         [styles.typeSecondary]: type === 'secondary',
         [styles.smallButton]: size === 'small',
+        [styles.largeButton]: size === 'large',
       },
       className,
     );
@@ -56,6 +57,7 @@ const Button = React.forwardRef<HTMLButtonElement, Props>(
       [styles.labelWithPrefixIcon]: Boolean(prefixIcon) || isLoading,
       [styles.labelWithSuffixIcon]: Boolean(suffixIcon),
       [styles.smallLabel]: size === 'small',
+      [styles.largeLabel]: size === 'large',
     });
 
     return (
