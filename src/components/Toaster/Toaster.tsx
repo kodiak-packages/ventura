@@ -70,9 +70,9 @@ class Toaster {
     return this.notifyHandler && this.notifyHandler(message, { ...settings, intent: 'success' });
   };
 
-  // warning = (message: string, settings?: Omit<ToastSettings, 'intent'>) => {
-  //   return this.notifyHandler(message, { ...settings, intent: 'warning' });
-  // };
+  warning = (message: string, settings?: Omit<ToastSettings, 'intent'>) => {
+    return this.notifyHandler && this.notifyHandler(message, { ...settings, intent: 'warning' });
+  };
 
   error = (message: string, settings?: Omit<ToastSettings, 'intent'>) => {
     return this.notifyHandler && this.notifyHandler(message, { ...settings, intent: 'error' });
