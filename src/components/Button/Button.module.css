@@ -6,7 +6,6 @@
   border: none;
   cursor: pointer;
   display: flex;
-  color: var(--color-secondary-font);
 }
 
 .smallButton {
@@ -38,11 +37,13 @@
 .typePrimary,
 .typePrimary:active {
   background-color: var(--color-primary);
+  color: var(--color-primary-font);
 }
 
 .typeSecondary,
 .typeSecondary:active {
   background-color: var(--color-secondary);
+  color: var(--color-secondary-font);
 }
 
 .button:disabled {
