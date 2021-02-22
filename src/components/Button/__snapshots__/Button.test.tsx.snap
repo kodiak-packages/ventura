@@ -39,7 +39,7 @@ exports[`Button large button 1`] = `
     type="button"
   >
     <span
-      class="label largeLabel"
+      class="label"
     >
       Click me
     </span>
@@ -130,7 +130,7 @@ exports[`Button small button 1`] = `
     type="button"
   >
     <span
-      class="label smallLabel"
+      class="label"
     >
       Click me
     </span>
