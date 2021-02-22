@@ -49,10 +49,10 @@
 
   /* Font */
   --font-family: Lato, sans-serif;
-  --font-size: 14px;
+  --font-size: 16px;
   --font-color: var(--color-neutral-8);
   --font-color-sub: var(--color-neutral-7);
-  --line-height: 16px;
+  --line-height: 28px;
 
   /* Border */
   --border-radius-small: 3px;

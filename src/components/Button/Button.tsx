@@ -56,8 +56,6 @@ const Button = React.forwardRef<HTMLButtonElement, Props>(
     const labelClassNames = classNames(styles.label, {
       [styles.labelWithPrefixIcon]: Boolean(prefixIcon) || isLoading,
       [styles.labelWithSuffixIcon]: Boolean(suffixIcon),
-      [styles.smallLabel]: size === 'small',
-      [styles.largeLabel]: size === 'large',
     });
 
     return (

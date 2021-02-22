@@ -58,11 +58,11 @@
   line-height: inherit;
 }
 
-.smallLabel {
+.smallButton .label {
   font-size: calc(var(--font-size) - 2px);
 }
 
-.largeLabel {
+.largeButton .label {
   font-size: calc(var(--font-size) + 2px);
 }
 
@@ -75,7 +75,17 @@
 }
 
 .spinner {
-  width: 14px;
-  height: 14px;
+  width: var(--font-size);
+  height: var(--font-size);
   vertical-align: -2px;
+}
+
+.smallButton .spinner {
+  width: calc(var(--font-size) - 2px);
+  height: calc(var(--font-size) - 2px);
+}
+
+.largeButton .spinner {
+  width: calc(var(--font-size) + 2px);
+  height: calc(var(--font-size) + 2px);
 }
