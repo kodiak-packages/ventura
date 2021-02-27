@@ -5,6 +5,7 @@
   padding: 8px 14px;
   width: 100%;
   color: var(--color-neutral-9);
+  -webkit-appearance: none;
 }
 
 .input::placeholder {
