@@ -79,6 +79,15 @@ describe('TextArea', () => {
     expect(textAreaElement.getAttribute('autocomplete')).toBe('on');
   });
 
+  test('disabled prop', () => {
+    const component = <TextArea {...defaultButtonProps} isDisabled />;
+    const { getByTestId } = render(component);
+    const textAreaElement = getByTestId('textarea-comment');
+
+    expect(textAreaElement.hasAttribute('spellcheck')).toBe(true);
+    expect(textAreaElement.getAttribute('spellcheck')).not.toBe(false);
+  });
+
   test('maxLength prop', () => {
     const maxLength = 3;
     const component = <TextArea {...defaultButtonProps} maxLength={3} />;

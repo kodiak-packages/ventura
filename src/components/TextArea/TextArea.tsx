@@ -12,6 +12,7 @@ interface Props {
   placeholder?: string;
   spellCheck?: boolean;
   autoComplete?: boolean;
+  isDisabled?: boolean;
   maxLength?: number;
   className?: string;
   isInvalid?: boolean;
@@ -28,6 +29,7 @@ const TextArea = React.forwardRef<HTMLTextAreaElement, Props>(
       isInvalid = false,
       spellCheck = false,
       autoComplete = false,
+      isDisabled = false,
       maxLength,
       className,
     }: Props,
@@ -55,6 +57,7 @@ const TextArea = React.forwardRef<HTMLTextAreaElement, Props>(
         className={textareaClassNames}
         data-testid={name && `textarea-${name}`}
         onBlur={onBlur}
+        disabled={isDisabled}
       />
     );
   },
