@@ -25,15 +25,15 @@ jobs:
       - name: Run ESLint
         run: yarn lint --quiet --color
 
+      - name: Run tests
+        id: tests
+        run: yarn run test --watchAll=false --colors --ci --coverage
+
       - name: Compile src
         run: yarn build
 
       - name: Build the docs
         run: yarn document
-
-      - name: Run tests
-        id: tests
-        run: yarn run test --watchAll=false --colors --ci --coverage
 
       - name: Upload coverage report to codecov
         uses: codecov/codecov-action@v1
