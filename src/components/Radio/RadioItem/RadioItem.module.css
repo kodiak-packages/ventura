@@ -35,6 +35,7 @@
   align-items: center;
   justify-content: center;
   margin-right: 14px;
+  flex-shrink: 0;
 }
 
 .radioButtonContainer .header .checkBox .checkBoxFilling {
