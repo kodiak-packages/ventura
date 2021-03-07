@@ -48,6 +48,7 @@ svg.icon {
   margin-right: 10px;
   height: 16px;
   width: 16px;
+  flex-shrink: 0;
 }
 
 svg.icon.iconSuccess {
