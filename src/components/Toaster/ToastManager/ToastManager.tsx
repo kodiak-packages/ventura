@@ -97,8 +97,7 @@ const ToastManager = ({ bindNotify, bindRemove, bindGetToasts, bindCloseAll }: P
 
   return (
     <span className={styles.toastManagerContainer}>
-      {toasts.map(({ id, durationInSeconds, isShown, message, intent, isClosable }) => {
-        return (
+      {toasts.map(({ id, durationInSeconds, isShown, message, intent, isClosable }) => (
           <Toast
             key={id}
             onClose={() => removeToast(id)}
@@ -108,8 +107,7 @@ const ToastManager = ({ bindNotify, bindRemove, bindGetToasts, bindCloseAll }: P
             intent={intent}
             isClosable={isClosable}
           />
-        );
-      })}
+        ))}
     </span>
   );
 };

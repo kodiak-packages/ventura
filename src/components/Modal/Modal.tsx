@@ -34,7 +34,8 @@ const Modal: React.FC<Props> & { Footer: typeof Footer } = ({
 
   useEffect(() => {
     disableBodyScroll(isOpen);
-    // eslint-disable-next-line no-unused-expressions
+
+    // eslint-disable-next-line no-unused-expressions, @typescript-eslint/no-unused-expressions
     if (isOpen) modalRef.current?.focus();
   }, [isOpen, modalRef]);
 
