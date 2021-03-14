@@ -3,10 +3,7 @@
   "extends": [
     "react-app",
     "airbnb-typescript",
-    "prettier/react",
-    "prettier/@typescript-eslint",
-    "eslint-config-prettier",
-    "plugin:prettier/recommended"
+    "eslint-config-prettier"
   ],
   "parserOptions": {
     "project": "./tsconfig.json"
@@ -21,7 +18,7 @@
       }
     ],
     "import/prefer-default-export": "off",
-    "simple-import-sort/sort": [
+    "simple-import-sort/imports": [
       "warn",
       {
         "groups": [
