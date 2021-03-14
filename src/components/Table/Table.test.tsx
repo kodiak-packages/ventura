@@ -29,15 +29,13 @@ describe('Table', () => {
           <Table.Cell>Status</Table.Cell>
         </Table.Header>
         <Table.Body>
-          {courses.map((course) => {
-            return (
-              <Table.Row key={course.name}>
-                <Table.Cell>{course.name}</Table.Cell>
-                <Table.Cell>{course.length}</Table.Cell>
-                <Table.Cell>{course.status}</Table.Cell>
-              </Table.Row>
-            );
-          })}
+          {courses.map((course) => (
+            <Table.Row key={course.name}>
+              <Table.Cell>{course.name}</Table.Cell>
+              <Table.Cell>{course.length}</Table.Cell>
+              <Table.Cell>{course.status}</Table.Cell>
+            </Table.Row>
+          ))}
         </Table.Body>
       </Table>
     );
@@ -56,19 +54,17 @@ describe('Table', () => {
           <Table.Cell>Status</Table.Cell>
         </Table.Header>
         <Table.Body>
-          {courses.map((course, index) => {
-            return (
-              <Table.Row
-                key={course.name}
-                name={index === 0 ? 'click' : undefined}
-                onClick={onClickFn}
-              >
-                <Table.Cell>{course.name}</Table.Cell>
-                <Table.Cell>{course.length}</Table.Cell>
-                <Table.Cell>{course.status}</Table.Cell>
-              </Table.Row>
-            );
-          })}
+          {courses.map((course, index) => (
+            <Table.Row
+              key={course.name}
+              name={index === 0 ? 'click' : undefined}
+              onClick={onClickFn}
+            >
+              <Table.Cell>{course.name}</Table.Cell>
+              <Table.Cell>{course.length}</Table.Cell>
+              <Table.Cell>{course.status}</Table.Cell>
+            </Table.Row>
+          ))}
         </Table.Body>
       </Table>
     );

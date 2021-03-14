@@ -83,8 +83,7 @@ const Toast: React.FC<Props> = ({
 
   return (
     <Transition appear unmountOnExit timeout={240} in={isShown} onExited={onClose}>
-      {(state) => {
-        return (
+      {(state) => (
           <div
             data-state={state}
             className={styles.toastContainer}
@@ -96,8 +95,7 @@ const Toast: React.FC<Props> = ({
               <Alert intent={intent} message={message} onClose={isClosable ? close : undefined} />
             </div>
           </div>
-        );
-      }}
+        )}
     </Transition>
   );
 };
