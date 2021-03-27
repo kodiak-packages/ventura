@@ -2,7 +2,6 @@
 title: Modal
 ---
 
-import { Playground, Props } from 'docz';
 import { Button, Modal, Input } from '../..';
 
 # Modal
@@ -17,7 +16,7 @@ A modal is a dialog that appears on top of the main content to require user inte
 
 ### Basic usage
 
-<Playground>
+<div>
   {() => {
     const [isOpen, setIsOpen] = React.useState(false);
     return (
@@ -32,13 +31,13 @@ A modal is a dialog that appears on top of the main content to require user inte
         </Modal>
       </>
     );
-}}
+  }}
+</div>
 
-</Playground>
 
 ### Modal with async action
 
-<Playground>
+<div>
   {() => {
     const [isOpen, setIsOpen] = React.useState(false);
     const [isLoading, setIsLoading] = React.useState(false);
@@ -59,16 +58,9 @@ A modal is a dialog that appears on top of the main content to require user inte
         </Modal>
       </>
     );
-}}
+  }}
+</div>
 
-</Playground>
 
 ## API
 
-### Modal
-
-<Props of={Modal} />
-
-### Modal.Footer
-
-<Props of={Modal.Footer} />

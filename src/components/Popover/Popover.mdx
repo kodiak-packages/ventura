@@ -1,10 +1,7 @@
 ---
-name: Popover
-menu: Components
-route: /popover
+title: Popover
 ---
 
-import { Playground, Props } from 'docz';
 import { Popover, Menu, Button, Trash } from '../../index.ts';
 
 # Popover
@@ -19,7 +16,7 @@ A Popover is used to display extra information or actions in a compact way.
 
 ### Basic usage
 
-<Playground>
+<div>
   {() => {
     const [isVisible, setIsVisible] = React.useState(false);
     const popoverContent = (
@@ -36,12 +33,12 @@ A Popover is used to display extra information or actions in a compact way.
       </ Popover>
     );
   }}
+</div>
 
-</Playground>
 
 ### Popover on hover
 
-<Playground>
+<div>
   {() => {
     const [isVisible, setIsVisible] = React.useState(false);
     const popoverContent = (
@@ -60,9 +57,7 @@ A Popover is used to display extra information or actions in a compact way.
       </ Popover>
     );
   }}
+</div>
 
-</Playground>
 
 ## API
-
-<Props of={Popover} />

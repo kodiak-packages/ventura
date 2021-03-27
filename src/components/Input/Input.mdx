@@ -2,7 +2,6 @@
 title: Input
 ---
 
-import { Playground, Props } from 'docz';
 import { Input } from '../../index.ts'
 import styles from './docAssets/docs.module.css';
 
@@ -18,45 +17,37 @@ A Input can be used to let the user insert text using key strokes. A crucial for
 
 ### Basic usage
 
-<Playground>
-  <Input name="firstname" />
-</Playground>
+
+<Input name="firstname" />
+
 
 ### Input with error
 
-<Playground>
-  <Input name="username" isInvalid />
-</Playground>
+
+<Input name="username" isInvalid />
+
 
 ### Disabled input
 
-<Playground>
-  <Input name="username" value="Can't type here" isDisabled />
-</Playground>
+<Input name="username" value="Can't type here" isDisabled />
 
 ### Listening for changes
 
-<Playground>
-  <Input name="logger" onChange={(event) => console.log(`LOGGER: ${event.target.value}`)} />
-</Playground>
+<Input name="logger" onChange={(event) => console.log(`LOGGER: ${event.target.value}`)} />
 
 ### Email address
 
-<Playground>
-  <Input name="email" placeholder="Email address" type="email" />
-</Playground>
+<Input name="email" placeholder="Email address" type="email" />
 
 ### Password
 
-<Playground>
-  <Input name="password" placeholder="Password" type="password" />
-</Playground>
+<Input name="password" placeholder="Password" type="password" />
 
 ### Limited amount of characters
 
-<Playground>
-  <Input name="countryCode" maxLength={2} className={styles.countryCode} placeholder="XX" />
-</Playground>
+
+<Input name="countryCode" maxLength={2} className={styles.countryCode} placeholder="XX" />
+
 
 ```css
 .countryCode {
@@ -67,7 +58,7 @@ A Input can be used to let the user insert text using key strokes. A crucial for
 
 ### Format a serial code
 
-<Playground>
+<div>
   {() => {
     const [serialCode, setSerialCode] = React.useState('AAAA-BBBB-CCCC-DDDD');
     const formattedSerialCode = (
@@ -87,8 +78,7 @@ A Input can be used to let the user insert text using key strokes. A crucial for
       />
     );
   }}
-</Playground>
+</div>
 
 ## API
 
-<Props of={Input} />

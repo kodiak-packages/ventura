@@ -2,7 +2,6 @@
 title: Icons
 ---
 
-import { Playground, Props } from 'docz'
 import { ArrowDownCircle, GitHub, Minimize, Minimize2, Figma, LifeBuoy, XCircle, X } from '../../index.ts'
 import Icon from './Icon.tsx'
 
@@ -16,26 +15,26 @@ All icons have their own component. Each component name is a pascal cased versio
 
 ### Basic usage
 
-<Playground>
-  <ArrowDownCircle />
-  <GitHub />
-  <Minimize />
-  <Minimize2 />
-  <Figma />
-  <LifeBuoy />
-  <XCircle />
-  <X />
-</Playground>
+
+<ArrowDownCircle />
+<GitHub />
+<Minimize />
+<Minimize2 />
+<Figma />
+<LifeBuoy />
+<XCircle />
+<X />
+
 
 ### Change icon color
 
 Feather Icons opens up a `color` property to change the color of an icon. We reccomand styling icons using className or CSS in JS.
 
-<Playground>
-  <GitHub color={'#000000'} />
-  <GitHub color={'#fdda24'} />
-  <GitHub color={'#ef3340'} />
-</Playground>
+
+<GitHub color={'#000000'} />
+<GitHub color={'#fdda24'} />
+<GitHub color={'#ef3340'} />
+
 
 ### Styling using className
 
@@ -43,9 +42,8 @@ To apply custom styles using CSS classes, you can use the className property.
 
 This is our preffered method.
 
-<Playground>
-  <GitHub className="blueIcon"/>
-</Playground>
+
+<GitHub className="blueIcon"/>
 
 ```css
   .blueIcon {
@@ -61,10 +59,10 @@ There are a few ways this can be done. The default styles can be changed using a
 
 To apply custom styles using CSS in JS, you can use the styles property.
 
-<Playground>
-  <GitHub style={{width: '24px', height: '24px', stroke: '#116ab8'}}/>
-</Playground>
+
+<GitHub style={{width: '24px', height: '24px', stroke: '#116ab8'}}/>
+
 
 ## API
 
-<Props of={Icon} />
+

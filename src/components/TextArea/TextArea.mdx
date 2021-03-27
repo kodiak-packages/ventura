@@ -1,10 +1,7 @@
 ---
-name: TextArea
-menu: Components
-route: /text-area
+title: TextArea
 ---
 
-import { Playground, Props } from 'docz';
 import { TextArea } from '../../index.ts'
 
 # TextArea
@@ -19,28 +16,28 @@ A Input can be used to let the user insert text using key strokes. A crucial for
 
 ### Basic usage
 
-<Playground>
-  <TextArea name="description" />
-</Playground>
+
+<TextArea name="description" />
+
 
 ### Listening for changes
 
-<Playground>
-  <TextArea name="changeLogger" onChange={(event) => console.log(`LOGGER: ${event.target.value}`)} />
-</Playground>
+
+<TextArea name="changeLogger" onChange={(event) => console.log(`LOGGER: ${event.target.value}`)} />
+
 
 ### Input with error
 
-<Playground>
-  <TextArea name="invalidTextArea" isInvalid />
-</Playground>
+
+<TextArea name="invalidTextArea" isInvalid />
+
 
 ### Disabled input
 
-<Playground>
-  <TextArea name="disabledTextArea" isDisabled value="This field is disabled" />
-</Playground>
 
-## API
+<TextArea name="disabledTextArea" isDisabled value="This field is disabled" />
 
-<Props of={TextArea} />
+
+<!-- ## API
+
+<Props of={TextArea} /> -->

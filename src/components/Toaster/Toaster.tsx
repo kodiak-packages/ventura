@@ -7,10 +7,6 @@ import ToastManager, {
   ToastSettings,
 } from './ToastManager/ToastManager';
 
-/**
- * The Toaster manages the interactions between
- * the ToasterManger and the toast API.
- */
 class Toaster {
   notifyHandler?: ToastCallHandler;
 
@@ -38,37 +34,49 @@ class Toaster {
     }
   }
 
-  private bindNotify = (handler: ToastCallHandler) => {
+  private bindNotify(handler: ToastCallHandler) {
     this.notifyHandler = handler;
-  };
+  }
 
-  private bindRemove = (handler: (id: string) => void) => {
+  private bindRemove(handler: (id: string) => void) {
     this.removeHandler = handler;
-  };
+  }
 
-  private bindGetToasts = (handler: () => ToastInstance[]) => {
+  private bindGetToasts(handler: () => ToastInstance[]) {
     this.getToastsHandler = handler;
-  };
+  }
 
-  private bindCloseAll = (handler: () => void) => {
+  private bindCloseAll(handler: () => void) {
     this.closeAllHandler = handler;
-  };
+  }
 
-  getToasts = () => this.getToastsHandler && this.getToastsHandler();
+  public getToasts() {
+    return this.getToastsHandler && this.getToastsHandler();
+  }
 
-  closeAll = () => this.closeAllHandler && this.closeAllHandler();
+  public closeAll() {
+    return this.closeAllHandler && this.closeAllHandler();
+  }
 
   // info = (message: string, settings?: Omit<ToastSettings, 'intent'>) => {
   //   return this.notifyHandler(message, { ...settings, intent: 'info' });
   // };
 
-  success = (message: string, settings?: Omit<ToastSettings, 'intent'>) => this.notifyHandler && this.notifyHandler(message, { ...settings, intent: 'success' });
+  public success(message: string, settings?: Omit<ToastSettings, 'intent'>) {
+    return this.notifyHandler && this.notifyHandler(message, { ...settings, intent: 'success' });
+  }
 
-  warning = (message: string, settings?: Omit<ToastSettings, 'intent'>) => this.notifyHandler && this.notifyHandler(message, { ...settings, intent: 'warning' });
+  public warning(message: string, settings?: Omit<ToastSettings, 'intent'>) {
+    return this.notifyHandler && this.notifyHandler(message, { ...settings, intent: 'warning' });
+  }
 
-  error = (message: string, settings?: Omit<ToastSettings, 'intent'>) => this.notifyHandler && this.notifyHandler(message, { ...settings, intent: 'error' });
+  public error(message: string, settings?: Omit<ToastSettings, 'intent'>) {
+    return this.notifyHandler && this.notifyHandler(message, { ...settings, intent: 'error' });
+  }
 
-  remove = (id: string) => this.removeHandler && this.removeHandler(id);
+  public remove(id: string) {
+    return this.removeHandler && this.removeHandler(id);
+  }
 }
 
 export default new Toaster();

@@ -2,7 +2,6 @@
 title: FormField
 ---
 
-import { Playground, Props } from 'docz';
 import { FormField, Input } from '../../index.ts';
 import styles from './docAssets/docs.module.css';
 
@@ -14,31 +13,31 @@ This component is used to wrap around one or multiple form elements. The label d
 
 ### Basic usage
 
-<Playground>
-  <FormField label='First name'>
-    <Input />
-  </FormField>
-</Playground>
+
+<FormField label='First name'>
+  <Input />
+</FormField>
+
 
 ### FormField with error message
 
-<Playground>
-  <FormField label='Last name' errorMessage='This field contains the following illegal characters: ;'>
-    <Input value='Doe;' isInvalid />
-  </FormField>
-</Playground>
+
+<FormField label='Last name' errorMessage='This field contains the following illegal characters: ;'>
+  <Input value='Doe;' isInvalid />
+</FormField>
+
 
 ### FormField with hint
 
-<Playground>
-  <FormField label='MAC address' hint='The mac address is located at the back side of the device'>
-    <Input placeholder='00:00:00:00:00:00' />
-  </FormField>
-</Playground>
+
+<FormField label='MAC address' hint='The mac address is located at the back side of the device'>
+  <Input placeholder='00:00:00:00:00:00' />
+</FormField>
+
 
 ### FormField with preview
 
-<Playground>
+<div>
   {() => {
     const [hexColor, setHexColor] = React.useState('#03176b');
     const [label, setLabel] = React.useState('Devops');
@@ -58,8 +57,7 @@ This component is used to wrap around one or multiple form elements. The label d
       </FormField>
     );
   }}
-</Playground>
+</div>
 
 ## API
 
-<Props of={FormField} />

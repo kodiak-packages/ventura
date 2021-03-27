@@ -2,7 +2,6 @@
 title: Checkbox
 ---
 
-import { Playground, Props } from 'docz';
 import { Checkbox } from '../../index.ts'
 
 # Checkbox
@@ -17,34 +16,23 @@ A checkbox can be used enable an optional setting or feature.
 
 ### Basic usage
 
-<Playground>
-  <Checkbox label="Enable me" name="enabled" />
-</Playground>
+<Checkbox label="Enable me" name="enabled" />
 
 ### Checked state
 
-<Playground>
-  <Checkbox label="Disable me" name="enabled-2" defaultValue={true} />
-</Playground>
+<Checkbox label="Disable me" name="enabled-2" defaultValue={true} />
 
 ### Checkbox with description
 
-<Playground>
-  <Checkbox label="Enable me" name="enabled-3" description="This feature can be enabled" />
-</Playground>
+<Checkbox label="Enable me" name="enabled-3" description="This feature can be enabled" />
 
 ### Disabled checkbox
 
-<Playground>
-  <Checkbox label="You can't enable me" name="enabled-4" isDisabled />
-</Playground>
+<Checkbox label="You can't enable me" name="enabled-4" isDisabled />
 
 ### Listening for changes
 
-<Playground>
-  <Checkbox label="Log" name="enabled-5" onChange={(event) => console.log(`LOGGER: ${event.target.checked}`)} />
-</Playground>
+<Checkbox label="Log" name="enabled-5" onChange={(event) => console.log(`LOGGER: ${event.target.checked}`)} />
 
 ## API
 
-<Props of={Checkbox} />
