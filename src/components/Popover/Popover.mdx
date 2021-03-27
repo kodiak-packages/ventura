@@ -31,7 +31,7 @@ A Popover is used to display extra information or actions in a compact way.
       setIsVisible(false);
     }
     return (
-      <Popover isVisible={isVisible} onClose={setIsVisible} content={popoverContent}>
+      <Popover isVisible={isVisible} onClose={onClose} content={popoverContent}>
         <Button onClick={() => setIsVisible(!isVisible)}>Open basic modal</Button>
       </ Popover>
     );
@@ -55,7 +55,7 @@ A Popover is used to display extra information or actions in a compact way.
       setIsVisible(true);
     }
     return (
-      <Popover placement={'top'} isVisible={isVisible} onClose={setIsVisible} content={popoverContent}>
+      <Popover placement={'top'} isVisible={isVisible} onClose={closePopover} content={popoverContent}>
         <Trash onMouseEnter={openPopover} onMouseLeave={closePopover}/>
       </ Popover>
     );

@@ -46,7 +46,7 @@ const Popover: React.FC<Props> = ({
   });
 
   return (
-    <OutsideClickHandler onOutsideClick={() => onClose()}>
+    <OutsideClickHandler onOutsideClick={() => onClose()} display="inline-block">
       <div className={styles.triggerContainer} ref={divRef}>
         {children}
       </div>
