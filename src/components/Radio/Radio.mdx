@@ -1,10 +1,7 @@
 ---
-name: Radio
-menu: Components
-route: /radio
+title: Radio
 ---
 
-import { Playground, Props } from 'docz'
 import { Radio, Loader } from '../../index.ts'
 
 import reactImage from './docAssets/react.png'
@@ -23,7 +20,7 @@ The `Radio.Group` component controls the name of the radio buttons and the onCha
 
 The `Radio.Item` component must be wrapped in a `Radio.Group` component to function properly.
 
-<Playground>
+<div>
   {() => {
     const [selectedValue, setSelectedValue] = React.useState('react')
     return (
@@ -34,13 +31,13 @@ The `Radio.Item` component must be wrapped in a `Radio.Group` component to funct
       </Radio.Group>
     )
   }}
-</Playground>
+</div>
 
 ### Custom label with Icon
 
 The label property on the button component also accepts JSX. This allows you to display custom components in the radio button label, like icons.
 
-<Playground>
+<div>
   {() => {
     const [selectedValue, setSelectedValue] = React.useState('react')
     return (
@@ -51,11 +48,11 @@ The label property on the button component also accepts JSX. This allows you to 
       </Radio.Group>
     )
   }}
-</Playground>
+</div>
 
 ### Radio item with description
 
-<Playground>
+<div>
   {() => {
     const [selectedValue, setSelectedValue] = React.useState('react')
     return (
@@ -66,11 +63,11 @@ The label property on the button component also accepts JSX. This allows you to 
       </Radio.Group>
     )
   }}
-</Playground>
+</div>
 
 ### Disabled radio items
 
-<Playground>
+<div>
   {() => {
     const [selectedValue, setSelectedValue] = React.useState('react')
     return (
@@ -81,14 +78,14 @@ The label property on the button component also accepts JSX. This allows you to 
       </Radio.Group>
     )
   }}
-</Playground>
+</div>
 
 ## API
 
-### Radio Group
+<!-- ### Radio Group
 
 <Props of={Radio.Group} />
 
 ### Radio Item
 
-<Props of={Radio.Item} />
+<Props of={Radio.Item} /> -->

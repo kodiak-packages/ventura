@@ -1,10 +1,7 @@
 ---
-name: Alert
-menu: Components
-route: /alert
+title: Alert
 ---
 
-import { Playground, Props } from 'docz';
 import { Alert } from '../..';
 
 # Alert
@@ -15,20 +12,14 @@ Alerts allow you to display error messages relevant to an entire form or applica
 
 ### Basic usage
 
-<Playground>
-  <Alert intent='error' message='Something went wrong.' />
-</Playground>
+<Alert intent='error' message='Something went wrong.' />
 
 ### Different intent
 
-<Playground>
-  <Alert intent='success' message='This went great!' />
-  <br />
-  <Alert intent='warning' message='I would like to warn you.' />
-  <br />
-  <Alert intent='error' message='Something went wrong.' />
-</Playground>
 
-## API
+<Alert intent='success' message='This went great!' />
+<br />
+<Alert intent='warning' message='I would like to warn you.' />
+<br />
+<Alert intent='error' message='Something went wrong.' />
 
-<Props of={Alert} />

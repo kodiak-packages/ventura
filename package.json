@@ -11,20 +11,31 @@
   ],
   "main": "dist/index.js",
   "scripts": {
-    "start": "rm -rf .docz && docz dev",
-    "build": "rm -rf dist && tsc --project tsconfig-build.json && yarn copy:assets",
     "test": "jest --detectOpenHandles --watchAll",
     "document": "docz build",
     "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'",
     "lint:fix": "yarn lint --fix",
     "release": "semantic-release",
-    "copy:assets": "cpx './src/**/!(docAssets)/*.{css,svg}' 'dist' && cpx './src/*.{css,svg}' 'dist'"
+    "copy:assets": "cpx './src/**/!(docAssets)/*.{css,svg}' 'dist' && cpx './src/*.{css,svg}' 'dist'",
+    "docusaurus": "docusaurus",
+    "start": "docusaurus start",
+    "build": "docusaurus build",
+    "swizzle": "docusaurus swizzle",
+    "deploy": "docusaurus deploy",
+    "clear": "docusaurus clear",
+    "serve": "docusaurus serve",
+    "write-translations": "docusaurus write-translations",
+    "write-heading-ids": "docusaurus write-heading-ids"
   },
   "peerDependencies": {
     "react": "^16",
     "react-dom": "^16"
   },
   "devDependencies": {
+    "@docusaurus/core": "^2.0.0-alpha.72",
+    "@docusaurus/module-type-aliases": "^2.0.0-alpha.72",
+    "@docusaurus/preset-classic": "^2.0.0-alpha.72",
+    "@mdx-js/react": "^1.6.22",
     "@semantic-release/git": "^9.0.0",
     "@testing-library/dom": "^7.26.3",
     "@testing-library/jest-dom": "^5.11.6",
@@ -34,9 +45,12 @@
     "@types/jest": "^26.0.20",
     "@types/react": "^17.0.3",
     "@types/react-dom": "^17.0.2",
+    "@types/react-helmet": "^6.1.0",
     "@types/react-portal": "^4.0.2",
+    "@types/react-router-dom": "^5.1.7",
     "@types/react-transition-group": "^4.4.0",
     "@typescript-eslint/eslint-plugin": "^4.17",
+    "clsx": "^1.1.1",
     "cpx": "1.5.0",
     "docz": "^2.3.1",
     "eslint": "^6.8.0",
@@ -55,8 +69,8 @@
     "jest": "^26.4.2",
     "jest-svg-transformer": "^1.0.0",
     "prettier": "^2.0.4",
-    "react": "^17",
-    "react-dom": "^17",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "semantic-release": "^17.4.1",
     "ts-jest": "^26.4.4",
     "typescript": "^3.9.7"
@@ -81,6 +95,18 @@
   "release": {
     "branches": [
       "master"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.5%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
     ]
   },
   "jest": {

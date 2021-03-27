@@ -1,6 +1,6 @@
 ---
-name: Getting Started
-route: /
+title: Getting Started
+slug: /
 ---
 
 # Getting Started

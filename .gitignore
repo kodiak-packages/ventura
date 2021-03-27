@@ -1,9 +1,14 @@
 # Production
 .docz/
 dist/
+build/
 
 # Dependencies
 node_modules/
+
+# Generated files
+.docusaurus
+.cache-loader
 
 # Logs
 logs
@@ -15,3 +20,7 @@ lerna-debug.log*
 
 # Misc
 .DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
