@@ -1,0 +1,8 @@
+ignore:
+  - "src/index.tsx"
+comment:
+  layout: "diff, files"
+coverage:
+  status:
+    project: off
+    patch: off
