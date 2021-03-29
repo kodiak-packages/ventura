@@ -1,10 +1,9 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/jsx-props-no-spreading */
 import React, { useRef, useState } from 'react';
+import OutsideClickHandler from 'react-outside-click-handler';
 import { usePopper } from 'react-popper';
 import { Placement } from '@popperjs/core';
-
-import { useOutsideClick } from '../../utils/hooks/useOutsideClick';
 
 import styles from './Popover.module.css';
 
@@ -28,10 +27,6 @@ const Popover: React.FC<Props> = ({
 
   const [arrowRef, setArrowRef] = useState<HTMLDivElement | null>(null);
 
-  useOutsideClick(() => {
-    onClose();
-  }, menuRef);
-
   const { styles: popperStyles, attributes } = usePopper(divRef.current, menuRef.current, {
     modifiers: [
       {
@@ -51,7 +46,7 @@ const Popover: React.FC<Props> = ({
   });
 
   return (
-    <>
+    <OutsideClickHandler onOutsideClick={() => onClose()} display="inline-block">
       <div className={styles.triggerContainer} ref={divRef}>
         {children}
       </div>
@@ -67,7 +62,7 @@ const Popover: React.FC<Props> = ({
           {content}
         </div>
       )}
-    </>
+    </OutsideClickHandler>
   );
 };
 

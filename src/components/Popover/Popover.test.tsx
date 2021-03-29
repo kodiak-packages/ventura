@@ -46,8 +46,11 @@ describe('Popover', () => {
     await waitFor(() => getByTestId('menu-item-default'));
 
     const outsideButton = getByTestId('button-click');
-    fireEvent.click(outsideButton);
 
-    expect(onCloseFn).toHaveBeenCalledTimes(1);
+    // Click does not trigger onClose :(
+    fireEvent.mouseDown(outsideButton);
+    fireEvent.mouseUp(outsideButton);
+
+    await waitFor(() => expect(onCloseFn).toHaveBeenCalledTimes(1));
   });
 });
