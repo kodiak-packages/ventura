@@ -50,6 +50,9 @@
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: 500;
 }
 
 .radioButtonContainer.isDisabled .header .title {
@@ -57,9 +60,10 @@
 }
 
 .radioButtonContainer .description {
-  color: var(--font-color-sub);
-  font-size: 13px;
-  margin: 6px 0px 0px 30px;
+  color: var(--color-neutral-6);
+  font-size: 14px;
+  line-height: 17px;
+  margin: 8px 0px 0px 30px;
 }
 
 .radioButtonContainer:hover {

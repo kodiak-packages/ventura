@@ -8,8 +8,8 @@
 .box {
   grid-area: box;
   content: '';
-  height: 17px;
-  width: 17px;
+  height: 16px;
+  width: 16px;
   border: 2px solid var(--color-neutral-7);
   margin-right: 10px;
   border-radius: 4px;
@@ -20,7 +20,7 @@
   background-color: var(--color-neutral-7);
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 70%;
+  background-size: 66%;
   border: none;
 }
 
@@ -42,7 +42,8 @@
   grid-area: title;
   display: block;
   font-weight: 500;
-  font-size: 15px;
+  font-size: 14px;
+  line-height: 16px;
 }
 
 .description {
@@ -50,6 +51,8 @@
   display: block;
   color: var(--color-neutral-6);
   margin-top: 8px;
+  font-size: 14px;
+  line-height: 17px;
 }
 
 .isDisabled .title,
