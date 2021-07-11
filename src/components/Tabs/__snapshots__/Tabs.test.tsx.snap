@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input default snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="ventura tabs"
+  >
+    <div
+      class="header"
+    >
+      <button
+        class="tabName"
+        type="button"
+      >
+        First
+      </button>
+      <button
+        class="tabName"
+        type="button"
+      >
+        Second
+      </button>
+      <button
+        class="tabName"
+        type="button"
+      >
+        Third
+      </button>
+    </div>
+  </div>
+  <div
+    class="ventura tab"
+  >
+    This is the first tab
+  </div>
+</DocumentFragment>
+`;
