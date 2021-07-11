@@ -4,7 +4,6 @@ import classNames from 'classnames';
 import { TabsContext } from '../Tabs';
 
 import cssReset from '../../../css-reset.module.css';
-import styles from './Tab.module.css';
 
 export interface Props {
   title: string;
@@ -24,6 +23,8 @@ const Tab: React.FC<Props> = ({ title, index, className, children }: Props) => {
     return () => {
       tabsContext.removeTab(index);
     };
+    // adding tabsContext causes infinite loop of updates
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [title, index]);
 
   if (tabsContext === null) {
@@ -32,7 +33,7 @@ const Tab: React.FC<Props> = ({ title, index, className, children }: Props) => {
     return null;
   }
 
-  const mergedClassNames = classNames(cssReset.ventura, styles.tab, className);
+  const mergedClassNames = classNames(cssReset.ventura, className);
 
   return tabsContext.currentTabIndex === index ? (
     <div className={mergedClassNames}>{children}</div>
