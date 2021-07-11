@@ -9,19 +9,19 @@ exports[`Input default snapshot 1`] = `
       class="header"
     >
       <button
-        class="tabName"
+        class="ventura tabName active"
         type="button"
       >
         First
       </button>
       <button
-        class="tabName"
+        class="ventura tabName"
         type="button"
       >
         Second
       </button>
       <button
-        class="tabName"
+        class="ventura tabName"
         type="button"
       >
         Third
@@ -29,7 +29,7 @@ exports[`Input default snapshot 1`] = `
     </div>
   </div>
   <div
-    class="ventura tab"
+    class="ventura"
   >
     This is the first tab
   </div>
