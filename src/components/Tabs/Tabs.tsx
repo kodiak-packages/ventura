@@ -16,7 +16,7 @@ interface Props {
   currentTabIndex: number;
   onChange: (tabIndex: number) => void;
   className?: string;
-  children: ReactNode;
+  children?: ReactNode;
 }
 
 const Tabs: React.FC<Props> = ({ currentTabIndex, onChange, className, children }: Props) => {

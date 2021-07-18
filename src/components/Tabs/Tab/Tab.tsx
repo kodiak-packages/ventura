@@ -9,7 +9,7 @@ export interface Props {
   title: string;
   index: number;
   className?: string;
-  children: ReactNode;
+  children?: ReactNode;
 }
 
 const Tab: React.FC<Props> = ({ title, index, className, children }: Props) => {

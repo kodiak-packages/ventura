@@ -4,7 +4,7 @@ import { fireEvent, render } from '@testing-library/react';
 import Tab from './Tab/Tab';
 import Tabs from './Tabs';
 
-describe('Input', () => {
+describe('Tabs', () => {
   const defaultProps = {
     currentTabIndex: 0,
     onChange: jest.fn(),
