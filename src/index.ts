@@ -13,6 +13,8 @@ export { default as TextArea } from './components/TextArea/TextArea';
 export { default as Popover } from './components/Popover/Popover';
 export { default as Menu } from './components/Menu/Menu';
 export { default as Tooltip } from './components/Tooltip/Tooltip';
+export { default as Tabs } from './components/Tabs/Tabs';
+export { default as Tab } from './components/Tabs/Tab/Tab';
 export { default as toaster } from './components/Toaster/Toaster';
 
 export * from 'react-feather';
