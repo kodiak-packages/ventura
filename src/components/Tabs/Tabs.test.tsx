@@ -29,7 +29,7 @@ describe('Tabs', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  test('onChange should be triggered when another tab is clicked', () => {
+  test('onChange should trigger when another tab is clicked', () => {
     const { getByText } = render(createComponent(defaultProps));
     const secondTab = getByText(/Second/);
     fireEvent.click(secondTab);
