@@ -1,35 +1,72 @@
-import React, { ChangeEventHandler, FocusEventHandler } from 'react';
-import Select, { OptionTypeBase } from 'react-select';
+import React from 'react';
+import { X } from 'react-feather';
+import Select, { components, OptionsType } from 'react-select';
 import classNames from 'classnames';
 
 import cssReset from '../../css-reset.module.css';
-import styles from './Input.module.css';
+import styles from './Select.module.css';
 
-interface Props {
-  options: OptionTypeBase[];
-  value?: string;
-  defaultValue?: string;
-  onChange?: ChangeEventHandler<HTMLInputElement>;
-  onBlur?: FocusEventHandler<HTMLInputElement>;
-  className?: string;
+interface Option {
+  label: React.ReactNode;
+  value: string;
 }
 
-const Input = React.forwardRef<Select, Props>(
-  ({ options, value, defaultValue, onChange, onBlur, className }: Props, ref) => {
-    const selectClassNames = classNames(cssReset.ventura, styles.input, className);
+interface Props {
+  options: Option[];
+  value?: Option | Option[];
+  defaultValue?: Option | Option[];
+  onChange?: (value: Option | Option[]) => void;
+  className?: string;
+  isMulti?: boolean;
+  isDisabled?: boolean;
+  placeholder?: string;
+}
 
-    const test = (t: any, actions: any) => {
-      console.log(t, actions);
+const Input = React.forwardRef<Select<Option>, Props>(
+  (
+    {
+      options,
+      value,
+      defaultValue,
+      onChange,
+      className,
+      isMulti = false,
+      isDisabled = false,
+      placeholder,
+    }: Props,
+    ref,
+  ) => {
+    const selectClassNames = classNames(cssReset.ventura, styles.select, className);
+
+    const handleChange = (newValue: Option | OptionsType<Option> | null) => {
+      if (onChange) {
+        onChange(newValue as Option | Option[]);
+      }
     };
 
     return (
       <Select
         ref={ref}
-        option={options}
-        inputValue={value}
-        defaultInputValue={defaultValue}
+        options={options}
+        value={value}
+        defaultValue={defaultValue}
+        isDisabled={isDisabled}
         className={selectClassNames}
-        onChange={test}
+        onChange={handleChange}
+        isMulti={isMulti}
+        components={{
+          DropdownIndicator: () => null,
+          IndicatorSeparator: () => null,
+          ClearIndicator: () => null,
+          MultiValueRemove: (props) => (
+            // eslint-disable-next-line react/jsx-props-no-spreading
+            <components.MultiValueRemove {...props}>
+              <X />
+            </components.MultiValueRemove>
+          ),
+        }}
+        classNamePrefix="ventura-select"
+        placeholder={placeholder}
       />
     );
   },

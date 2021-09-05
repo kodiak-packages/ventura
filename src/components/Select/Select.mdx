@@ -5,8 +5,7 @@ route: /select
 ---
 
 import { Playground, Props } from 'docz';
-import { Select } from '../../index.ts'
-import styles from './docAssets/docs.module.css';
+import { Select, Trash2} from '../../index.ts'
 
 # Select
 
@@ -21,7 +20,7 @@ A Select can be used to let the user insert text using key strokes. A crucial fo
 ### Basic usage
 
 <Playground>
-  <Select options={[{label: "Test", value: 'test'},{label: "Test2", value: 'test2'}]} />
+  <Select isMulti options={[{label: <span><Trash2/>Bram</span>, value: 'test'},{label: "Test2", value: 'test2'}]} />
 </Playground>
 
 ### Input with error
@@ -32,4 +31,4 @@ A Select can be used to let the user insert text using key strokes. A crucial fo
 
 ## API
 
-<Props of={Input} />
+<Props of={Select} />
