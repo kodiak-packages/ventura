@@ -40,13 +40,13 @@ const Input = React.forwardRef<Select<Option>, Props>(
   ) => {
     const selectClassNames = classNames(cssReset.ventura, styles.select, className);
 
+    const showNoOptionsMessage = () => noOptionsMessage;
+
     const handleChange = (newValue: Option | OptionsType<Option> | null) => {
       if (onChange) {
         onChange(newValue as Option | Option[]);
       }
     };
-
-    const showNoOptionsMessage = () => noOptionsMessage;
 
     return (
       <Select
