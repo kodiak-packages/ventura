@@ -1,0 +1,35 @@
+---
+name: Select
+menu: Components
+route: /select
+---
+
+import { Playground, Props } from 'docz';
+import { Select } from '../../index.ts'
+import styles from './docAssets/docs.module.css';
+
+# Select
+
+A Select can be used to let the user insert text using key strokes. A crucial form item for building interactive apps.
+
+## Best practices
+
+- Selects should be wrapped in a [FormField](/form-field) or should be preceded by another component serving as a label
+
+## Examples
+
+### Basic usage
+
+<Playground>
+  <Select options={[{label: "Test", value: 'test'},{label: "Test2", value: 'test2'}]} />
+</Playground>
+
+### Input with error
+
+<Playground>
+  <Select name="username" isInvalid />
+</Playground>
+
+## API
+
+<Props of={Input} />
