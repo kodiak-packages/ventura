@@ -50,7 +50,7 @@ const Input = React.forwardRef<Select<Option>, Props>(
 
     return (
       <Select
-        ref={ref}
+        ref={ref as any}
         options={options}
         value={value}
         defaultValue={defaultValue}
