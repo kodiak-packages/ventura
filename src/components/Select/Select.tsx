@@ -20,6 +20,7 @@ interface Props {
   isMulti?: boolean;
   isDisabled?: boolean;
   placeholder?: string;
+  noOptionsMessage?: string;
 }
 
 const Input = React.forwardRef<Select<Option>, Props>(
@@ -32,7 +33,8 @@ const Input = React.forwardRef<Select<Option>, Props>(
       className,
       isMulti = false,
       isDisabled = false,
-      placeholder,
+      placeholder = '',
+      noOptionsMessage = '',
     }: Props,
     ref,
   ) => {
@@ -44,6 +46,8 @@ const Input = React.forwardRef<Select<Option>, Props>(
       }
     };
 
+    const showNoOptionsMessage = () => noOptionsMessage;
+
     return (
       <Select
         ref={ref}
@@ -54,6 +58,7 @@ const Input = React.forwardRef<Select<Option>, Props>(
         className={selectClassNames}
         onChange={handleChange}
         isMulti={isMulti}
+        noOptionsMessage={showNoOptionsMessage}
         components={{
           DropdownIndicator: () => null,
           IndicatorSeparator: () => null,

@@ -9,7 +9,7 @@ import { Select, Trash2} from '../../index.ts'
 
 # Select
 
-A Select can be used to let the user insert text using key strokes. A crucial form item for building interactive apps.
+A Select can be used to select one or more values from a predetermined list.
 
 ## Best practices
 
@@ -20,13 +20,13 @@ A Select can be used to let the user insert text using key strokes. A crucial fo
 ### Basic usage
 
 <Playground>
-  <Select isMulti options={[{label: <span><Trash2/>Bram</span>, value: 'test'},{label: "Test2", value: 'test2'}]} />
+  <Select options={[{label: 'Option 1', value: '1'},{label: "Option 2", value: '2'}]} />
 </Playground>
 
-### Input with error
+### Multi select
 
 <Playground>
-  <Select name="username" isInvalid />
+  <Select isMulti options={[{label: 'Option 1', value: '1'},{label: "Option 2", value: '2'}]} />
 </Playground>
 
 ## API
