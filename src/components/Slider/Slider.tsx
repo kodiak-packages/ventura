@@ -42,6 +42,7 @@ const Slider: React.FC<Props> = ({
     (Math.round(val * (10 ** numberOfDecimals || 1)) / (10 ** numberOfDecimals || 1)).toFixed(
       numberOfDecimals,
     );
+
   const classNames = classnames(
     cssReset.ventura,
     styles.sliderWrapper,
