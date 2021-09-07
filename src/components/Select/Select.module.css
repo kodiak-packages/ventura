@@ -1,0 +1,62 @@
+.select :global .ventura-select__control,
+.select :global .ventura-select__control:hover {
+  min-height: 36px;
+  background-color: var(--color-neutral-1);
+  border-radius: var(--border-radius-small);
+  border: 1px solid var(--color-neutral-4);
+}
+
+.select :global .ventura-select__control--is-focused {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--color-focus);
+}
+
+.select :global .ventura-select__placeholder {
+  color: var(--color-neutral-6);
+}
+
+.select :global .ventura-select__value-container {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.select :global .ventura-select__menu {
+  border: none;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.select :global .ventura-select__multi-value {
+  height: 24px;
+  background: var(--color-neutral-2);
+  border-radius: 3px;
+}
+
+.select :global .ventura-select__multi-value__label {
+  padding-top: 4px;
+  padding-bottom: 3px;
+  background: var(--color-neutral-2);
+  border-radius: 3px;
+  padding-left: 7px;
+  color: var(--color-neutral-8);
+}
+
+.select :global .ventura-select__multi-value__remove {
+  padding-right: 6px;
+  padding-left: 4px;
+  color: var(--color-neutral-5);
+  cursor: pointer;
+}
+
+.select :global .ventura-select__multi-value__remove:hover {
+  background-color: unset;
+  color: unset;
+}
+
+.select :global .ventura-select__option {
+  padding: 6px 12px;
+}
+
+.select :global .ventura-select__option--is-focused,
+.select :global .ventura-select__option:active {
+  background: var(--color-neutral-2);
+}

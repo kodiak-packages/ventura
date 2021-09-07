@@ -1,0 +1,34 @@
+---
+name: Select
+menu: Components
+route: /select
+---
+
+import { Playground, Props } from 'docz';
+import { Select, Trash2} from '../../index.ts'
+
+# Select
+
+A Select can be used to select one or more values from a predetermined list.
+
+## Best practices
+
+- Selects should be wrapped in a [FormField](/form-field) or should be preceded by another component serving as a label
+
+## Examples
+
+### Basic usage
+
+<Playground>
+  <Select options={[{label: 'Option 1', value: '1'},{label: "Option 2", value: '2'}]} />
+</Playground>
+
+### Multi select
+
+<Playground>
+  <Select isMulti options={[{label: 'Option 1', value: '1'},{label: "Option 2", value: '2'}]} />
+</Playground>
+
+## API
+
+<Props of={Select} />
