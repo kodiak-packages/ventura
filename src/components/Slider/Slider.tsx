@@ -37,7 +37,7 @@ const Slider: React.FC<Props> = ({
   const maxValue = valueBoundaries[1];
   const numberOfDecimals =
     defaultNumberOfDecimals ?? Math.max(...valueBoundaries.map(countDecimals));
-  const stepSize = defaultStepSize ?? valueBoundaries[1] <= 100 ? 1 : (maxValue - minValue) / 100;
+  const stepSize = defaultStepSize ?? (maxValue - minValue) / 100;
   const formatValue = (val: number) =>
     (Math.round(val * (10 ** numberOfDecimals || 1)) / (10 ** numberOfDecimals || 1)).toFixed(
       numberOfDecimals,
