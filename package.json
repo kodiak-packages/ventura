@@ -59,7 +59,7 @@
     "prettier": "^2.0.4",
     "react": "^16",
     "react-dom": "^16",
-    "semantic-release": "^17.4.1",
+    "semantic-release": "^17.4.7",
     "ts-jest": "^26.4.4",
     "typescript": "^3.9.7"
   },
