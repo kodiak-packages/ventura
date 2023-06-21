@@ -53,10 +53,13 @@ A checkbox can be used enable an optional setting or feature.
 <Playground>
   {() => {
     const [isChecked, setIsChecked] = React.useState(false);
+    const handleToggleClick = () => {
+      setIsChecked(!isChecked);
+    };
     return (
       <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
-        <Button onClick={() => setIsChecked(!isChecked)}>Toggle checkbox</Button>
-        <Checkbox label="Checkbox" name="enabled-6" value={isChecked}  />
+        <Button onClick={handleToggleClick}>Toggle checkbox</Button>
+        <Checkbox label="Checkbox" name="enabled-6" value={isChecked} onChange={() => setIsChecked(!isChecked)}  />
       </div>
     );
 }}
