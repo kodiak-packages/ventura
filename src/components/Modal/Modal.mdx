@@ -38,6 +38,27 @@ A modal is a dialog that appears on top of the main content to require user inte
 
 </Playground>
 
+### Modal max width
+
+<Playground>
+  {() => {
+    const [isOpen, setIsOpen] = React.useState(false);
+    return (
+      <>
+        <Button onClick={() => setIsOpen(true)}>Open basic modal</Button>
+        <Modal title="This is the title" isOpen={isOpen} maxWidth="300px">
+          <span>Insert your text or form elements here</span>
+          <Modal.Footer>
+            <Button type='secondary' onClick={() => setIsOpen(false)}>Cancel</Button>
+            <Button onClick={() => 'do some logic here'}>Create</Button>
+          </Modal.Footer>
+        </Modal>
+      </>
+    );
+}}
+
+</Playground>
+
 ### Modal with async action
 
 <Playground>
