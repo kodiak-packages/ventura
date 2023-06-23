@@ -14,6 +14,43 @@ exports[`Modal snapshot when shown 1`] = `
       <article
         class="modal"
         role="presentation"
+        style="max-width: 650px;"
+        tabindex="0"
+      >
+        <h1
+          class="title"
+        >
+          This is the title
+        </h1>
+        <span>
+          Insert your text or form elements here
+        </span>
+        <div
+          class="container"
+        >
+          Buttons are placed here
+        </div>
+      </article>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Modal snapshot when shown 2`] = `
+<body
+  style="overflow: hidden;"
+>
+  <div />
+  <div>
+    <div
+      class="ventura overlay"
+      data-testid="modal"
+      role="article"
+    >
+      <article
+        class="modal"
+        role="presentation"
+        style="max-width: 800px;"
         tabindex="0"
       >
         <h1
