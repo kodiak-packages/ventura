@@ -12,6 +12,7 @@ type Props = {
   isOpen?: boolean;
   onEscKeyDown?: () => void;
   className?: string;
+  maxWidth?: string;
   children?: ReactNode;
 };
 
@@ -28,6 +29,7 @@ const Modal: React.FC<Props> & { Footer: typeof Footer } = ({
   isOpen = false,
   onEscKeyDown,
   className,
+  maxWidth = '650px',
   children,
 }: Props) => {
   const modalRef = React.useRef<HTMLDivElement>(null);
@@ -52,6 +54,7 @@ const Modal: React.FC<Props> & { Footer: typeof Footer } = ({
         <article
           ref={modalRef}
           className={styles.modal}
+          style={{ maxWidth }}
           onKeyDown={handleKeyDown}
           // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
           tabIndex={0}

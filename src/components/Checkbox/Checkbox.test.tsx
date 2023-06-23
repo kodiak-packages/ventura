@@ -66,4 +66,20 @@ describe('Checkbox', () => {
     // className in prop should be the last in the row
     expect(renderedClassNames.indexOf(className)).toBe(renderedClassNames.length - 1);
   });
+
+  test('value prop updates internal state', () => {
+    const { getByTestId, rerender } = render(<Checkbox {...defaultProps} value={false} />);
+    const checkbox = getByTestId('checkbox-enabled') as HTMLInputElement;
+
+    // Initial state should be unchecked
+    expect(checkbox.checked).toBe(false);
+
+    // Update value prop to true
+    rerender(<Checkbox {...defaultProps} value />);
+    expect(checkbox.checked).toBe(true);
+
+    // Update value prop back to false
+    rerender(<Checkbox {...defaultProps} value={false} />);
+    expect(checkbox.checked).toBe(false);
+  });
 });

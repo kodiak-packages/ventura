@@ -5,7 +5,8 @@ route: /checkbox
 ---
 
 import { Playground, Props } from 'docz';
-import { Checkbox } from '../../index.ts'
+import { Checkbox } from '../../index.ts';
+import { Button } from '../..';
 
 # Checkbox
 
@@ -45,6 +46,24 @@ A checkbox can be used enable an optional setting or feature.
 
 <Playground>
   <Checkbox label="Log" name="enabled-5" onChange={(event) => console.log(`LOGGER: ${event.target.checked}`)} />
+</Playground>
+
+### Updating initial state
+
+<Playground>
+  {() => {
+    const [isChecked, setIsChecked] = React.useState(false);
+    const handleToggleClick = () => {
+      setIsChecked(!isChecked);
+    };
+    return (
+      <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
+        <Button onClick={handleToggleClick}>Toggle checkbox</Button>
+        <Checkbox label="Checkbox" name="enabled-6" value={isChecked} onChange={() => setIsChecked(!isChecked)}  />
+      </div>
+    );
+}}
+
 </Playground>
 
 ## API

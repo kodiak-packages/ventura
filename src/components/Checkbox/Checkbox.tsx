@@ -1,4 +1,4 @@
-import React, { ChangeEventHandler, ReactNode, useState } from 'react';
+import React, { ChangeEventHandler, ReactNode, useEffect, useState } from 'react';
 import classNames from 'classnames';
 
 import checkIcon from './check.svg';
@@ -19,6 +19,10 @@ interface Props {
 const Checkbox = React.forwardRef<HTMLInputElement, Props>(
   ({ name, value, onChange, isDisabled = false, className, description, label }: Props, ref) => {
     const [isChecked, setIsChecked] = useState<boolean>(value ?? false);
+
+    useEffect(() => {
+      setIsChecked(value ?? false);
+    }, [value]);
 
     const labelClassNames = classNames(
       cssReset.ventura,
