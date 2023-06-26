@@ -21,6 +21,7 @@ const Checkbox = React.forwardRef<HTMLInputElement, Props>(
     const [isChecked, setIsChecked] = useState<boolean>(value ?? false);
 
     useEffect(() => {
+      // fix
       setIsChecked(value ?? false);
     }, [value]);
 
