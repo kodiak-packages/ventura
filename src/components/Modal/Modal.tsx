@@ -30,7 +30,7 @@ const Modal: React.FC<Props> & { Footer: typeof Footer } = ({
   onEscKeyDown,
   className,
   children,
-  maxWidth,
+  maxWidth, // added optional maxWidth prop
 }: Props) => {
   const modalRef = React.useRef<HTMLDivElement>(null);
 
