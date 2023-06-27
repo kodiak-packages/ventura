@@ -7,16 +7,8 @@ describe('Modal', () => {
   test('snapshot when shown', () => {
     // portals don't render in the fragment so we have look in baseElement
     // https://github.com/testing-library/react-testing-library/issues/62#issuecomment-513199414
-    const { baseElement, rerender } = render(
+    const { baseElement } = render(
       <Modal title="This is the title" isOpen>
-        <span>Insert your text or form elements here</span>
-        <Modal.Footer>Buttons are placed here</Modal.Footer>
-      </Modal>,
-    );
-    expect(baseElement).toMatchSnapshot();
-
-    rerender(
-      <Modal title="This is the title" isOpen maxWidth="800px">
         <span>Insert your text or form elements here</span>
         <Modal.Footer>Buttons are placed here</Modal.Footer>
       </Modal>,

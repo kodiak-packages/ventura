@@ -13,7 +13,6 @@ type Props = {
   onEscKeyDown?: () => void;
   className?: string;
   children?: ReactNode;
-  maxWidth?: string;
 };
 
 const disableBodyScroll = (isDisabled: boolean) => {
@@ -30,7 +29,6 @@ const Modal: React.FC<Props> & { Footer: typeof Footer } = ({
   onEscKeyDown,
   className,
   children,
-  maxWidth, // added optional maxWidth prop
 }: Props) => {
   const modalRef = React.useRef<HTMLDivElement>(null);
 
@@ -48,17 +46,12 @@ const Modal: React.FC<Props> & { Footer: typeof Footer } = ({
 
   const overlayClassNames = classNames(cssReset.ventura, styles.overlay, className);
 
-  const modalStyles = {
-    maxWidth: maxWidth || '650px',
-  };
-
   return isOpen ? (
     <Portal>
       <div className={overlayClassNames} role="article" data-testid="modal">
         <article
           ref={modalRef}
           className={styles.modal}
-          style={modalStyles}
           onKeyDown={handleKeyDown}
           // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
           tabIndex={0}
