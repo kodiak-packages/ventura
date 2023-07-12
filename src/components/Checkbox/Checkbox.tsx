@@ -1,4 +1,10 @@
-import React, { ChangeEventHandler, ReactNode, useEffect, useState } from 'react';
+import React, {
+  ChangeEventHandler,
+  MouseEventHandler,
+  ReactNode,
+  useEffect,
+  useState,
+} from 'react';
 import classNames from 'classnames';
 
 import checkIcon from './check.svg';
@@ -10,6 +16,7 @@ interface Props {
   name: string;
   value?: boolean;
   onChange?: ChangeEventHandler<HTMLInputElement>;
+  onClick?: MouseEventHandler<HTMLButtonElement>;
   className?: string;
   isDisabled?: boolean;
   description?: string;
@@ -17,7 +24,10 @@ interface Props {
 }
 
 const Checkbox = React.forwardRef<HTMLInputElement, Props>(
-  ({ name, value, onChange, isDisabled = false, className, description, label }: Props, ref) => {
+  (
+    { name, value, onChange, onClick, isDisabled = false, className, description, label }: Props,
+    ref,
+  ) => {
     const [isChecked, setIsChecked] = useState<boolean>(value ?? false);
 
     useEffect(() => {
@@ -35,7 +45,7 @@ const Checkbox = React.forwardRef<HTMLInputElement, Props>(
       className,
     );
 
-    const onClick = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const click = (event: React.ChangeEvent<HTMLInputElement>) => {
       // Info at https://fb.me/react-event-pooling
       event.persist();
 
@@ -53,7 +63,10 @@ const Checkbox = React.forwardRef<HTMLInputElement, Props>(
           id={name}
           name={name}
           checked={isChecked}
-          onChange={onClick}
+          onChange={click}
+          onClick={
+            isDisabled ? undefined : (onClick as MouseEventHandler<HTMLInputElement> | undefined)
+          }
           ref={ref}
           data-testid={name && `checkbox-${name}`}
           disabled={isDisabled}
