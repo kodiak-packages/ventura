@@ -55,6 +55,17 @@ describe('Checkbox', () => {
     );
   });
 
+  test('onClick prop', () => {
+    const onClickFn = jest.fn();
+    const component = <Checkbox {...defaultProps} onClick={onClickFn} />;
+    const { getByTestId } = render(component);
+
+    const checkboxLabel = getByTestId('checkbox-label-enabled');
+    fireEvent.click(checkboxLabel);
+
+    expect(onClickFn).toHaveBeenCalledTimes(1);
+  });
+
   test('className prop', () => {
     const className = 'center';
     const component = <Checkbox {...defaultProps} className={className} />;
